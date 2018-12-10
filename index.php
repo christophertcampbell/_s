@@ -2,6 +2,8 @@
 /**
  * The main template file
  *
+ * Set the sidebar location (right or left) in inc/template-functions.php
+ * 
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
@@ -12,6 +14,8 @@
  * @package _s
  */
 
+_s_add_body_class_default_sidebar_location();
+ 
 get_header();
 ?>
 

@@ -2,10 +2,14 @@
 /**
  * The template for displaying search results pages
  *
+ * Set the sidebar location (right or left) in inc/template-functions.php
+ * 
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package _s
  */
+
+_s_add_body_class_default_sidebar_location();
 
 get_header();
 ?>

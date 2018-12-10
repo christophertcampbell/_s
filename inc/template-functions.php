@@ -35,3 +35,38 @@ function _s_pingback_header() {
 	}
 }
 add_action( 'wp_head', '_s_pingback_header' );
+
+/**
+ * If the sidebar is active, adds the default sidebar class to the <body> element.
+ */
+function _s_add_body_class_default_sidebar_location() {
+	// Change this function call to set the default location of the sidebar
+	_s_add_body_class_right_sidebar();
+	// _s_add_body_class_left_sidebar();
+}
+
+/**
+ * If the sidebar is active, adds the 'sidebar' and 'content-sidebar' classes to the <body> element.
+ */
+function _s_add_body_class_right_sidebar() {
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		add_filter( 'body_class', function( $classes ) {
+			$classes[] = 'sidebar';
+			$classes[] = 'content-sidebar';
+			return $classes;
+		} );
+	}
+}
+
+/**
+ * If the sidebar is active, adds the 'sidebar' and 'sidebar-content' classes to the <body> element.
+ */
+function _s_add_body_class_left_sidebar() {
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		add_filter( 'body_class', function( $classes ) {
+			$classes[] = 'sidebar';
+			$classes[] = 'sidebar-content';
+			return $classes;
+		} );
+	}
+}
