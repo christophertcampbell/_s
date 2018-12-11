@@ -16,13 +16,6 @@ function _s_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
-	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
 
@@ -37,7 +30,8 @@ function _s_pingback_header() {
 add_action( 'wp_head', '_s_pingback_header' );
 
 /**
- * If the sidebar is active, adds the default sidebar class to the <body> element.
+ * Adds the default sidebar class to the <body> element.
+ * If the sidebar is not active, instead adds the 'no-sidebar' class;
  */
 function _s_add_body_class_default_sidebar_location() {
 	// Change this function call to set the default location of the sidebar
@@ -46,7 +40,8 @@ function _s_add_body_class_default_sidebar_location() {
 }
 
 /**
- * If the sidebar is active, adds the 'sidebar' and 'content-sidebar' classes to the <body> element.
+ * Adds the 'sidebar' and 'content-sidebar' classes to the <body> element.
+ * If the sidebar is not active, instead adds the 'no-sidebar' class;
  */
 function _s_add_body_class_right_sidebar() {
 	if ( is_active_sidebar( 'sidebar-1' ) ) {
@@ -55,11 +50,14 @@ function _s_add_body_class_right_sidebar() {
 			$classes[] = 'content-sidebar';
 			return $classes;
 		} );
+	} else {
+		_s_add_body_class_no_sidebar();
 	}
 }
 
 /**
- * If the sidebar is active, adds the 'sidebar' and 'sidebar-content' classes to the <body> element.
+ * Adds the 'sidebar' and 'sidebar-content' classes to the <body> element.
+ * If the sidebar is not active, instead adds the 'no-sidebar' class;
  */
 function _s_add_body_class_left_sidebar() {
 	if ( is_active_sidebar( 'sidebar-1' ) ) {
@@ -68,5 +66,17 @@ function _s_add_body_class_left_sidebar() {
 			$classes[] = 'sidebar-content';
 			return $classes;
 		} );
+	} else {
+		_s_add_body_class_no_sidebar();
 	}
+}
+
+/**
+ * Adds the 'no-sidebar' class to the <body> element
+ */
+function _s_add_body_class_no_sidebar() {
+	add_filter( 'body_class', function( $classes ) {
+		$classes[] = 'no-sidebar';
+		return $classes;
+	} );
 }
