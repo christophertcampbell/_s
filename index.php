@@ -14,7 +14,7 @@
  * @package _s
  */
 
-_s_add_body_class_default_sidebar_location();
+_s_add_body_class_sidebar();
  
 get_header();
 ?>
