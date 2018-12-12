@@ -7,6 +7,8 @@
  * @package _s
  */
 
+_s_add_body_class_no_sidebar();
+
 get_header();
 ?>
 
@@ -33,5 +35,4 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

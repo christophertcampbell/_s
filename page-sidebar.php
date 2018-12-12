@@ -1,20 +1,15 @@
 <?php
 /**
- * Default template for displaying all pages
- *
- * Full width, no sidebar
+ * Template for displaying single pages with a sidebar
  * 
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * Set the sidebar location (right or left) in inc/template-functions.php
+ * 
+ * Template Name: With Sidebar
+ * 
  * @package _s
  */
 
-_s_add_body_class_no_sidebar();
+_s_add_body_class_sidebar();
 
 get_header();
 ?>
@@ -40,4 +35,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();
