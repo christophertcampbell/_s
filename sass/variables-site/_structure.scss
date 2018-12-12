@@ -1,2 +1,17 @@
-$size__site-main: 100%;
+$size__site-content: 1000px;
+$size__site-content-with-sidebar: 1200px;
 $size__site-sidebar: 25%;
+$size__site-content-gutter: 20px;
+$size__site-content-gutter-desktop: 33px;
+$size__site-content-gutter-inner: 3%;
+
+$size__site-header-content: 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+$size__site-header-gutter: 20px;
+$size__site-header-gutter-desktop: 33px;
+
+$size__site-footer-content: 999999px;
+$size__site-footer-gutter: 20px;
+$size__site-footer-gutter-desktop: 33px;
+
+$breakpoint__sidebar: 900px; /* The breakpoint at which the sidebar is aligned to the side */
+$breakpoint__desktop: 800px; /* The breakpoint at which '-desktop' variables take effect */
