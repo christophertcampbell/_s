@@ -12,7 +12,9 @@
 
 	.site-main .entry-header > *,
 	.site-main .entry-content > *,
-	.site-main .entry-footer {
+	.site-main .entry-footer,
+	.site-main .post-navigation > *,
+	.site-main .comments-area > * {
 		margin-left: $size__site-content-gutter;
 		margin-right: $size__site-content-gutter;
 	}
@@ -22,7 +24,9 @@
 	
 		.site-main .entry-header > *,
 		.site-main .entry-content > *,
-		.site-main .entry-footer {
+		.site-main .entry-footer,
+		.site-main .post-navigation > *,
+		.site-main .comments-area > * {
 			margin-left: $size__site-content-gutter-medium;
 			margin-right: $size__site-content-gutter-medium;
 		}
@@ -34,7 +38,9 @@
 		
 		.site-main .entry-header > *,
 		.site-main .entry-content > *,
-		.site-main .entry-footer {
+		.site-main .entry-footer,
+		.site-main .post-navigation > *,
+		.site-main .comments-area > * {
 			margin-left: auto;
 			margin-right: auto;
 			max-width: $size__site-content;

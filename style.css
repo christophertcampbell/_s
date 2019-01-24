@@ -516,14 +516,18 @@ big {
 }
 .no-sidebar .site-main .entry-header > *,
 .no-sidebar .site-main .entry-content > *,
-.no-sidebar .site-main .entry-footer {
+.no-sidebar .site-main .entry-footer,
+.no-sidebar .site-main .post-navigation > *,
+.no-sidebar .site-main .comments-area > * {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media screen and (min-width: 800px) {
   .no-sidebar .site-main .entry-header > *,
 .no-sidebar .site-main .entry-content > *,
-.no-sidebar .site-main .entry-footer {
+.no-sidebar .site-main .entry-footer,
+.no-sidebar .site-main .post-navigation > *,
+.no-sidebar .site-main .comments-area > * {
     margin-left: 33px;
     margin-right: 33px;
   }
@@ -531,7 +535,9 @@ big {
 @media screen and (min-width: 1066px) {
   .no-sidebar .site-main .entry-header > *,
 .no-sidebar .site-main .entry-content > *,
-.no-sidebar .site-main .entry-footer {
+.no-sidebar .site-main .entry-footer,
+.no-sidebar .site-main .post-navigation > *,
+.no-sidebar .site-main .comments-area > * {
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
