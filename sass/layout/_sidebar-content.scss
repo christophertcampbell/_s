@@ -9,11 +9,11 @@
 		width: 100%;
 	}
 
-	@media screen and (min-width: $breakpoint__desktop) {
+	@media screen and (min-width: $breakpoint__medium) {
 
 		.site-content {
-			margin-left: $size__site-content-gutter-desktop;
-			margin-right: $size__site-content-gutter-desktop;
+			margin-left: $size__site-content-gutter-medium;
+			margin-right: $size__site-content-gutter-medium;
 		}
 
 	}
@@ -38,7 +38,7 @@
 
 	}
 
-	@media screen and (min-width: ($size__site-content-with-sidebar + $size__site-content-gutter-desktop + $size__site-content-gutter-desktop)) {
+	@media screen and (min-width: ($size__site-content-with-sidebar + $size__site-content-gutter-medium + $size__site-content-gutter-medium)) {
 
 		.site-content {
 			margin-left: auto;

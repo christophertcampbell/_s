@@ -5,16 +5,16 @@
 	margin-right: $size__site-header-gutter;
 }
 
-@media screen and (min-width: $breakpoint__desktop) {
+@media screen and (min-width: $breakpoint__medium) {
 
 	.site-header > * {
-		margin-left: $size__site-header-gutter-desktop;
-		margin-right: $size__site-header-gutter-desktop;
+		margin-left: $size__site-header-gutter-medium;
+		margin-right: $size__site-header-gutter-medium;
 	}	
 	
 }
 
-@media screen and (min-width: ($size__site-header-content + $size__site-header-gutter-desktop + $size__site-header-gutter-desktop)) {
+@media screen and (min-width: ($size__site-header-content + $size__site-header-gutter-medium + $size__site-header-gutter-medium)) {
 
 	.site-header > * {
 		margin-left: auto;
@@ -31,16 +31,16 @@
 	margin-right: $size__site-footer-gutter;
 }
 
-@media screen and (min-width: $breakpoint__desktop) {
+@media screen and (min-width: $breakpoint__medium) {
 
 	.site-footer > * {
-		margin-left: $size__site-footer-gutter-desktop;
-		margin-right: $size__site-footer-gutter-desktop;
+		margin-left: $size__site-footer-gutter-medium;
+		margin-right: $size__site-footer-gutter-medium;
 	}	
 	
 }
 
-@media screen and (min-width: ($size__site-footer-content + $size__site-footer-gutter-desktop + $size__site-footer-gutter-desktop)) {
+@media screen and (min-width: ($size__site-footer-content + $size__site-footer-gutter-medium + $size__site-footer-gutter-medium)) {
 
 	.site-footer > * {
 		margin-left: auto;

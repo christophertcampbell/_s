@@ -47,8 +47,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+/* The breakpoint at which '-medium' variables take effect */
 /* The breakpoint at which the sidebar is aligned to the side */
-/* The breakpoint at which '-desktop' variables take effect */
 /* The breakpoint at which the screen width is at least the max content width + gutters */
 /* The breakpoint at which the screen width is at least the max alignwide width + gutters */
 /*--------------------------------------------------------------
