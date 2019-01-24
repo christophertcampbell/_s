@@ -4,6 +4,7 @@ $size__site-sidebar: 25%;
 $size__site-content-gutter: 20px;
 $size__site-content-gutter-desktop: 33px;
 $size__site-content-gutter-inner: 3%;
+$size__alignwide: 1200px;
 
 $size__site-header-content: 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 $size__site-header-gutter: 20px;
@@ -15,3 +16,9 @@ $size__site-footer-gutter-desktop: 33px;
 
 $breakpoint__sidebar: 900px; /* The breakpoint at which the sidebar is aligned to the side */
 $breakpoint__desktop: 800px; /* The breakpoint at which '-desktop' variables take effect */
+
+/* The breakpoint at which the screen width is at least the max content width + gutters */
+$breakpoint__max-standard-width: $size__site-content + $size__site-content-gutter-desktop + $size__site-content-gutter-desktop;
+
+/* The breakpoint at which the screen width is at least the max alignwide width + gutters */
+$breakpoint__max-alignwide-width: $size__alignwide + $size__site-content-gutter-desktop + $size__site-content-gutter-desktop;
