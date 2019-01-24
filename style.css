@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/* Specific parts of the page */
 /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 /* The breakpoint at which '-medium' variables take effect */
 /* The breakpoint at which the sidebar is aligned to the side */
@@ -825,6 +826,17 @@ a:hover, a:active {
   display: block;
   float: left;
   width: 100%;
+  color: #404040;
+  background-color: #fff;
+}
+.main-navigation a {
+  color: royalblue;
+}
+.main-navigation a:visited {
+  color: purple;
+}
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+  color: midnightblue;
 }
 .main-navigation ul {
   display: none;
@@ -1042,6 +1054,54 @@ a:hover, a:active {
 
 .bypostauthor {
   display: block;
+}
+
+.comments-area {
+  color: #404040;
+  background-color: #fff;
+}
+.comments-area a {
+  color: royalblue;
+}
+.comments-area a:visited {
+  color: purple;
+}
+.comments-area a:hover, .comments-area a:focus, .comments-area a:active {
+  color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+  color: #404040;
+  background-color: #fff;
+}
+.site-header a {
+  color: royalblue;
+}
+.site-header a:visited {
+  color: purple;
+}
+.site-header a:hover, .site-header a:focus, .site-header a:active {
+  color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  color: #404040;
+  background-color: #fff;
+}
+.site-footer a {
+  color: royalblue;
+}
+.site-footer a:visited {
+  color: purple;
+}
+.site-footer a:hover, .site-footer a:focus, .site-footer a:active {
+  color: midnightblue;
 }
 
 /*--------------------------------------------------------------

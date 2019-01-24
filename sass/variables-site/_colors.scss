@@ -18,3 +18,29 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+/* Specific parts of the page */
+
+$color__header-background: $color__background-body;
+$color__header-text: $color__text-main;
+$color__header-link: $color__link;
+$color__header-link-hover: $color__link-hover;
+$color__header-link-visited: $color__link-visited;
+
+$color__main-navigation-background: $color__background-body;
+$color__main-navigation-text: $color__text-main;
+$color__main-navigation-link: $color__link;
+$color__main-navigation-link-hover: $color__link-hover;
+$color__main-navigation-link-visited: $color__link-visited;
+
+$color__comments-area-background: $color__background-body;
+$color__comments-area-text: $color__text-main;
+$color__comments-area-link: $color__link;
+$color__comments-area-link-hover: $color__link-hover;
+$color__comments-area-link-visited: $color__link-visited;
+
+$color__footer-background: $color__background-body;
+$color__footer-text: $color__text-main;
+$color__footer-link: $color__link;
+$color__footer-link-hover: $color__link-hover;
+$color__footer-link-visited: $color__link-visited;

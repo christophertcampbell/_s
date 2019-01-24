@@ -4,6 +4,23 @@
 	float: left;
 	width: 100%;
 
+	color: $color__main-navigation-text;
+	background-color: $color__main-navigation-background;
+
+	a {
+		color: $color__main-navigation-link;
+
+		&:visited  {
+			color: $color__main-navigation-link-visited;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__main-navigation-link-hover;
+		}
+	}
+
 	ul {
 		display: none;
 		list-style: none;
