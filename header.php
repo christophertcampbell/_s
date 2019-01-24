@@ -25,8 +25,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="inner">
-			<div class="site-branding">
+		<div class="site-branding">
+			<div class="inner">
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
@@ -43,9 +43,11 @@
 					?>
 					<p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
-			</div><!-- .site-branding -->
+			</div><!-- .inner -->
+		</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="main-navigation">
+			<div class="inner">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
 				<?php
 				wp_nav_menu( array(
@@ -53,8 +55,8 @@
 					'menu_id'        => 'primary-menu',
 				) );
 				?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .inner -->
+			</div><!-- .inner -->
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

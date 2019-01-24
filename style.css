@@ -461,41 +461,51 @@ big {
 ## Header and Footer
 --------------------------------------------------------------*/
 /* Header */
-.site-header > * {
+.site-header .inner {
   margin-left: 20px;
   margin-right: 20px;
 }
 
 @media screen and (min-width: 800px) {
-  .site-header > * {
+  .site-header .inner {
     margin-left: 33px;
     margin-right: 33px;
   }
 }
+/* Max width of header content (including gutters) */
 @media screen and (min-width: 1000065px) {
-  .site-header > * {
+  .site-header .inner {
     margin-left: auto;
     margin-right: auto;
     max-width: 999999px;
+  }
+}
+/* Max width of header navigation content (including gutters) */
+@media screen and (min-width: 1366px) {
+  .site-header .main-navigation .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
   }
 }
 /* Footer */
-.site-footer > * {
+.site-footer .inner {
   margin-left: 20px;
   margin-right: 20px;
 }
 
 @media screen and (min-width: 800px) {
-  .site-footer > * {
+  .site-footer .inner {
     margin-left: 33px;
     margin-right: 33px;
   }
 }
-@media screen and (min-width: 1000065px) {
-  .site-footer > * {
+/* Max width of header content (including gutters) */
+@media screen and (min-width: 1366px) {
+  .site-footer .inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 999999px;
+    max-width: 1300px;
   }
 }
 /*--------------------------------------------------------------
