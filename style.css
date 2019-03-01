@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: _s
 Theme URI: https://underscores.me/
@@ -397,7 +398,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
