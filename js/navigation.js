@@ -44,13 +44,36 @@
 		body.className = body.className.replace( ' menu-open', '' );
 		button.setAttribute( 'aria-expanded', 'false' );
 		menu.setAttribute( 'aria-expanded', 'false' );
+		restoreScrollPosition();
 	}
 	
 	function expandMenu() {
+		recordScrollPosition();
 		container.className += ' toggled';
 		body.className += ' menu-open';
 		button.setAttribute( 'aria-expanded', 'true' );
 		menu.setAttribute( 'aria-expanded', 'true' );
+	}
+
+	var scrollPositionX;
+	var scrollPositionY;
+
+	/* Record the scroll position in case the theme hides page elements when the menu is open */
+	/* Otherwise, hiding page elements (ie: display: none on <main> or <footer>) causes scroll position to be lost */
+	function recordScrollPosition() {
+		scrollPositionX = window.pageXOffset || document.documentElement.scrollLeft;
+		scrollPositionY = window.pageYOffset || document.documentElement.scrollTop;
+	}
+
+	function restoreScrollPosition() {
+		if (scrollPositionX) {
+			document.documentElement.scrollLeft = scrollPositionX;
+			scrollPositionX = undefined;
+		}
+		if (scrollPositionY) {
+			document.documentElement.scrollTop = scrollPositionY;
+			scrollPositionY = undefined;
+		}
 	}
 
 	function menuIsOpen() {
