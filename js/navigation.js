@@ -32,15 +32,23 @@
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
+			collapseMenu();
 		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
+			expandMenu();
 		}
 	};
+	
+	function collapseMenu() {
+		container.className = container.className.replace( ' toggled', '' );
+		button.setAttribute( 'aria-expanded', 'false' );
+		menu.setAttribute( 'aria-expanded', 'false' );
+	}
+	
+	function expandMenu() {
+		container.className += ' toggled';
+		button.setAttribute( 'aria-expanded', 'true' );
+		menu.setAttribute( 'aria-expanded', 'true' );
+	}
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
