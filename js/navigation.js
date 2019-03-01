@@ -5,18 +5,19 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, i, len;
+	var body, container, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
 	}
-
+	
 	button = container.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
-
+	
+	body = document.getElementsByTagName( 'body' )[0];
 	menu = container.getElementsByTagName( 'ul' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
@@ -40,12 +41,14 @@
 	
 	function collapseMenu() {
 		container.className = container.className.replace( ' toggled', '' );
+		body.className = body.className.replace( ' menu-open', '' );
 		button.setAttribute( 'aria-expanded', 'false' );
 		menu.setAttribute( 'aria-expanded', 'false' );
 	}
 	
 	function expandMenu() {
 		container.className += ' toggled';
+		body.className += ' menu-open';
 		button.setAttribute( 'aria-expanded', 'true' );
 		menu.setAttribute( 'aria-expanded', 'true' );
 	}
