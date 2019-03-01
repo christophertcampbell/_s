@@ -50,6 +50,17 @@
 		menu.setAttribute( 'aria-expanded', 'true' );
 	}
 
+	function menuIsOpen() {
+		return container.classList.contains("toggled");
+	}
+
+	// Listen for escape key press and close menu
+	document.onkeyup = function(event) {
+		if ((event.key === 27 || event.key.toLowerCase() === 'escape') && menuIsOpen()) {
+			collapseMenu();
+		}
+	}
+
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
 
