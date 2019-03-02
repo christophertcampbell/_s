@@ -841,13 +841,13 @@ a:hover, a:active {
     width: 100%;
   }
   .main-navigation a {
-    color: royalblue;
+    color: #333;
   }
   .main-navigation a:visited {
-    color: purple;
+    color: #333;
   }
   .main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
-    color: midnightblue;
+    color: royalblue;
   }
   .main-navigation ul {
     display: none;
@@ -865,7 +865,7 @@ a:hover, a:active {
     overflow-x: hidden;
     overflow-y: auto;
     padding-top: 60px;
-    color: #404040;
+    color: #333;
     background-color: #fff;
   }
   .main-navigation ul ul {
@@ -1154,17 +1154,17 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-header {
+.site-branding {
   color: #404040;
   background-color: #fff;
 }
-.site-header a {
+.site-branding a {
   color: royalblue;
 }
-.site-header a:visited {
+.site-branding a:visited {
   color: purple;
 }
-.site-header a:hover, .site-header a:focus, .site-header a:active {
+.site-branding a:hover, .site-branding a:focus, .site-branding a:active {
   color: midnightblue;
 }
 
