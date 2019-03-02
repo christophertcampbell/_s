@@ -1,0 +1,18 @@
+.site-footer {
+	color: $color__footer-text;
+	background-color: $color__footer-background;
+
+	a {
+		color: $color__footer-link;
+
+		&:visited  {
+			color: $color__footer-link-visited;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__footer-link-hover;
+		}
+	}
+}

@@ -1,2 +1,25 @@
-$size__site-main: 100%;
+$size__site-content: 1000px;
+$size__site-content-with-sidebar: 1200px;
 $size__site-sidebar: 25%;
+$size__site-content-gutter: 20px;
+$size__site-content-gutter-medium: 33px;
+$size__site-content-gutter-inner: 3%;
+$size__alignwide: 1200px;
+
+$size__site-header-content: 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+$size__site-header-navigation: 1300px;
+$size__site-header-gutter: 20px;
+$size__site-header-gutter-medium: 33px;
+
+$size__site-footer-content: 1300px; // 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+$size__site-footer-gutter: 20px;
+$size__site-footer-gutter-medium: 33px;
+
+$breakpoint__medium: 800px; /* The breakpoint at which '-medium' variables take effect */
+$breakpoint__sidebar: 900px; /* The breakpoint at which the sidebar is aligned to the side */
+
+/* The breakpoint at which the screen width is at least the max content width + gutters */
+$breakpoint__site-content-plus-gutters: $size__site-content + $size__site-content-gutter-medium + $size__site-content-gutter-medium;
+
+/* The breakpoint at which the screen width is at least the max alignwide width + gutters */
+$breakpoint__alignwide-plus-gutters: $size__alignwide + $size__site-content-gutter-medium + $size__site-content-gutter-medium;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: _s
 Theme URI: https://underscores.me/
@@ -25,6 +26,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Normalize
 # Typography
 # Layout
+	## Common
 	## No Sidebar
 	## Content / Sidebar
 	## Sidbar / Content
@@ -45,6 +47,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/* Specific parts of the page */
+/* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+/* The breakpoint at which '-medium' variables take effect */
+/* The breakpoint at which the sidebar is aligned to the side */
+/* The breakpoint at which the screen width is at least the max content width + gutters */
+/* The breakpoint at which the screen width is at least the max alignwide width + gutters */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -390,7 +398,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -452,8 +460,64 @@ big {
 # Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+## Header and Footer
+--------------------------------------------------------------*/
+/* Header */
+.site-header .inner {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  .site-header .inner {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+/* Max width of header content (including gutters) */
+@media screen and (min-width: 1000065px) {
+  .site-header .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 999999px;
+  }
+}
+/* Max width of header navigation content (including gutters) */
+@media screen and (min-width: 1366px) {
+  .site-header .main-navigation .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+  }
+}
+/* Footer */
+.site-footer .inner {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  .site-footer .inner {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+/* Max width of header content (including gutters) */
+@media screen and (min-width: 1366px) {
+  .site-footer .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+  }
+}
+/*--------------------------------------------------------------
 ## No Sidebar
 --------------------------------------------------------------*/
+.no-sidebar {
+  /* Mid-sized screens */
+  /* Max width of standard content (including gutters) */
+  /* Max width of alignwide content (including gutters) */
+}
 .no-sidebar .content-area {
   float: none;
   margin-left: auto;
@@ -462,47 +526,125 @@ big {
 .no-sidebar .site-main {
   margin-right: 0;
 }
+.no-sidebar .site-main .entry-header > *,
+.no-sidebar .site-main .entry-content > *,
+.no-sidebar .site-main .entry-footer,
+.no-sidebar .site-main .post-navigation > *,
+.no-sidebar .site-main .comments-area > * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media screen and (min-width: 800px) {
+  .no-sidebar .site-main .entry-header > *,
+.no-sidebar .site-main .entry-content > *,
+.no-sidebar .site-main .entry-footer,
+.no-sidebar .site-main .post-navigation > *,
+.no-sidebar .site-main .comments-area > * {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+@media screen and (min-width: 1066px) {
+  .no-sidebar .site-main .entry-header > *,
+.no-sidebar .site-main .entry-content > *,
+.no-sidebar .site-main .entry-footer,
+.no-sidebar .site-main .post-navigation > *,
+.no-sidebar .site-main .comments-area > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+  }
+  .no-sidebar .site-main .entry-content > .alignwide,
+.no-sidebar .site-main .entry-content > .alignfull {
+    margin-left: 33px;
+    margin-right: 33px;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1266px) {
+  .no-sidebar .site-main .entry-content > .alignwide {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
 
 /*--------------------------------------------------------------
 ## Content / Sidebar
 --------------------------------------------------------------*/
+.content-sidebar .site-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .content-sidebar .content-area {
-  float: left;
-  margin: 0 -25% 0 0;
   width: 100%;
 }
-.content-sidebar .site-main {
-  margin: 0 25% 0 0;
+@media screen and (min-width: 800px) {
+  .content-sidebar .site-content {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
 }
-.content-sidebar .site-content .widget-area {
-  float: right;
-  overflow: hidden;
-  width: 25%;
+@media screen and (min-width: 900px) {
+  .content-sidebar .content-area {
+    float: left;
+    margin: 0 -25% 0 0;
+  }
+  .content-sidebar .site-main {
+    margin: 0 25% 0 0;
+    padding-right: 3%;
+  }
+  .content-sidebar .site-content .widget-area {
+    float: right;
+    overflow: hidden;
+    width: 25%;
+  }
 }
-.content-sidebar .site-footer {
-  clear: both;
-  width: 100%;
+@media screen and (min-width: 1266px) {
+  .content-sidebar .site-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
 }
 
 /*--------------------------------------------------------------
 ## Sidebar / Content
 --------------------------------------------------------------*/
+.sidebar-content .site-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .sidebar-content .content-area {
-  float: right;
-  margin: 0 0 0 -25%;
   width: 100%;
 }
-.sidebar-content .site-main {
-  margin: 0 0 0 25%;
+@media screen and (min-width: 800px) {
+  .sidebar-content .site-content {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
 }
-.sidebar-content .site-content .widget-area {
-  float: left;
-  overflow: hidden;
-  width: 25%;
+@media screen and (min-width: 900px) {
+  .sidebar-content .content-area {
+    float: right;
+    margin: 0 0 0 -25%;
+  }
+  .sidebar-content .site-main {
+    margin: 0 0 0 25%;
+    padding-left: 3%;
+  }
+  .sidebar-content .site-content .widget-area {
+    float: left;
+    overflow: hidden;
+    width: 25%;
+  }
 }
-.sidebar-content .site-footer {
-  clear: both;
-  width: 100%;
+@media screen and (min-width: 1266px) {
+  .sidebar-content .site-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -685,6 +827,17 @@ a:hover, a:active {
   display: block;
   float: left;
   width: 100%;
+  color: #404040;
+  background-color: #fff;
+}
+.main-navigation a {
+  color: royalblue;
+}
+.main-navigation a:visited {
+  color: purple;
+}
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+  color: midnightblue;
 }
 .main-navigation ul {
   display: none;
@@ -902,6 +1055,54 @@ a:hover, a:active {
 
 .bypostauthor {
   display: block;
+}
+
+.comments-area {
+  color: #404040;
+  background-color: #fff;
+}
+.comments-area a {
+  color: royalblue;
+}
+.comments-area a:visited {
+  color: purple;
+}
+.comments-area a:hover, .comments-area a:focus, .comments-area a:active {
+  color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+  color: #404040;
+  background-color: #fff;
+}
+.site-header a {
+  color: royalblue;
+}
+.site-header a:visited {
+  color: purple;
+}
+.site-header a:hover, .site-header a:focus, .site-header a:active {
+  color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  color: #404040;
+  background-color: #fff;
+}
+.site-footer a {
+  color: royalblue;
+}
+.site-footer a:visited {
+  color: purple;
+}
+.site-footer a:hover, .site-footer a:focus, .site-footer a:active {
+  color: midnightblue;
 }
 
 /*--------------------------------------------------------------

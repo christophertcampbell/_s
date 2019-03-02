@@ -1,24 +1,51 @@
 .sidebar-content {
 
-	.content-area {
-		float: right;
-		margin: 0 0 0 (-$size__site-sidebar);
-		width: $size__site-main;
-	}
-	
-	.site-main {
-		margin: 0 0 0 $size__site-sidebar;
-	}
-	
-	.site-content .widget-area {
-		float: left;
-		overflow: hidden;
-		width: $size__site-sidebar;
-	}
-	
-	.site-footer {
-		clear: both;
-		width: $size__site-main;
+	.site-content {
+		margin-left: $size__site-content-gutter;
+		margin-right: $size__site-content-gutter;
 	}
 
+	.content-area {
+		width: 100%;
+	}
+
+	@media screen and (min-width: $breakpoint__medium) {
+
+		.site-content {
+			margin-left: $size__site-content-gutter-medium;
+			margin-right: $size__site-content-gutter-medium;
+		}
+
+	}
+
+	@media screen and (min-width: $breakpoint__sidebar) {
+
+		.content-area {
+			float: right;
+			margin: 0 0 0 (-$size__site-sidebar);
+		}
+		
+		.site-main {
+			margin: 0 0 0 ($size__site-sidebar);
+			padding-left: $size__site-content-gutter-inner;
+		}
+		
+		.site-content .widget-area {
+			float: left;
+			overflow: hidden;
+			width: $size__site-sidebar;
+		}
+
+	}
+
+	@media screen and (min-width: ($size__site-content-with-sidebar + $size__site-content-gutter-medium + $size__site-content-gutter-medium)) {
+
+		.site-content {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $size__site-content-with-sidebar;
+		}
+		
+	}
+	
 }
