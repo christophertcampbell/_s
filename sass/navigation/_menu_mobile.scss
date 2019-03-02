@@ -1,18 +1,19 @@
 /* Small-screen menu styling */
 @media screen and (max-width: $breakpoint__menu) {
 	
-	body.menu-open .site-content {
-		display: none;
-	}
+	body.menu-open {
+		overflow: hidden; /* Prevent extra scroll bar */
+
+		.site-content {
+			display: none;
+		}
+	} 
 
 	.main-navigation {
 		clear: both;
 		display: block;
 		float: left;
 		width: 100%;
-		
-		color: $color__main-navigation-text;
-		background-color: $color__main-navigation-background;
 
 		a {
 			color: $color__main-navigation-link;
@@ -33,6 +34,19 @@
 			list-style: none;
 			margin: 0;
 			padding-left: 0;
+
+			&.nav-menu { /* Top level */
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				overflow-x: hidden;
+				overflow-y: auto;
+				padding-top: 60px;
+				color: $color__main-navigation-text;
+				background-color: $color__main-navigation-background;
+			}
 
 			ul {
 				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -95,6 +109,10 @@
 		
 		.menu-toggle {
 			display: block;
+			position: absolute;
+			top: .5em;
+			right: .5em;
+			z-index: 999;
 		}
 		
 		&.toggled ul {

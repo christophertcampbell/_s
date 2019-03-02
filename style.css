@@ -826,6 +826,10 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 /* Small-screen menu styling */
 @media screen and (max-width: 900px) {
+  body.menu-open {
+    overflow: hidden;
+    /* Prevent extra scroll bar */
+  }
   body.menu-open .site-content {
     display: none;
   }
@@ -835,8 +839,6 @@ a:hover, a:active {
     display: block;
     float: left;
     width: 100%;
-    color: #404040;
-    background-color: #fff;
   }
   .main-navigation a {
     color: royalblue;
@@ -852,6 +854,19 @@ a:hover, a:active {
     list-style: none;
     margin: 0;
     padding-left: 0;
+  }
+  .main-navigation ul.nav-menu {
+    /* Top level */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 60px;
+    color: #404040;
+    background-color: #fff;
   }
   .main-navigation ul ul {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -885,6 +900,10 @@ a:hover, a:active {
   }
   .main-navigation .menu-toggle {
     display: block;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 999;
   }
   .main-navigation.toggled ul {
     display: block;
