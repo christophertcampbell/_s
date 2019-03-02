@@ -72,6 +72,17 @@
 			float: left;
 			position: relative;
 
+			a {
+				padding: .5em 1em;
+				border-right: 1px solid $color__menu-link-border;
+			}
+
+			&:first-child {
+				a {
+					border-left: 1px solid $color__menu-link-border;
+				}
+			}
+			
 			&:hover > a,
 			&.focus > a {
 			}

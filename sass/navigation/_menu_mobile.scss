@@ -124,22 +124,22 @@
 			display: block;
 		}
 	}
-}
+	
+	body.admin-bar {
+		.menu-toggle {
+			top: 6px + 32px;
 
-body.admin-bar {
-	.menu-toggle {
-		top: 6px + 32px;
-
-		@media screen and (max-width: 782px) {
-			top: 6px + 46px;
+			@media screen and (max-width: 782px) {
+				top: 6px + 46px;
+			}
 		}
-	}
 
-	.main-navigation ul.nav-menu { /* Top level */
-		padding-top: 40px + 32px;
+		.main-navigation ul.nav-menu { /* Top level */
+			padding-top: 40px + 32px;
 
-		@media screen and (max-width: 782px) {
-			padding-top: 40px + 46px;
+			@media screen and (max-width: 782px) {
+				padding-top: 40px + 46px;
+			}
 		}
 	}
 }
