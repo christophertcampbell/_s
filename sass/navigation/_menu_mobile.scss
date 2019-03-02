@@ -1,6 +1,10 @@
 /* Small-screen menu styling */
 @media screen and (max-width: $breakpoint__menu) {
 	
+	body.menu-open .site-content {
+		display: none;
+	}
+
 	.main-navigation {
 		clear: both;
 		display: block;

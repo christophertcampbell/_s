@@ -826,6 +826,10 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 /* Small-screen menu styling */
 @media screen and (max-width: 900px) {
+  body.menu-open .site-content {
+    display: none;
+  }
+
   .main-navigation {
     clear: both;
     display: block;
