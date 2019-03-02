@@ -16,16 +16,16 @@
 		width: 100%;
 
 		a {
-			color: $color__main-navigation-link;
+			color: $color__menu-link;
 
 			&:visited  {
-				color: $color__main-navigation-link-visited;
+				color: $color__menu-link-visited;
 			}
 
 			&:hover,
 			&:focus,
 			&:active {
-				color: $color__main-navigation-link-hover;
+				color: $color__menu-link-hover;
 			}
 		}
 
@@ -44,8 +44,8 @@
 				overflow-x: hidden;
 				overflow-y: auto;
 				padding-top: 60px;
-				color: $color__main-navigation-text;
-				background-color: $color__main-navigation-background;
+				color: $color__menu-text;
+				background-color: $color__menu-background;
 			}
 
 			ul {
