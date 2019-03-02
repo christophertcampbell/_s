@@ -43,7 +43,7 @@
 				bottom: 0;
 				overflow-x: hidden;
 				overflow-y: auto;
-				padding-top: 2em;
+				padding-top: 2.5em;
 				color: $color__mobile-menu-text;
 				background-color: $color__mobile-menu-background;
 			}
@@ -88,15 +88,22 @@
 		}
 
 		li {
+			a {
+				border-bottom: 1px solid $color__mobile-menu-link-border;
+				display: block;
+				padding: 1em $size__site-content-gutter;
+				text-decoration: none;
+			}
+			
 			&:hover > a,
 			&.focus > a {
 			}
-		}
 
-		a {
-			display: block;
-			padding: 1em $size__site-content-gutter;
-			text-decoration: none;
+			&:first-child {
+				a {
+					border-top: 1px solid $color__mobile-menu-link-border;
+				}
+			}
 		}
 
 		.current_page_item > a,

@@ -864,7 +864,7 @@ a:hover, a:active {
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: 2em;
+    padding-top: 2.5em;
     color: #333;
     background-color: #fff;
   }
@@ -890,10 +890,14 @@ a:hover, a:active {
 .main-navigation ul li.focus > ul {
     left: auto;
   }
-  .main-navigation a {
+  .main-navigation li a {
+    border-bottom: 1px solid #eee;
     display: block;
     padding: 1em 20px;
     text-decoration: none;
+  }
+  .main-navigation li:first-child a {
+    border-top: 1px solid #eee;
   }
   .main-navigation .menu-toggle {
     display: block;
