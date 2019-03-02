@@ -1,0 +1,100 @@
+/* Small-screen menu styling */
+@media screen and (max-width: $breakpoint__menu) {
+	
+	.main-navigation {
+		clear: both;
+		display: block;
+		float: left;
+		width: 100%;
+		
+		color: $color__main-navigation-text;
+		background-color: $color__main-navigation-background;
+
+		a {
+			color: $color__main-navigation-link;
+
+			&:visited  {
+				color: $color__main-navigation-link-visited;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $color__main-navigation-link-hover;
+			}
+		}
+
+		ul {
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+
+			ul {
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+				float: left;
+				position: absolute;
+				top: 100%;
+				left: -999em;
+				z-index: 99999;
+
+				ul {
+					left: -999em;
+					top: 0;
+				}
+
+				li {
+					&:hover > ul,
+					&.focus > ul {
+						left: 100%;
+					}
+				}
+
+				a {
+					width: 200px;
+				}
+
+				:hover > a,
+				.focus > a {
+				}
+
+				a:hover,
+				a.focus {
+				}
+			}
+
+			li:hover > ul,
+			li.focus > ul {
+				left: auto;
+			}
+		}
+
+		li {
+			float: left;
+			position: relative;
+
+			&:hover > a,
+			&.focus > a {
+			}
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+		}
+
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+		}
+		
+		.menu-toggle {
+			display: block;
+		}
+		
+		&.toggled ul {
+			display: block;
+		}
+	}
+}
