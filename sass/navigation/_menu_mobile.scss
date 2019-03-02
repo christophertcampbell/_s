@@ -43,7 +43,7 @@
 				bottom: 0;
 				overflow-x: hidden;
 				overflow-y: auto;
-				padding-top: 60px;
+				padding-top: 2em;
 				color: $color__mobile-menu-text;
 				background-color: $color__mobile-menu-background;
 			}
@@ -88,9 +88,6 @@
 		}
 
 		li {
-			float: left;
-			position: relative;
-
 			&:hover > a,
 			&.focus > a {
 			}
@@ -98,6 +95,7 @@
 
 		a {
 			display: block;
+			padding: 1em $size__site-content-gutter;
 			text-decoration: none;
 		}
 
