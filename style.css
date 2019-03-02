@@ -35,6 +35,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Navigation
 	## Links
 	## Menus
+	## Post Navigation
 # Accessibility
 # Alignments
 # Clearings
@@ -51,6 +52,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 /* The breakpoint at which '-medium' variables take effect */
 /* The breakpoint at which the sidebar is aligned to the side */
+/* The breakpoint at which the menu transitions from mobile to desktop */
 /* The breakpoint at which the screen width is at least the max content width + gutters */
 /* The breakpoint at which the screen width is at least the max alignwide width + gutters */
 /*--------------------------------------------------------------
@@ -890,6 +892,9 @@ a:hover, a:active {
     display: block;
   }
 }
+/*--------------------------------------------------------------
+## Post Navigation
+--------------------------------------------------------------*/
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
