@@ -5,18 +5,19 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, i, len;
+	var body, container, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
 	}
-
+	
 	button = container.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
-
+	
+	body = document.getElementsByTagName( 'body' )[0];
 	menu = container.getElementsByTagName( 'ul' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
@@ -32,15 +33,59 @@
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
+			collapseMenu();
 		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
+			expandMenu();
 		}
 	};
+	
+	function collapseMenu() {
+		container.className = container.className.replace( ' toggled', '' );
+		body.className = body.className.replace( ' menu-open', '' );
+		button.setAttribute( 'aria-expanded', 'false' );
+		menu.setAttribute( 'aria-expanded', 'false' );
+		restoreScrollPosition();
+	}
+	
+	function expandMenu() {
+		recordScrollPosition();
+		container.className += ' toggled';
+		body.className += ' menu-open';
+		button.setAttribute( 'aria-expanded', 'true' );
+		menu.setAttribute( 'aria-expanded', 'true' );
+	}
+
+	var scrollPositionX;
+	var scrollPositionY;
+
+	/* Record the scroll position in case the theme hides page elements when the menu is open */
+	/* Otherwise, hiding page elements (ie: display: none on <main> or <footer>) causes scroll position to be lost */
+	function recordScrollPosition() {
+		scrollPositionX = window.pageXOffset || document.documentElement.scrollLeft;
+		scrollPositionY = window.pageYOffset || document.documentElement.scrollTop;
+	}
+
+	function restoreScrollPosition() {
+		if (scrollPositionX) {
+			document.documentElement.scrollLeft = scrollPositionX;
+			scrollPositionX = undefined;
+		}
+		if (scrollPositionY) {
+			document.documentElement.scrollTop = scrollPositionY;
+			scrollPositionY = undefined;
+		}
+	}
+
+	function menuIsOpen() {
+		return container.classList.contains("toggled");
+	}
+
+	// Listen for escape key press and close menu
+	document.onkeyup = function(event) {
+		if ((event.key === 27 || event.key.toLowerCase() === 'escape') && menuIsOpen()) {
+			collapseMenu();
+		}
+	}
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
