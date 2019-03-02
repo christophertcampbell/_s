@@ -16,6 +16,7 @@ function _s_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
 
