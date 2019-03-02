@@ -43,7 +43,7 @@
 				bottom: 0;
 				overflow-x: hidden;
 				overflow-y: auto;
-				padding-top: 2.5em;
+				padding-top: 40px;
 				color: $color__mobile-menu-text;
 				background-color: $color__mobile-menu-background;
 			}
@@ -115,13 +115,31 @@
 		.menu-toggle {
 			display: block;
 			position: absolute;
-			top: .5em;
-			right: .5em;
+			top: 6px;
+			right: 6px;
 			z-index: 999;
 		}
 		
 		&.toggled ul {
 			display: block;
+		}
+	}
+}
+
+body.admin-bar {
+	.menu-toggle {
+		top: 6px + 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 6px + 46px;
+		}
+	}
+
+	.main-navigation ul.nav-menu { /* Top level */
+		padding-top: 40px + 32px;
+
+		@media screen and (max-width: 782px) {
+			padding-top: 40px + 46px;
 		}
 	}
 }
