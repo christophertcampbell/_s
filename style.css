@@ -474,8 +474,10 @@ big {
 ## Header
 --------------------------------------------------------------*/
 .site-header > .inner {
+  /* Small screen size */
   margin-left: 20px;
   margin-right: 20px;
+  /* Medium screen size */
   /* Max width of header content (including gutters) */
 }
 @media screen and (min-width: 800px) {

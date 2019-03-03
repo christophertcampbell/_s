@@ -29,7 +29,7 @@ $breakpoint__sidebar: 900px; /* The breakpoint at which the sidebar is aligned t
 $breakpoint__menu: 900px; /* The breakpoint at which the menu transitions from mobile to desktop */
 
 /* The breakpoint at which the screen width is at least the max content width + gutters */
-$breakpoint__site-content-plus-gutters: $size__site-content + $size__site-content-gutter-medium + $size__site-content-gutter-medium;
+$breakpoint__site-content-plus-gutters: $size__site-content + ($size__site-content-gutter-medium * 2);
 
 /* The breakpoint at which the screen width is at least the max alignwide width + gutters */
-$breakpoint__alignwide-plus-gutters: $size__alignwide + $size__site-content-gutter-medium + $size__site-content-gutter-medium;
+$breakpoint__alignwide-plus-gutters: $size__alignwide + ($size__site-content-gutter-medium * 2);
