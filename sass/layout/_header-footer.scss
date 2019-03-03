@@ -28,19 +28,26 @@
 
 /* Footer */
 
-.site-footer .inner {
-	margin-left: $size__site-footer-gutter;
-	margin-right: $size__site-footer-gutter;
+.site-footer {
+	
+	.inner {
+		margin-left: $size__site-footer-gutter;
+		margin-right: $size__site-footer-gutter;
 
-	@media screen and (min-width: $breakpoint__medium) {
-		margin-left: $size__site-footer-gutter-medium;
-		margin-right: $size__site-footer-gutter-medium;
+		@media screen and (min-width: $breakpoint__medium) {
+			margin-left: $size__site-footer-gutter-medium;
+			margin-right: $size__site-footer-gutter-medium;
+		}
+
+		/* Max width of header content (including gutters) */
+		@media screen and (min-width: ($size__site-footer-content + $size__site-footer-gutter-medium + $size__site-footer-gutter-medium)) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $size__site-footer-content;
+		}
 	}
 
-	/* Max width of header content (including gutters) */
-	@media screen and (min-width: ($size__site-footer-content + $size__site-footer-gutter-medium + $size__site-footer-gutter-medium)) {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: $size__site-footer-content;
+	.site-info {
+		text-align: center;
 	}
 }

@@ -514,6 +514,9 @@ big {
     max-width: 1000px;
   }
 }
+.site-footer .site-info {
+  text-align: center;
+}
 
 /*--------------------------------------------------------------
 ## No Sidebar
