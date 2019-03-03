@@ -72,14 +72,14 @@
 					color: $color__menu-submenu-link;
 					width: 200px;
 
+					&:visited {
+						color: $color__menu-submenu-link-visited;
+					}
+
 					&:hover,
 					&:focus {
 						background-color: $color__menu-submenu-background-color-hover;
 						color: $color__menu-submenu-link-hover;
-					}
-
-					&:visited {
-						color: $color__menu-submenu-link-visited;
 					}
 				}
 			}

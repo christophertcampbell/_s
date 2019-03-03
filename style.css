@@ -1032,12 +1032,12 @@ a:hover, a:active {
     color: royalblue;
     width: 200px;
   }
+  .main-navigation ul ul a:visited {
+    color: royalblue;
+  }
   .main-navigation ul ul a:hover, .main-navigation ul ul a:focus {
     background-color: #fff;
     color: midnightblue;
-  }
-  .main-navigation ul ul a:visited {
-    color: royalblue;
   }
   .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
