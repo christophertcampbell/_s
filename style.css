@@ -51,6 +51,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Optionals
+	## Header - Compact
 --------------------------------------------------------------*/
 /* Specific parts of the page */
 /* Important note regarding units (px, %, etc)
@@ -885,7 +887,7 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 /* Small-screen menu styling */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   body.menu-open {
     overflow: hidden;
     /* Prevent extra scroll bar */
@@ -1019,24 +1021,24 @@ a:hover, a:active {
     top: 38px;
   }
 }
-@media screen and (max-width: 900px) and (max-width: 782px) {
+@media screen and (max-width: 700px) and (max-width: 782px) {
   body.admin-bar .menu-toggle {
     top: 52px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   body.admin-bar .main-navigation ul.nav-menu {
     /* Top level */
     padding-top: 72px;
   }
 }
-@media screen and (max-width: 900px) and (max-width: 782px) {
+@media screen and (max-width: 700px) and (max-width: 782px) {
   body.admin-bar .main-navigation ul.nav-menu {
     padding-top: 86px;
   }
 }
 /* Large-screen menu styling */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   .main-navigation {
     clear: both;
     display: block;
@@ -1468,5 +1470,11 @@ object {
 .gallery-caption {
   display: block;
 }
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* Optionals are partials that can be commented / uncommented
+   to perform basic configuration of the theme */
 
 /*# sourceMappingURL=style.css.map */

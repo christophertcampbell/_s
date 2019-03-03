@@ -43,7 +43,7 @@ $size__site-footer-gutter-medium: 33px;
 
 $breakpoint__medium: 800px; /* The breakpoint at which '-medium' variables take effect */
 $breakpoint__sidebar: 900px; /* The breakpoint at which the sidebar is aligned to the side */
-$breakpoint__menu: 900px; /* The breakpoint at which the menu transitions from mobile to desktop */
+$breakpoint__menu: 700px; /* The breakpoint at which the menu transitions from mobile to desktop */
 
 /* The breakpoint at which the screen width is at least the max content width + gutters */
 $breakpoint__site-content-plus-gutters: $size__site-content + ($size__site-content-gutter-medium * 2);
