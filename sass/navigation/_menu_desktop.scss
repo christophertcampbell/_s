@@ -10,6 +10,15 @@
 		color: $color__menu-text;
 		background-color: $color__menu-background;
 
+		.nav-menu > li { /* Top level */
+			> a {
+				&:hover,
+				&:focus {
+					background-color: $color__menu-background-hover;
+				}
+			}
+		}
+
 		a {
 			color: $color__menu-link;
 

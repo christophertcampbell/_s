@@ -940,6 +940,12 @@ a:hover, a:active {
     color: #404040;
     background-color: #fff;
   }
+  .main-navigation .nav-menu > li {
+    /* Top level */
+  }
+  .main-navigation .nav-menu > li > a:hover, .main-navigation .nav-menu > li > a:focus {
+    background-color: #fff;
+  }
   .main-navigation a {
     color: royalblue;
   }
