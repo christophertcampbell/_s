@@ -15,21 +15,30 @@
 
 	<footer id="colophon" class="site-footer">
 		<?php get_sidebar( 'footer' ); ?>
-		<div class="site-info">
-			<div class="inner">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
+		<?php if ( get_theme_mod('hide_footer_credits') !== true ) : ?>
+			<div class="site-info">
+				<div class="inner">
 					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', '_s' ), 'WordPress' );
+						$custom_credits = get_theme_mod( 'custom_footer_credits' );
+						if ($custom_credits) :
+							echo $custom_credits;
+						else:
 					?>
-				</a>
-				<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattic</a>' );
-				?>
-			</div><!-- .inner -->
-		</div><!-- .site-info -->
+						<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
+							<?php
+							/* translators: %s: CMS name, i.e. WordPress. */
+							printf( esc_html__( 'Proudly powered by %s', '_s' ), 'WordPress' );
+							?>
+						</a>
+						<span class="sep"> | </span>
+						<?php
+							/* translators: 1: Theme name, 2: Theme author. */
+							printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattic</a>' );
+						?>
+					<?php endif; ?>
+				</div><!-- .inner -->
+			</div><!-- .site-info -->
+		<?php endif; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

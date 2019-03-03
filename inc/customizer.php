@@ -53,3 +53,49 @@ function _s_customize_preview_js() {
 	wp_enqueue_script( '_s-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
+
+/**
+ * Add footer settings
+ */
+function _s_add_footer_section( $wp_customize ) {
+	$wp_customize->add_section( 'footer' , array(
+		'title'      => __('Footer','_s'),
+		// 'priority'   => 30,
+	) );
+
+	// Setting: hide_footer_credits
+
+	$wp_customize->add_setting( 'hide_footer_credits', array(
+	   'capability' => 'edit_theme_options',
+	   'sanitize_callback' => '_s_sanitize_checkbox',
+	 ) );
+	 
+	 $wp_customize->add_control( 'hide_footer_credits', array(
+	   'type' => 'checkbox',
+	   'section' => 'footer',
+	   'label' => __( 'Hide footer credits' ),
+	   'description' => __( 'Hide the footer credits' ),
+	 ) );
+
+	 // Setting: custom_footer_credits
+
+	 $wp_customize->add_setting( 'custom_footer_credits', array(
+		'capability' => 'edit_theme_options',
+		'default' => '',
+	  ) );
+	  
+	  $wp_customize->add_control( 'custom_footer_credits', array(
+		'type' => 'textarea',
+		'section' => 'footer',
+		'label' => __( 'Custom Footer Credits' ),
+		'description' => __( 'Will replace the default Wordpress / Underscores credits' ),
+	  ) );
+	 
+ }
+ add_action( 'customize_register', '_s_add_footer_section' );
+
+function _s_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
