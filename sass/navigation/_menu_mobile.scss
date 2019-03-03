@@ -97,6 +97,31 @@
 					border-top: 1px solid $color__mobile-menu-link-border;
 				}
 			}
+
+			&.menu-item-has-children {
+
+				> a:after {
+					content: "\f132";
+					float: right;
+					font-family: dashicons;
+					font-size: 1.5em;
+					line-height: 30px;
+	
+				}
+
+				&.focus {
+					> a:after {
+						content: "\f460";
+						font-weight: bold;
+
+						/* Adjust for pixel difference between open/close icons */
+						position: relative;
+						right: -1px;
+						top: -2px;
+					}
+				}
+
+			}
 		}
 
 		.current_page_item > a,
@@ -111,14 +136,45 @@
 			top: 6px;
 			right: 6px;
 			z-index: 999;
+
+			/* Remove default button styling */
+			background: none;
+			border: 0;
+			border-radius: 0;
+			outline: 0;
+			padding: 0;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			.toggle-content {
+				display: none;
+			}
+
+			&:after {
+				/* Open menu icon */
+				content: "\f333";
+				font-family: "dashicons";
+				font-size: 3em;
+			}
 		}
 
 		.nav-menu {
 			display: none;
 		}
 		
-		&.toggled .nav-menu {
-			display: block;
+		&.toggled {
+
+			.menu-toggle:after {
+				/* Close menu icon */
+				content: "\f335";
+			}
+
+			.nav-menu {
+				display: block;
+			}
+
 		}
 	}
 	
