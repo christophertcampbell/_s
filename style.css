@@ -468,25 +468,24 @@ big {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-header .inner {
+.site-header > .inner {
   margin-left: 20px;
   margin-right: 20px;
   /* Max width of header content (including gutters) */
 }
 @media screen and (min-width: 800px) {
-  .site-header .inner {
+  .site-header > .inner {
     margin-left: 33px;
     margin-right: 33px;
   }
 }
 @media screen and (min-width: 1000065px) {
-  .site-header .inner {
+  .site-header > .inner {
     margin-left: auto;
     margin-right: auto;
     max-width: 999999px;
   }
 }
-
 .site-header .main-navigation .inner {
   /* Max width of header navigation content (including gutters) */
 }
