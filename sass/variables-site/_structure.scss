@@ -8,16 +8,18 @@ $size__alignwide: 1200px;
 
 /* .site-header */
 $size__site-header-content: 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
-$size__site-header-gutter: 20px;
-$size__site-header-gutter-medium: 33px;
+$size__site-header-gutter: 0px;
+$size__site-header-gutter-medium: 0px;
 
 /* .site-branding */
-$size__site-branding-content: 1000px;
-$size__site-branding-gutter: 0px; /* Set to 0px if setting gutters with .site-header */ 
-$size__site-branding-gutter-medium: 0px;
+$size__site-branding-content: 1200px;
+$size__site-branding-gutter: 20px; /* Set to 0px if setting gutters with .site-header */ 
+$size__site-branding-gutter-medium: 33px; /* Set to 0px if setting gutters with .site-header */
 
 /* .main-navigation */
-$size__site-menu-content: 1300px;
+$size__site-menu-content: 1000px;
+$size__site-menu-gutter: 20px; /* Set to 0px if setting gutters with .site-header */
+$size__site-menu-gutter-medium: 33px; /* Set to 0px if setting gutters with .site-header */
 
 /* .site-footer */
 $size__site-footer-content: 1000px; // 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */

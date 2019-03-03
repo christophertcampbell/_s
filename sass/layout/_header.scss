@@ -45,8 +45,18 @@
 	.main-navigation {
 
 		.inner {
+			/* Small screen size */
+			margin-left: $size__site-menu-gutter;
+			margin-right: $size__site-menu-gutter;
+
+			/* Medium screen size */
+			@media screen and (min-width: $breakpoint__medium) {
+				margin-left: $size__site-menu-gutter-medium;
+				margin-right: $size__site-menu-gutter-medium;
+			}
+
 			/* Max width of header navigation content (including gutters) */
-			@media screen and (min-width: $size__site-menu-content + ($size__site-header-gutter-medium * 2)) {
+			@media screen and (min-width: $size__site-menu-content + ($size__site-menu-gutter-medium * 2)) {
 				margin-left: auto;
 				margin-right: auto;
 				max-width: $size__site-menu-content;

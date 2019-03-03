@@ -57,7 +57,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 /* .site-branding */
 /* Set to 0px if setting gutters with .site-header */
+/* Set to 0px if setting gutters with .site-header */
 /* .main-navigation */
+/* Set to 0px if setting gutters with .site-header */
+/* Set to 0px if setting gutters with .site-header */
 /* .site-footer */
 /* The breakpoint at which '-medium' variables take effect */
 /* The breakpoint at which the sidebar is aligned to the side */
@@ -475,18 +478,18 @@ big {
 --------------------------------------------------------------*/
 .site-header > .inner {
   /* Small screen size */
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
   /* Medium screen size */
   /* Max width of header content (including gutters) */
 }
 @media screen and (min-width: 800px) {
   .site-header > .inner {
-    margin-left: 33px;
-    margin-right: 33px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
-@media screen and (min-width: 1000065px) {
+@media screen and (min-width: 999999px) {
   .site-header > .inner {
     margin-left: auto;
     margin-right: auto;
@@ -495,32 +498,42 @@ big {
 }
 .site-header .site-branding .inner {
   /* Small screen size */
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
   /* Medium screen size */
   /* Max width of site branding content */
 }
 @media screen and (min-width: 800px) {
   .site-header .site-branding .inner {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 33px;
+    margin-right: 33px;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1266px) {
   .site-header .site-branding .inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1000px;
+    max-width: 1200px;
   }
 }
 .site-header .main-navigation .inner {
+  /* Small screen size */
+  margin-left: 20px;
+  margin-right: 20px;
+  /* Medium screen size */
   /* Max width of header navigation content (including gutters) */
 }
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 800px) {
+  .site-header .main-navigation .inner {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+@media screen and (min-width: 1066px) {
   .site-header .main-navigation .inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1300px;
+    max-width: 1000px;
   }
 }
 
