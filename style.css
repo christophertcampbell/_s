@@ -26,7 +26,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Normalize
 # Typography
 # Layout
-	## Common
+	## Header
+	## Footer
 	## No Sidebar
 	## Content / Sidebar
 	## Sidbar / Content
@@ -465,9 +466,8 @@ big {
 # Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Header and Footer
+## Header
 --------------------------------------------------------------*/
-/* Header */
 .site-header .inner {
   margin-left: 20px;
   margin-right: 20px;
@@ -498,7 +498,9 @@ big {
   }
 }
 
-/* Footer */
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
 .site-footer .inner {
   margin-left: 20px;
   margin-right: 20px;
