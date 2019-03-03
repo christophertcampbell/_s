@@ -94,6 +94,15 @@
 	for ( i = 0, len = links.length; i < len; i++ ) {
 		links[i].addEventListener( 'focus', handleFocus, true );
 		links[i].addEventListener( 'blur', handleBlur, true );
+
+		// Prevent focus and blur events from happening when using click events
+		links[i].addEventListener( 'mousedown', handleMenuItemMouseDown, true );
+	}
+
+	function handleMenuItemMouseDown(e) {
+		// Prevent focus and blur events from happening when using click events
+		// Allows better behavior on desktop by allowing right-clicks on menu items
+		e.preventDefault();
 	}
 
 	function handleFocus() {
