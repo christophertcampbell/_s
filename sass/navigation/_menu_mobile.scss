@@ -30,7 +30,6 @@
 		}
 
 		ul {
-			display: none;
 			list-style: none;
 			margin: 0;
 			padding-left: 0;
@@ -56,34 +55,19 @@
 				left: -999em;
 				z-index: 99999;
 
-				ul {
-					left: -999em;
-					top: 0;
-				}
-
-				li {
-					&:hover > ul,
-					&.focus > ul {
-						left: 100%;
-					}
-				}
-
-				a {
-					width: 200px;
-				}
-
-				:hover > a,
-				.focus > a {
-				}
-
-				a:hover,
-				a.focus {
+				&.toggled { /* Reveal sub-menu when toggled by click */
+					left: auto;
+					float: none;
+					position: relative;
+					top: auto;
 				}
 			}
 
-			li:hover > ul,
-			li.focus > ul {
+			li.focus > ul  { /* Reveal sub-menu when focused by tab */
 				left: auto;
+				float: none;
+				position: relative;
+				top: auto;
 			}
 		}
 
@@ -119,8 +103,12 @@
 			right: 6px;
 			z-index: 999;
 		}
+
+		.nav-menu {
+			display: none;
+		}
 		
-		&.toggled ul {
+		&.toggled .nav-menu {
 			display: block;
 		}
 	}

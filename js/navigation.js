@@ -92,29 +92,103 @@
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-		links[i].addEventListener( 'blur', toggleFocus, true );
+		links[i].addEventListener( 'focus', handleFocus, true );
+		links[i].addEventListener( 'blur', handleBlur, true );
+	}
+
+	function handleFocus() {
+		addFocus(this);
+		addJustFocusedClass(this);
+	}
+
+	function handleBlur(e) {
+		removeFocus(this);
 	}
 
 	/**
-	 * Sets or removes .focus class on an element.
+	 * Adds the .focus class to a menu item and its ancestors
+	 * 
+	 * @param {HTMLElement} el 
 	 */
-	function toggleFocus() {
-		var self = this;
-
+	function addFocus(el) {
 		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+		while ( -1 === el.className.indexOf( 'nav-menu' ) ) {
 
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
+			// On li elements add the class .focus if it doesn't already exist
+			if ( 'li' === el.tagName.toLowerCase() ) {
+				if ( -1 === el.className.indexOf( 'focus' ) ) {
+					el.className += ' focus';
 				}
 			}
 
-			self = self.parentElement;
+			el = el.parentElement;
+		}
+	}
+
+	/**
+	 * Removes the .focus class from a menu item and its descendents
+	 * 
+	 * @param {HTMLElement} el 
+	 */
+	function removeFocus(el) {
+		// Move up through the ancestors of the current link until we hit .nav-menu.
+		while ( -1 === el.className.indexOf( 'nav-menu' ) ) {
+
+			// On li elements add the class .focus if it doesn't already exist
+			if ( 'li' === el.tagName.toLowerCase() ) {
+				el.className = el.className.replace( ' focus', '' );
+			}
+
+			el = el.parentElement;
+		}
+	}
+
+	/**
+	 * Change behavior of parent menu items to reveal/hide sub-menu on click
+	 */
+	var parentMenuItems = menu.querySelectorAll(".menu-item-has-children > a");
+	for ( i = 0; i < parentMenuItems.length; i++ ) {
+		parentMenuItems[i].addEventListener("click", function(e) {
+			e.preventDefault();
+			handleMenuItemClick(e.target.parentNode);
+		})
+	}
+	
+	function handleMenuItemClick(el) {
+		if ( -1 !== el.className.indexOf(' just-focused') ) {
+			// Just focused, don't toggle the 'focus' class again
+			// Happens because initial click causes focus to happen
+			// first and then the click event as well.
+			return;
+		}
+
+		if ( -1 === el.className.indexOf(' focus') ) {
+			el.className += ' focus';
+		} else {
+			el.className = el.className.replace(' focus', '');
+		}
+	}
+
+	/**
+	 * Add a 'just-focused' class after focus to prevent a clicked parent menu item
+	 * from immediately hiding itself (click also triggers focus, so both occur together
+	 * during the first click of a parent menu item)
+	 */
+	function addJustFocusedClass(el) {
+		if (el.nodeName == "A") {
+			el = el.parentNode; // Make sure we are dealing with a parent <li> element
+		}
+
+		if ( -1 === el.className.indexOf('menu-item-has-children') ) {
+			return;
+		}
+
+		if ( -1 === el.className.indexOf(' just-focused') ) {
+			el.className = el.className += ' just-focused';
+
+			setTimeout(function() {
+				el.className = el.className.replace(' just-focused', '');
+			}, 100);
 		}
 	}
 
@@ -138,6 +212,7 @@
 						menuItem.parentNode.children[i].classList.remove( 'focus' );
 					}
 					menuItem.classList.add( 'focus' );
+					addJustFocusedClass(menuItem);
 				} else {
 					menuItem.classList.remove( 'focus' );
 				}
