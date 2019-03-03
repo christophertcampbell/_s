@@ -3,62 +3,51 @@
 .site-header .inner {
 	margin-left: $size__site-header-gutter;
 	margin-right: $size__site-header-gutter;
-}
 
-@media screen and (min-width: $breakpoint__medium) {
-
-	.site-header .inner {
+	@media screen and (min-width: $breakpoint__medium) {
 		margin-left: $size__site-header-gutter-medium;
 		margin-right: $size__site-header-gutter-medium;
-	}	
-	
-}
+	}
 
-/* Max width of header content (including gutters) */
-@media screen and (min-width: ($size__site-header-content + $size__site-header-gutter-medium + $size__site-header-gutter-medium)) {
-
-	.site-header .inner {
+	/* Max width of header content (including gutters) */
+	@media screen and (min-width: ($size__site-header-content + $size__site-header-gutter-medium + $size__site-header-gutter-medium)) {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: $size__site-header-content;
 	}
-
 }
 
-/* Max width of header navigation content (including gutters) */
-@media screen and (min-width: ($size__site-header-navigation + $size__site-header-gutter-medium + $size__site-header-gutter-medium)) {
-
-	.site-header .main-navigation .inner {
+.site-header .main-navigation .inner {
+	/* Max width of header navigation content (including gutters) */
+	@media screen and (min-width: ($size__site-header-navigation + $size__site-header-gutter-medium + $size__site-header-gutter-medium)) {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: $size__site-header-navigation;
 	}
-
 }
 
 /* Footer */
 
-.site-footer .inner {
-	margin-left: $size__site-footer-gutter;
-	margin-right: $size__site-footer-gutter;
-}
-
-@media screen and (min-width: $breakpoint__medium) {
-
-	.site-footer .inner {
-		margin-left: $size__site-footer-gutter-medium;
-		margin-right: $size__site-footer-gutter-medium;
-	}	
+.site-footer {
 	
-}
+	.inner {
+		margin-left: $size__site-footer-gutter;
+		margin-right: $size__site-footer-gutter;
 
-/* Max width of header content (including gutters) */
-@media screen and (min-width: ($size__site-footer-content + $size__site-footer-gutter-medium + $size__site-footer-gutter-medium)) {
+		@media screen and (min-width: $breakpoint__medium) {
+			margin-left: $size__site-footer-gutter-medium;
+			margin-right: $size__site-footer-gutter-medium;
+		}
 
-	.site-footer .inner {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: $size__site-footer-content;
+		/* Max width of header content (including gutters) */
+		@media screen and (min-width: ($size__site-footer-content + $size__site-footer-gutter-medium + $size__site-footer-gutter-medium)) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $size__site-footer-content;
+		}
 	}
 
+	.site-info {
+		text-align: center;
+	}
 }
