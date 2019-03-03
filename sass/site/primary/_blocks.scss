@@ -1,0 +1,31 @@
+
+/* Fix default column alignments at intermediate screen sizes */
+
+.wp-block-columns {
+	&.has-1-column,
+	&.has-2-columns,
+	&.has-3-columns {
+		@media screen and (min-width: 600px) and (max-width: 782px) {
+			flex-wrap: nowrap;
+
+			.wp-block-column:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&:not(.has-1-column):not(.has-2-columns):not(.has-3-columns) {
+		@media screen and (min-width: 600px) and (max-width: 782px) {
+			// display: block;
+
+			.wp-block-column {
+				flex-basis: 46%;
+				margin-left: 0;
+
+				&:nth-child(even) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

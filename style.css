@@ -43,6 +43,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 	## Posts and pages
 	## Comments
+	## Header
+	## Footer
+	## Blocks
 # Infinite scroll
 # Media
 	## Captions
@@ -1284,6 +1287,28 @@ a:hover, a:active {
 }
 .site-footer a:hover, .site-footer a:focus, .site-footer a:active {
   color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+## Blocks
+--------------------------------------------------------------*/
+/* Fix default column alignments at intermediate screen sizes */
+@media screen and (min-width: 600px) and (max-width: 782px) {
+  .wp-block-columns.has-1-column, .wp-block-columns.has-2-columns, .wp-block-columns.has-3-columns {
+    flex-wrap: nowrap;
+  }
+  .wp-block-columns.has-1-column .wp-block-column:last-child, .wp-block-columns.has-2-columns .wp-block-column:last-child, .wp-block-columns.has-3-columns .wp-block-column:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 782px) {
+  .wp-block-columns:not(.has-1-column):not(.has-2-columns):not(.has-3-columns) .wp-block-column {
+    flex-basis: 46%;
+    margin-left: 0;
+  }
+  .wp-block-columns:not(.has-1-column):not(.has-2-columns):not(.has-3-columns) .wp-block-column:nth-child(even) {
+    margin-right: 0;
+  }
 }
 
 /*--------------------------------------------------------------
