@@ -868,7 +868,7 @@ a:hover, a:active {
     background-color: #fff;
   }
   .main-navigation ul ul {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    /* Sub menus */
     float: left;
     position: absolute;
     top: 100%;
@@ -881,6 +881,12 @@ a:hover, a:active {
     float: none;
     position: relative;
     top: auto;
+  }
+  .main-navigation ul ul > li:first-child > a {
+    border-top: 0;
+  }
+  .main-navigation ul ul a {
+    padding-left: 40px;
   }
   .main-navigation ul li.focus > ul {
     /* Reveal sub-menu when focused by tab */

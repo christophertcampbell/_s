@@ -47,8 +47,7 @@
 				background-color: $color__mobile-menu-background;
 			}
 
-			ul {
-				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			ul { /* Sub menus */
 				float: left;
 				position: absolute;
 				top: 100%;
@@ -60,6 +59,16 @@
 					float: none;
 					position: relative;
 					top: auto;
+				}
+
+				> li:first-child {
+					> a {
+						border-top: 0;
+					}
+				}
+
+				a {
+					padding-left: $size__site-content-gutter * 2;
 				}
 			}
 
