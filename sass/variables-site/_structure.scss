@@ -1,28 +1,43 @@
+/* Important note regarding units (px, %, etc)
+
+   The -content and -gutter variables are used
+   with arithmetic operators (addition and multiplication)
+   to calculate breakpoints.
+
+   SASS arithmetic cannot mix px and % variables, therefore
+   all -content and -gutter variables here MUST be in px units
+
+   If you want an element to be 100% wide, instead of using 100%
+   use a large pixel value (ie: 999999px).
+*/
+
 $size__site-content: 1000px;
 $size__site-content-with-sidebar: 1200px;
 $size__site-sidebar: 25%;
 $size__site-content-gutter: 20px;
 $size__site-content-gutter-medium: 33px;
-$size__site-content-gutter-inner: 3%;
+$size__site-content-gutter-inner: 3%; /* This value can be px or % */
 $size__alignwide: 1200px;
 
 /* .site-header */
-$size__site-header-content: 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+$size__site-header-content: 999999px;
 $size__site-header-gutter: 0px;
 $size__site-header-gutter-medium: 0px;
 
 /* .site-branding */
+/* Set gutters to 0px if setting gutters with .site-header above */
 $size__site-branding-content: 1200px;
-$size__site-branding-gutter: 20px; /* Set to 0px if setting gutters with .site-header */ 
-$size__site-branding-gutter-medium: 33px; /* Set to 0px if setting gutters with .site-header */
+$size__site-branding-gutter: 20px;  
+$size__site-branding-gutter-medium: 33px;
 
 /* .main-navigation */
+/* Set gutters to 0px if setting gutters with .site-header above */
 $size__site-menu-content: 1000px;
-$size__site-menu-gutter: 20px; /* Set to 0px if setting gutters with .site-header */
-$size__site-menu-gutter-medium: 33px; /* Set to 0px if setting gutters with .site-header */
+$size__site-menu-gutter: 20px;
+$size__site-menu-gutter-medium: 33px;
 
 /* .site-footer */
-$size__site-footer-content: 1000px; // 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+$size__site-footer-content: 1000px;
 $size__site-footer-gutter: 20px;
 $size__site-footer-gutter-medium: 33px;
 

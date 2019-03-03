@@ -53,14 +53,24 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /* Specific parts of the page */
+/* Important note regarding units (px, %, etc)
+
+   The -content and -gutter variables are used
+   with arithmetic operators (addition and multiplication)
+   to calculate breakpoints.
+
+   SASS arithmetic cannot mix px and % variables, therefore
+   all -content and -gutter variables here MUST be in px units
+
+   If you want an element to be 100% wide, instead of using 100%
+   use a large pixel value (ie: 999999px).
+*/
+/* This value can be px or % */
 /* .site-header */
-/* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 /* .site-branding */
-/* Set to 0px if setting gutters with .site-header */
-/* Set to 0px if setting gutters with .site-header */
+/* Set gutters to 0px if setting gutters with .site-header above */
 /* .main-navigation */
-/* Set to 0px if setting gutters with .site-header */
-/* Set to 0px if setting gutters with .site-header */
+/* Set gutters to 0px if setting gutters with .site-header above */
 /* .site-footer */
 /* The breakpoint at which '-medium' variables take effect */
 /* The breakpoint at which the sidebar is aligned to the side */
