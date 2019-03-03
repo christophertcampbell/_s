@@ -505,11 +505,11 @@ big {
   }
 }
 /* Max width of header content (including gutters) */
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1066px) {
   .site-footer .inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1300px;
+    max-width: 1000px;
   }
 }
 /*--------------------------------------------------------------
