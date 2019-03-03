@@ -53,7 +53,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /* Specific parts of the page */
+/* .site-header */
 /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
+/* .site-branding */
+/* Set to 0px if setting gutters with .site-header */
+/* .main-navigation */
+/* .site-footer */
 /* The breakpoint at which '-medium' variables take effect */
 /* The breakpoint at which the sidebar is aligned to the side */
 /* The breakpoint at which the menu transitions from mobile to desktop */
@@ -484,6 +489,26 @@ big {
     margin-left: auto;
     margin-right: auto;
     max-width: 999999px;
+  }
+}
+.site-header .site-branding .inner {
+  /* Small screen size */
+  margin-left: 0px;
+  margin-right: 0px;
+  /* Medium screen size */
+  /* Max width of site branding content */
+}
+@media screen and (min-width: 800px) {
+  .site-header .site-branding .inner {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .site-header .site-branding .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
   }
 }
 .site-header .main-navigation .inner {

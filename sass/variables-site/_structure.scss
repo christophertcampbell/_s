@@ -6,12 +6,20 @@ $size__site-content-gutter-medium: 33px;
 $size__site-content-gutter-inner: 3%;
 $size__alignwide: 1200px;
 
+/* .site-header */
 $size__site-header-content: 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 $size__site-header-gutter: 20px;
 $size__site-header-gutter-medium: 33px;
 
+/* .site-branding */
+$size__site-branding-content: 1000px;
+$size__site-branding-gutter: 0px; /* Set to 0px if setting gutters with .site-header */ 
+$size__site-branding-gutter-medium: 0px;
+
+/* .main-navigation */
 $size__site-header-navigation: 1300px;
 
+/* .site-footer */
 $size__site-footer-content: 1000px; // 999999px; /* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
 $size__site-footer-gutter: 20px;
 $size__site-footer-gutter-medium: 33px;
