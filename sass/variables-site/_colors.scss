@@ -9,7 +9,7 @@ $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: royalblue;
-$color__link-visited: purple;
+$color__link-visited: $color__link; //purple;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
 
@@ -27,11 +27,28 @@ $color__header-link: $color__link;
 $color__header-link-hover: $color__link-hover;
 $color__header-link-visited: $color__link-visited;
 
-$color__main-navigation-background: $color__background-body;
-$color__main-navigation-text: $color__text-main;
-$color__main-navigation-link: $color__link;
-$color__main-navigation-link-hover: $color__link-hover;
-$color__main-navigation-link-visited: $color__link-visited;
+$color__menu-background: $color__background-body;
+$color__menu-background-hover: $color__background-body;
+$color__menu-text: $color__text-main;
+$color__menu-link: $color__link;
+$color__menu-link-hover: $color__link-hover;
+$color__menu-link-visited: $color__link-visited;
+$color__menu-link-border: #eee;
+
+$color__menu-submenu-background-color: $color__background-body;
+$color__menu-submenu-background-color-hover: $color__background-body;
+$color__menu-submenu-text: $color__text-main;
+$color__menu-submenu-link: $color__link;
+$color__menu-submenu-link-hover: $color__link-hover;
+$color__menu-submenu-link-visited: $color__link-visited;
+$color__menu-submenu-link-border: $color__menu-link-border;
+
+$color__mobile-menu-background: #fff;
+$color__mobile-menu-text: #333;
+$color__mobile-menu-link: #333;
+$color__mobile-menu-link-hover: royalblue;
+$color__mobile-menu-link-visited: $color__mobile-menu-link;
+$color__mobile-menu-link-border: #eee;
 
 $color__comments-area-background: $color__background-body;
 $color__comments-area-text: $color__text-main;
