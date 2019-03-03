@@ -809,7 +809,7 @@ a {
   color: royalblue;
 }
 a:visited {
-  color: purple;
+  color: royalblue;
 }
 a:hover, a:focus, a:active {
   color: midnightblue;
@@ -944,7 +944,7 @@ a:hover, a:active {
     color: royalblue;
   }
   .main-navigation a:visited {
-    color: purple;
+    color: royalblue;
   }
   .main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
     color: midnightblue;
@@ -955,6 +955,9 @@ a:hover, a:active {
     padding-left: 0;
   }
   .main-navigation ul ul {
+    /* Sub menus */
+    background-color: #fff;
+    color: #404040;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     float: left;
     position: absolute;
@@ -969,8 +972,21 @@ a:hover, a:active {
   .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
     left: 100%;
   }
+  .main-navigation ul ul li:first-child a {
+    border-left: 0;
+  }
   .main-navigation ul ul a {
+    border-right: 0;
+    border-top: 1px solid #eee;
+    color: royalblue;
     width: 200px;
+  }
+  .main-navigation ul ul a:hover, .main-navigation ul ul a:focus {
+    background-color: #fff;
+    color: midnightblue;
+  }
+  .main-navigation ul ul a:visited {
+    color: royalblue;
   }
   .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -1173,7 +1189,7 @@ a:hover, a:active {
   color: royalblue;
 }
 .comments-area a:visited {
-  color: purple;
+  color: royalblue;
 }
 .comments-area a:hover, .comments-area a:focus, .comments-area a:active {
   color: midnightblue;
@@ -1190,7 +1206,7 @@ a:hover, a:active {
   color: royalblue;
 }
 .site-branding a:visited {
-  color: purple;
+  color: royalblue;
 }
 .site-branding a:hover, .site-branding a:focus, .site-branding a:active {
   color: midnightblue;
@@ -1207,7 +1223,7 @@ a:hover, a:active {
   color: royalblue;
 }
 .site-footer a:visited {
-  color: purple;
+  color: royalblue;
 }
 .site-footer a:hover, .site-footer a:focus, .site-footer a:active {
   color: midnightblue;

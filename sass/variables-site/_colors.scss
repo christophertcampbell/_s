@@ -9,7 +9,7 @@ $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: royalblue;
-$color__link-visited: purple;
+$color__link-visited: $color__link; //purple;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
 
@@ -33,6 +33,14 @@ $color__menu-link: $color__link;
 $color__menu-link-hover: $color__link-hover;
 $color__menu-link-visited: $color__link-visited;
 $color__menu-link-border: #eee;
+
+$color__menu-submenu-background-color: $color__background-body;
+$color__menu-submenu-background-color-hover: $color__background-body;
+$color__menu-submenu-text: $color__text-main;
+$color__menu-submenu-link: $color__link;
+$color__menu-submenu-link-hover: $color__link-hover;
+$color__menu-submenu-link-visited: $color__link-visited;
+$color__menu-submenu-link-border: $color__menu-link-border;
 
 $color__mobile-menu-background: #fff;
 $color__mobile-menu-text: #333;
