@@ -1288,6 +1288,9 @@ a:hover, a:active {
 .site-footer a:hover, .site-footer a:focus, .site-footer a:active {
   color: midnightblue;
 }
+.site-footer ul, .site-footer ol {
+  margin: 0;
+}
 
 /*--------------------------------------------------------------
 ## Blocks
