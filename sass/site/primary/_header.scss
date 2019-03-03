@@ -15,4 +15,10 @@
 			color: $color__header-link-hover;
 		}
 	}
+
+	.site-logo {
+		a, img {
+			display: block;
+		}
+	}
 }
