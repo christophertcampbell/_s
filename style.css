@@ -928,15 +928,15 @@ a:hover, a:active {
     padding-left: 0;
   }
   .site-header .main-navigation ul.nav-menu {
-    /* Top level */
+    /* Fixed positioning of mobile menu */
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
     right: 0;
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: 40px;
+    padding-top: 0.5em;
     color: #333;
     background-color: #fff;
   }
@@ -1050,12 +1050,12 @@ a:hover, a:active {
 @media screen and (max-width: 700px) {
   body.admin-bar .site-header .main-navigation ul.nav-menu {
     /* Top level */
-    padding-top: 72px;
+    top: 82px;
   }
 }
 @media screen and (max-width: 700px) and (max-width: 782px) {
   body.admin-bar .site-header .main-navigation ul.nav-menu {
-    padding-top: 86px;
+    top: 96px;
   }
 }
 /* Large-screen menu styling */

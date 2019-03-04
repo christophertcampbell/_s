@@ -36,15 +36,17 @@
 				margin: 0;
 				padding-left: 0;
 	
-				&.nav-menu { /* Top level */
+				&.nav-menu {
+					/* Fixed positioning of mobile menu */
 					position: fixed;
-					top: 0;
+					top: $height__site-header-mobile;
 					left: 0;
 					right: 0;
 					bottom: 0;
 					overflow-x: hidden;
 					overflow-y: auto;
-					padding-top: 40px;
+					padding-top: .5em;
+
 					color: $color__mobile-menu-text;
 					background-color: $color__mobile-menu-background;
 				}
@@ -208,10 +210,10 @@
 				}
 
 				ul.nav-menu { /* Top level */
-					padding-top: 40px + 32px;
+					top: $height__site-header-mobile + 32px;
 		
 					@media screen and (max-width: 782px) {
-						padding-top: 40px + 46px;
+						top: $height__site-header-mobile + 46px;
 					}
 				}
 			}
