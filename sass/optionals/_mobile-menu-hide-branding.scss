@@ -1,29 +1,31 @@
 /* Hide the site branding when the mobile menu is open */
 
-/* Small-screen menu styling */
-@media screen and (max-width: $breakpoint__menu) {
-	.site-header {
-		.site-branding {
-			display: none;
-		}
+body.menu-open {
+	/* Small-screen menu styling */
+	@media screen and (max-width: $breakpoint__menu) {
+		.site-header {
+			.site-branding {
+				display: none;
+			}
 
-		.main-navigation {
-			ul.nav-menu {
-				top: 0;
-				padding-top: 3em;
+			.main-navigation {
+				ul.nav-menu {
+					top: 0;
+					padding-top: 3em;
+				}
 			}
 		}
 	}
-}
 
-body.admin-bar {
-	.site-header {
-		.main-navigation {
-			ul.nav-menu {
-				top: 32px;
+	&.admin-bar {
+		.site-header {
+			.main-navigation {
+				ul.nav-menu {
+					top: 32px;
 
-				@media screen and (max-width: 782px) {
-					top: 46px;
+					@media screen and (max-width: 782px) {
+						top: 46px;
+					}
 				}
 			}
 		}
