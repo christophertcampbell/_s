@@ -7,6 +7,13 @@ body {
 		.entry-title {
 			display: none;
 		}
+		
+		&.collapse-header-margin {
+			.entry-content {
+				margin-top: 0;
+			}
+		}
 	}
+
 	
 }

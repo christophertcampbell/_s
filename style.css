@@ -1645,5 +1645,8 @@ body.menu-open.admin-bar .site-header .main-navigation ul.nav-menu {
 body.no-post-title .entry-title {
   display: none;
 }
+body.no-post-title.collapse-header-margin .entry-content {
+  margin-top: 0;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -21,6 +21,7 @@ function _s_render_post_settings_meta_box( $post ) {
 
 	// Collect saved values
 	$_s_hide_post_title = ( isset( $meta['_s_hide_post_title'][0] ) &&  '1' === $meta['_s_hide_post_title'][0] ) ? 1 : 0;
+	$_s_collapse_header_and_content = ( isset( $meta['_s_collapse_header_and_content'][0] ) &&  '1' === $meta['_s_collapse_header_and_content'][0] ) ? 1 : 0;
 
 	wp_nonce_field( '_s_post_settings_meta_box', '_s_post_settings_meta_box_nonce' );
 
@@ -32,6 +33,12 @@ function _s_render_post_settings_meta_box( $post ) {
 			</label>
 		</p>
 
+		<table>
+			<tr>
+				<td><input type="checkbox" name="_s_collapse_header_and_content" id="_s_collapse_header_and_content" value="1" <?php checked( $_s_collapse_header_and_content, 1 ); ?> /></td>
+				<td><label for="_s_collapse_header_and_content">Collapse space between header and content</label></td>
+			</tr>
+		</table>
 	<?php
 }
 
@@ -65,12 +72,18 @@ function _s_save_post_settings_meta_box( $post_id ) {
 	$_s_hide_post_title = ( isset( $_POST['_s_hide_post_title'] ) && '1' === $_POST['_s_hide_post_title'] ) ? 1 : 0;
 	update_post_meta( $post_id, '_s_hide_post_title', esc_attr( $_s_hide_post_title ) );
 
+	$_s_hide_post_title = ( isset( $_POST['_s_collapse_header_and_content'] ) && '1' === $_POST['_s_collapse_header_and_content'] ) ? 1 : 0;
+	update_post_meta( $post_id, '_s_collapse_header_and_content', esc_attr( $_s_hide_post_title ) );
 }
 
 function _s_add_post_settings_body_classes( $classes ) {
 
 	if ( get_post_meta( get_the_id(), '_s_hide_post_title', true ) ) {
 		$classes[] = 'no-post-title';
+	}
+
+	if ( get_post_meta( get_the_id(), '_s_collapse_header_and_content', true ) ) {
+		$classes[] = 'collapse-header-margin';
 	}
 
 	return $classes;
