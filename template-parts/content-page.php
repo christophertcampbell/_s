@@ -10,9 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<?php if ( ! get_post_meta( get_the_id(), '_s_hide_post_title', true ) ) : ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<?php _s_post_thumbnail(); ?>
 
