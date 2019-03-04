@@ -1429,6 +1429,25 @@ a:hover, a:active {
   }
 }
 
+.wp-block-image figure {
+  /* Allow floated images to align with surrounding text */
+}
+.wp-block-image figure.alignleft, .wp-block-image figure.alignright, .wp-block-image figure.aligncenter {
+  margin-top: 0;
+}
+.wp-block-image img {
+  display: block;
+}
+
+.wp-block-kadence-rowlayout.alignfull {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.wp-block-kadence-rowlayout .wp-block-image.alignfull {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1619,6 +1638,15 @@ body.menu-open.admin-bar .site-header .main-navigation ul.nav-menu {
   body.menu-open.admin-bar .site-header .main-navigation ul.nav-menu {
     top: 46px;
   }
+}
+
+/* These styles work in coordination with the
+   meta settings established in inc/post-settings-meta-box.php */
+body.no-post-title .entry-title {
+  display: none;
+}
+body.no-post-title.collapse-header-margin .entry-content {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
