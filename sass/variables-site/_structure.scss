@@ -20,12 +20,19 @@ $size__site-content-gutter-inner: 3%; /* This value can be px or % */
 $size__alignwide: 1200px;
 
 /* .site-header */
+/* If you are using the _branding-inline and _menu-inline optionals,
+   you will want to use these settings for content and gutter widths,
+   rather than the individual .site-branding and .main-navigation
+   variables below */
 $size__site-header-content: 999999px;
 $size__site-header-gutter: 0px;
 $size__site-header-gutter-medium: 0px;
 
+$height__site-header-mobile: 50px;
+$height__site-header-inline: 70px; /* Used in optionals */
+
 /* .site-branding */
-/* Set gutters to 0px if setting gutters with .site-header above */
+/* Set gutters to 0px if setting gutters with .site-header above */ 
 $size__site-branding-content: 1200px;
 $size__site-branding-gutter: 20px;  
 $size__site-branding-gutter-medium: 33px;
@@ -41,12 +48,13 @@ $size__site-footer-content: 1000px;
 $size__site-footer-gutter: 20px;
 $size__site-footer-gutter-medium: 33px;
 
-$breakpoint__medium: 800px; /* The breakpoint at which '-medium' variables take effect */
-$breakpoint__sidebar: 900px; /* The breakpoint at which the sidebar is aligned to the side */
-$breakpoint__menu: 700px; /* The breakpoint at which the menu transitions from mobile to desktop */
+$breakpoint__medium: 800px; /* Breakpoint at which '-medium' variables take effect */
+$breakpoint__sidebar: 900px; /* Breakpoint at which the sidebar is aligned to the side */
+$breakpoint__menu: 700px; /* Breakpoint at which the menu transitions from mobile to desktop */
+$breakpoint__site-description: 950px; /* Breakpoint below which the .site-description element is hidden */
 
-/* The breakpoint at which the screen width is at least the max content width + gutters */
+/* Breakpoint at which the screen width is at least the max content width + gutters */
 $breakpoint__site-content-plus-gutters: $size__site-content + ($size__site-content-gutter-medium * 2);
 
-/* The breakpoint at which the screen width is at least the max alignwide width + gutters */
+/* Breakpoint at which the screen width is at least the max alignwide width + gutters */
 $breakpoint__alignwide-plus-gutters: $size__alignwide + ($size__site-content-gutter-medium * 2);

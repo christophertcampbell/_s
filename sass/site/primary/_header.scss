@@ -1,24 +1,35 @@
-.site-branding {
-	color: $color__header-text;
-	background-color: $color__header-background;
+.site-header {
 
-	a {
-		color: $color__header-link;
-
-		&:visited  {
-			color: $color__header-link-visited;
+	.site-branding {
+		color: $color__header-text;
+		background-color: $color__header-background;
+	
+		a {
+			color: $color__header-link;
+			text-decoration: none;
+	
+			&:visited  {
+				color: $color__header-link-visited;
+			}
+	
+			&:hover,
+			&:focus,
+			&:active {
+				color: $color__header-link-hover;
+			}
+		}
+	
+		.site-logo {
+			a, img {
+				display: block;
+			}
 		}
 
-		&:hover,
-		&:focus,
-		&:active {
-			color: $color__header-link-hover;
+		.site-description {
+			@media screen and (max-width: $breakpoint__site-description) {
+				display: none;
+			}
 		}
 	}
 
-	.site-logo {
-		a, img {
-			display: block;
-		}
-	}
 }

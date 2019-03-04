@@ -69,16 +69,22 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 /* This value can be px or % */
 /* .site-header */
+/* If you are using the _branding-inline and _menu-inline optionals,
+   you will want to use these settings for content and gutter widths,
+   rather than the individual .site-branding and .main-navigation
+   variables below */
+/* Used in optionals */
 /* .site-branding */
 /* Set gutters to 0px if setting gutters with .site-header above */
 /* .main-navigation */
 /* Set gutters to 0px if setting gutters with .site-header above */
 /* .site-footer */
-/* The breakpoint at which '-medium' variables take effect */
-/* The breakpoint at which the sidebar is aligned to the side */
-/* The breakpoint at which the menu transitions from mobile to desktop */
-/* The breakpoint at which the screen width is at least the max content width + gutters */
-/* The breakpoint at which the screen width is at least the max alignwide width + gutters */
+/* Breakpoint at which '-medium' variables take effect */
+/* Breakpoint at which the sidebar is aligned to the side */
+/* Breakpoint at which the menu transitions from mobile to desktop */
+/* Breakpoint below which the .site-description element is hidden */
+/* Breakpoint at which the screen width is at least the max content width + gutters */
+/* Breakpoint at which the screen width is at least the max alignwide width + gutters */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -1311,21 +1317,27 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-branding {
+.site-header .site-branding {
   color: #404040;
   background-color: #fff;
 }
-.site-branding a {
+.site-header .site-branding a {
+  color: royalblue;
+  text-decoration: none;
+}
+.site-header .site-branding a:visited {
   color: royalblue;
 }
-.site-branding a:visited {
-  color: royalblue;
-}
-.site-branding a:hover, .site-branding a:focus, .site-branding a:active {
+.site-header .site-branding a:hover, .site-header .site-branding a:focus, .site-header .site-branding a:active {
   color: midnightblue;
 }
-.site-branding .site-logo a, .site-branding .site-logo img {
+.site-header .site-branding .site-logo a, .site-header .site-branding .site-logo img {
   display: block;
+}
+@media screen and (max-width: 950px) {
+  .site-header .site-branding .site-description {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1476,5 +1488,68 @@ object {
 --------------------------------------------------------------*/
 /* Optionals are partials that can be commented / uncommented
    to perform basic configuration of the theme */
+/*--------------------------------------------------------------
+## Header - Compact
+--------------------------------------------------------------*/
+.site-header {
+  /* Places the site logo, title and description
+     on a single line */
+}
+.site-header .site-branding {
+  float: left;
+  padding: 10px 0;
+}
+.site-header .site-branding .site-logo {
+  margin-right: 1.5em;
+}
+.site-header .site-branding .site-logo img {
+  height: 30px;
+  width: 30px;
+}
+.site-header .site-branding .site-logo,
+.site-header .site-branding .site-title-container {
+  float: left;
+  line-height: 30px;
+}
+.site-header .site-branding .site-title,
+.site-header .site-branding .site-description {
+  margin: 0;
+  float: left;
+}
+.site-header .site-branding .site-title {
+  font-size: 1.5em;
+  margin-right: 1em;
+}
+@media screen and (min-width: 700px) {
+  .site-header .site-branding .site-logo img {
+    height: 50px;
+    width: 50px;
+  }
+  .site-header .site-branding .site-logo,
+.site-header .site-branding .site-title-container {
+    line-height: 50px;
+  }
+}
+
+.site-header {
+  /* Places the main menu beside the site title,
+     rather than beneath it */
+}
+@media screen and (min-width: 700px) {
+  .site-header .main-navigation {
+    clear: none;
+    float: right;
+    width: auto;
+  }
+  .site-header .main-navigation .inner {
+    float: right;
+  }
+  .site-header .main-navigation .nav-menu > li > a {
+    /* Top level menu items */
+    line-height: 70px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

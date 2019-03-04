@@ -33,21 +33,23 @@
 							<?php the_custom_logo(); ?>
 						</div>
 					<?php endif; ?>
-					<?php
-					if ( is_front_page() && is_home() ) :
-						?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<div class="site-title-container">
 						<?php
-					else :
-						?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-					endif;
-					$_s_description = get_bloginfo( 'description', 'display' );
-					if ( $_s_description || is_customize_preview() ) :
-						?>
-						<p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
-					<?php endif; ?>
+						if ( is_front_page() && is_home() ) :
+							?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php
+						else :
+							?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php
+						endif;
+						$_s_description = get_bloginfo( 'description', 'display' );
+						if ( $_s_description || is_customize_preview() ) :
+							?>
+							<p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
+						<?php endif; ?>
+					</div>
 				</div><!-- .inner -->
 			</div><!-- .site-branding -->
 
