@@ -67,4 +67,12 @@
 		</div><!-- .inner -->
 	</header><!-- #masthead -->
 
+	<?php if ( has_header_image() ) : ?>
+		<div id="header-image" class="header-image">
+			<div class="inner">
+				<?php the_header_image_tag() ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<div id="content" class="site-content">
