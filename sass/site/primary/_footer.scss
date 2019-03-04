@@ -19,4 +19,24 @@
 	ul, ol {
 		margin: 0;
 	}
+
+	.site-info {
+		color: $color__footer-credits-text;
+		background-color: $color__footer-credits-background;
+		padding: 1em;
+	
+		a {
+			color: $color__footer-credits-link;
+	
+			&:visited  {
+				color: $color__footer-credits-link-visited;
+			}
+	
+			&:hover,
+			&:focus,
+			&:active {
+				color: $color__footer-credits-link-hover;
+			}
+		}
+	}
 }

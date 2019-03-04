@@ -1388,6 +1388,20 @@ a:hover, a:active {
 .site-footer ul, .site-footer ol {
   margin: 0;
 }
+.site-footer .site-info {
+  color: #404040;
+  background-color: #fff;
+  padding: 1em;
+}
+.site-footer .site-info a {
+  color: royalblue;
+}
+.site-footer .site-info a:visited {
+  color: royalblue;
+}
+.site-footer .site-info a:hover, .site-footer .site-info a:focus, .site-footer .site-info a:active {
+  color: midnightblue;
+}
 
 /*--------------------------------------------------------------
 ## Blocks
