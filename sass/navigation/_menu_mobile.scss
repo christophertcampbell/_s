@@ -7,191 +7,199 @@
 		.site-content {
 			display: none;
 		}
-	} 
+	}
 
-	.main-navigation {
-		clear: both;
-		display: block;
-		float: left;
-		width: 100%;
+	.site-header {
 
-		a {
-			color: $color__mobile-menu-link;
-
-			&:visited  {
-				color: $color__mobile-menu-link-visited;
+		.main-navigation {
+			clear: both;
+			display: block;
+			float: left;
+			width: 100%;
+	
+			a {
+				color: $color__mobile-menu-link;
+	
+				&:visited  {
+					color: $color__mobile-menu-link-visited;
+				}
+	
+				&:hover,
+				&:focus,
+				&:active {
+					color: $color__mobile-menu-link-hover;
+				}
 			}
-
-			&:hover,
-			&:focus,
-			&:active {
-				color: $color__mobile-menu-link-hover;
-			}
-		}
-
-		ul {
-			list-style: none;
-			margin: 0;
-			padding-left: 0;
-
-			&.nav-menu { /* Top level */
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				overflow-x: hidden;
-				overflow-y: auto;
-				padding-top: 40px;
-				color: $color__mobile-menu-text;
-				background-color: $color__mobile-menu-background;
-			}
-
-			ul { /* Sub menus */
-				float: left;
-				position: absolute;
-				top: 100%;
-				left: -999em;
-				z-index: 99999;
-
-				&.toggled { /* Reveal sub-menu when toggled by click */
+	
+			ul {
+				list-style: none;
+				margin: 0;
+				padding-left: 0;
+	
+				&.nav-menu { /* Top level */
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					overflow-x: hidden;
+					overflow-y: auto;
+					padding-top: 40px;
+					color: $color__mobile-menu-text;
+					background-color: $color__mobile-menu-background;
+				}
+	
+				ul { /* Sub menus */
+					float: left;
+					position: absolute;
+					top: 100%;
+					left: -999em;
+					z-index: 99999;
+	
+					&.toggled { /* Reveal sub-menu when toggled by click */
+						left: auto;
+						float: none;
+						position: relative;
+						top: auto;
+					}
+	
+					> li:first-child {
+						> a {
+							border-top: 0;
+						}
+					}
+	
+					a {
+						padding-left: $size__site-content-gutter * 2;
+					}
+				}
+	
+				li.focus > ul  { /* Reveal sub-menu when focused by tab */
 					left: auto;
 					float: none;
 					position: relative;
 					top: auto;
 				}
-
-				> li:first-child {
-					> a {
-						border-top: 0;
+			}
+	
+			li {
+				a {
+					border-bottom: 1px solid $color__mobile-menu-link-border;
+					display: block;
+					padding: 1em $size__site-content-gutter;
+					text-decoration: none;
+				}
+				
+				&:hover > a,
+				&.focus > a {
+				}
+	
+				&:first-child {
+					a {
+						border-top: 1px solid $color__mobile-menu-link-border;
 					}
 				}
-
-				a {
-					padding-left: $size__site-content-gutter * 2;
-				}
-			}
-
-			li.focus > ul  { /* Reveal sub-menu when focused by tab */
-				left: auto;
-				float: none;
-				position: relative;
-				top: auto;
-			}
-		}
-
-		li {
-			a {
-				border-bottom: 1px solid $color__mobile-menu-link-border;
-				display: block;
-				padding: 1em $size__site-content-gutter;
-				text-decoration: none;
-			}
-			
-			&:hover > a,
-			&.focus > a {
-			}
-
-			&:first-child {
-				a {
-					border-top: 1px solid $color__mobile-menu-link-border;
-				}
-			}
-
-			&.menu-item-has-children {
-
-				> a:after {
-					content: "\f132";
-					float: right;
-					font-family: dashicons;
-					font-size: 1.5em;
-					line-height: 30px;
+	
+				&.menu-item-has-children {
+	
+					> a:after {
+						content: "\f132";
+						float: right;
+						font-family: dashicons;
+						font-size: 1.5em;
+						line-height: 30px;
+		
+					}
+	
+					&.focus {
+						> a:after {
+							content: "\f460";
+							font-weight: bold;
+	
+							/* Adjust for pixel difference between open/close icons */
+							position: relative;
+							right: -1px;
+							top: -2px;
+						}
+					}
 	
 				}
-
-				&.focus {
-					> a:after {
-						content: "\f460";
-						font-weight: bold;
-
-						/* Adjust for pixel difference between open/close icons */
-						position: relative;
-						right: -1px;
-						top: -2px;
-					}
+			}
+	
+			.current_page_item > a,
+			.current-menu-item > a,
+			.current_page_ancestor > a,
+			.current-menu-ancestor > a {
+			}
+			
+			.menu-toggle {
+				display: block;
+				position: absolute;
+				top: 6px;
+				right: 6px;
+				z-index: 999;
+	
+				/* Remove default button styling */
+				background: none;
+				border: 0;
+				border-radius: 0;
+				outline: 0;
+				padding: 0;
+	
+				&:hover {
+					cursor: pointer;
 				}
-
+	
+				.toggle-content {
+					display: none;
+				}
+	
+				&:after {
+					/* Open menu icon */
+					content: "\f333";
+					font-family: "dashicons";
+					font-size: 3em;
+				}
 			}
-		}
-
-		.current_page_item > a,
-		.current-menu-item > a,
-		.current_page_ancestor > a,
-		.current-menu-ancestor > a {
-		}
-		
-		.menu-toggle {
-			display: block;
-			position: absolute;
-			top: 6px;
-			right: 6px;
-			z-index: 999;
-
-			/* Remove default button styling */
-			background: none;
-			border: 0;
-			border-radius: 0;
-			outline: 0;
-			padding: 0;
-
-			&:hover {
-				cursor: pointer;
-			}
-
-			.toggle-content {
+	
+			.nav-menu {
 				display: none;
 			}
-
-			&:after {
-				/* Open menu icon */
-				content: "\f333";
-				font-family: "dashicons";
-				font-size: 3em;
+			
+			&.toggled {
+	
+				.menu-toggle:after {
+					/* Close menu icon */
+					content: "\f335";
+				}
+	
+				.nav-menu {
+					display: block;
+				}
+	
 			}
 		}
 
-		.nav-menu {
-			display: none;
-		}
-		
-		&.toggled {
-
-			.menu-toggle:after {
-				/* Close menu icon */
-				content: "\f335";
-			}
-
-			.nav-menu {
-				display: block;
-			}
-
-		}
 	}
 	
 	body.admin-bar {
-		.menu-toggle {
-			top: 6px + 32px;
+		.site-header {
+			.main-navigation {
+				.menu-toggle {
+					top: 6px + 32px;
+		
+					@media screen and (max-width: 782px) {
+						top: 6px + 46px;
+					}
+				}
 
-			@media screen and (max-width: 782px) {
-				top: 6px + 46px;
-			}
-		}
-
-		.main-navigation ul.nav-menu { /* Top level */
-			padding-top: 40px + 32px;
-
-			@media screen and (max-width: 782px) {
-				padding-top: 40px + 46px;
+				ul.nav-menu { /* Top level */
+					padding-top: 40px + 32px;
+		
+					@media screen and (max-width: 782px) {
+						padding-top: 40px + 46px;
+					}
+				}
 			}
 		}
 	}
