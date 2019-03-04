@@ -609,11 +609,6 @@ big {
   margin-left: 20px;
   margin-right: 20px;
 }
-.no-sidebar .site-main .entry-content > .alignfull {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100vw;
-}
 @media screen and (min-width: 800px) {
   .no-sidebar .site-main .entry-header > *,
 .no-sidebar .site-main .entry-content > *,
@@ -622,12 +617,6 @@ big {
 .no-sidebar .site-main .comments-area > * {
     margin-left: 33px;
     margin-right: 33px;
-  }
-  .no-sidebar .site-main .entry-content > .alignfull {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    max-width: 100%;
   }
 }
 @media screen and (min-width: 1066px) {
@@ -640,15 +629,11 @@ big {
     margin-right: auto;
     max-width: 1000px;
   }
-  .no-sidebar .site-main .entry-content > .alignwide {
+  .no-sidebar .site-main .entry-content > .alignwide,
+.no-sidebar .site-main .entry-content > .alignfull {
     margin-left: 33px;
     margin-right: 33px;
     max-width: 100%;
-  }
-  .no-sidebar .site-main .entry-content > .alignfull {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100vw;
   }
 }
 @media screen and (min-width: 1266px) {

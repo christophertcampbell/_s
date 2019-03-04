@@ -19,12 +19,6 @@
 		margin-right: $size__site-content-gutter;
 	}
 
-	.site-main .entry-content > .alignfull {
-		margin-left: 0;
-		margin-right: 0;
-		width: 100vw;
-	}
-
 	/* Mid-sized screens */
 	@media screen and (min-width: $breakpoint__medium) {
 	
@@ -35,13 +29,6 @@
 		.site-main .comments-area > * {
 			margin-left: $size__site-content-gutter-medium;
 			margin-right: $size__site-content-gutter-medium;
-		}
-
-		.site-main .entry-content > .alignfull {
-			margin-left: 0;
-			margin-right: 0;
-			width: 100%;
-			max-width: 100%;
 		}
 		
 	}
@@ -59,17 +46,11 @@
 			max-width: $size__site-content;
 		}
 
-		// .site-main .entry-content > .alignfull,
-		.site-main .entry-content > .alignwide {
+		.site-main .entry-content > .alignwide,
+		.site-main .entry-content > .alignfull {
 			margin-left: $size__site-content-gutter-medium;
 			margin-right: $size__site-content-gutter-medium;
 			max-width: 100%;
-		}
-
-		.site-main .entry-content > .alignfull {
-			margin-left: 0;
-			margin-right: 0;
-			width: 100vw;
 		}
 
 	}
