@@ -29,3 +29,31 @@
 		}
 	}
 }
+
+.wp-block-image {
+	figure {
+		/* Allow floated images to align with surrounding text */
+		&.alignleft,
+		&.alignright,
+		&.aligncenter {
+			margin-top: 0;
+		}
+
+	}
+
+	img {
+		display: block;
+	}
+}
+
+.wp-block-kadence-rowlayout {
+	&.alignfull {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.wp-block-image.alignfull {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}

@@ -1429,6 +1429,25 @@ a:hover, a:active {
   }
 }
 
+.wp-block-image figure {
+  /* Allow floated images to align with surrounding text */
+}
+.wp-block-image figure.alignleft, .wp-block-image figure.alignright, .wp-block-image figure.aligncenter {
+  margin-top: 0;
+}
+.wp-block-image img {
+  display: block;
+}
+
+.wp-block-kadence-rowlayout.alignfull {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.wp-block-kadence-rowlayout .wp-block-image.alignfull {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
