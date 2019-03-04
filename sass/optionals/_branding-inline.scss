@@ -1,0 +1,52 @@
+.site-header {
+
+	/* Places the site logo, title and description
+	   on a single line */
+	
+	.site-branding {
+		float: left;
+		padding: 10px 0;
+		
+		.site-logo {
+			margin-right: 1.5em;
+
+			img {
+				height: $height__site-header-mobile - 20px;
+				width: $height__site-header-mobile - 20px;
+			}
+		}
+
+		.site-logo,
+		.site-title-container {
+			float: left;
+			line-height: $height__site-header-mobile - 20px;
+		}
+
+		.site-title,
+		.site-description {
+			margin: 0;
+			float: left;
+		}
+
+		.site-title {
+			font-size: 1.5em;
+			margin-right: 1em;
+		}
+	}
+
+	@media screen and (min-width: $breakpoint__menu) {
+
+		.site-branding {
+
+			.site-logo img {
+				height: $height__site-header-inline - 20px;
+				width: $height__site-header-inline - 20px;
+			}
+
+			.site-logo,
+			.site-title-container {
+				line-height: $height__site-header-inline - 20px;
+			}
+		}
+	}
+}

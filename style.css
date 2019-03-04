@@ -26,7 +26,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Normalize
 # Typography
 # Layout
-	## Common
+	## Header
+	## Footer
 	## No Sidebar
 	## Content / Sidebar
 	## Sidbar / Content
@@ -43,18 +44,52 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 	## Posts and pages
 	## Comments
+	## Header
+	## Footer
+	## Blocks
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
+# Optionals
+	## Header - Compact
 --------------------------------------------------------------*/
-/* Specific parts of the page */
-/* Cannot mix % and px (gutter) so use a huge pixel value instead of 100% */
-/* The breakpoint at which '-medium' variables take effect */
-/* The breakpoint at which the sidebar is aligned to the side */
-/* The breakpoint at which the menu transitions from mobile to desktop */
-/* The breakpoint at which the screen width is at least the max content width + gutters */
-/* The breakpoint at which the screen width is at least the max alignwide width + gutters */
+/* Header */
+/* Branding */
+/* Desktop Menu */
+/* Mobile Menu */
+/* Comments */
+/* Footer */
+/* Important note regarding units (px, %, etc)
+
+   The -content and -gutter variables are used
+   with arithmetic operators (addition and multiplication)
+   to calculate breakpoints.
+
+   SASS arithmetic cannot mix px and % variables, therefore
+   all -content and -gutter variables here MUST be in px units
+
+   If you want an element to be 100% wide, instead of using 100%
+   use a large pixel value (ie: 999999px).
+*/
+/* This value can be px or % */
+/* .site-header */
+/* If you are using the _branding-inline and _menu-inline optionals,
+   you will want to use these settings for content and gutter widths,
+   rather than the individual .site-branding and .main-navigation
+   variables below */
+/* Used in optionals */
+/* .site-branding */
+/* Set gutters to 0px if setting gutters with .site-header above */
+/* .main-navigation */
+/* Set gutters to 0px if setting gutters with .site-header above */
+/* .site-footer */
+/* Breakpoint at which '-medium' variables take effect */
+/* Breakpoint at which the sidebar is aligned to the side */
+/* Breakpoint at which the menu transitions from mobile to desktop */
+/* Breakpoint below which the .site-description element is hidden */
+/* Breakpoint at which the screen width is at least the max content width + gutters */
+/* Breakpoint at which the screen width is at least the max alignwide width + gutters */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -462,40 +497,72 @@ big {
 # Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Header and Footer
+## Header
 --------------------------------------------------------------*/
-/* Header */
-.site-header .inner {
-  margin-left: 20px;
-  margin-right: 20px;
+.site-header > .inner {
+  /* Small screen size */
+  margin-left: 0px;
+  margin-right: 0px;
+  /* Medium screen size */
   /* Max width of header content (including gutters) */
 }
 @media screen and (min-width: 800px) {
-  .site-header .inner {
-    margin-left: 33px;
-    margin-right: 33px;
+  .site-header > .inner {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
-@media screen and (min-width: 1000065px) {
-  .site-header .inner {
+@media screen and (min-width: 999999px) {
+  .site-header > .inner {
     margin-left: auto;
     margin-right: auto;
     max-width: 999999px;
   }
 }
-
+.site-header .site-branding .inner {
+  /* Small screen size */
+  margin-left: 20px;
+  margin-right: 20px;
+  /* Medium screen size */
+  /* Max width of site branding content */
+}
+@media screen and (min-width: 800px) {
+  .site-header .site-branding .inner {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+@media screen and (min-width: 1266px) {
+  .site-header .site-branding .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
 .site-header .main-navigation .inner {
+  /* Small screen size */
+  margin-left: 20px;
+  margin-right: 20px;
+  /* Medium screen size */
   /* Max width of header navigation content (including gutters) */
 }
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 800px) {
+  .site-header .main-navigation .inner {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+@media screen and (min-width: 1066px) {
   .site-header .main-navigation .inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1300px;
+    max-width: 1000px;
   }
 }
 
-/* Footer */
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
 .site-footer .inner {
   margin-left: 20px;
   margin-right: 20px;
@@ -831,7 +898,7 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 /* Small-screen menu styling */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   body.menu-open {
     overflow: hidden;
     /* Prevent extra scroll bar */
@@ -840,84 +907,94 @@ a:hover, a:active {
     display: none;
   }
 
-  .main-navigation {
+  .site-header .main-navigation {
     clear: both;
     display: block;
     float: left;
     width: 100%;
   }
-  .main-navigation a {
+  .site-header .main-navigation a {
     color: #333;
   }
-  .main-navigation a:visited {
+  .site-header .main-navigation a:visited {
     color: #333;
   }
-  .main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+  .site-header .main-navigation a:hover, .site-header .main-navigation a:focus, .site-header .main-navigation a:active {
     color: royalblue;
   }
-  .main-navigation ul {
+  .site-header .main-navigation ul {
     list-style: none;
     margin: 0;
     padding-left: 0;
   }
-  .main-navigation ul.nav-menu {
-    /* Top level */
+  .site-header .main-navigation ul.nav-menu {
+    /* Fixed positioning of mobile menu */
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
     right: 0;
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: 40px;
+    padding-top: 0.5em;
     color: #333;
     background-color: #fff;
   }
-  .main-navigation ul ul {
+  .site-header .main-navigation ul ul {
     /* Sub menus */
+    background-color: #fff;
+    color: #333;
     float: left;
     position: absolute;
     top: 100%;
     left: -999em;
     z-index: 99999;
   }
-  .main-navigation ul ul.toggled {
+  .site-header .main-navigation ul ul.toggled {
     /* Reveal sub-menu when toggled by click */
     left: auto;
     float: none;
     position: relative;
     top: auto;
   }
-  .main-navigation ul ul > li:first-child > a {
+  .site-header .main-navigation ul ul > li:first-child > a {
     border-top: 0;
   }
-  .main-navigation ul ul a {
+  .site-header .main-navigation ul ul a {
+    border-color: #eee;
+    color: #333;
     padding-left: 40px;
   }
-  .main-navigation ul li.focus > ul {
+  .site-header .main-navigation ul ul a:visited {
+    color: #333;
+  }
+  .site-header .main-navigation ul ul a:hover, .site-header .main-navigation ul ul a:focus, .site-header .main-navigation ul ul a:active {
+    color: royalblue;
+  }
+  .site-header .main-navigation ul li.focus > ul {
     /* Reveal sub-menu when focused by tab */
     left: auto;
     float: none;
     position: relative;
     top: auto;
   }
-  .main-navigation li a {
+  .site-header .main-navigation li a {
     border-bottom: 1px solid #eee;
     display: block;
     padding: 1em 20px;
     text-decoration: none;
   }
-  .main-navigation li:first-child a {
+  .site-header .main-navigation li:first-child a {
     border-top: 1px solid #eee;
   }
-  .main-navigation li.menu-item-has-children > a:after {
+  .site-header .main-navigation li.menu-item-has-children > a:after {
     content: "";
     float: right;
     font-family: dashicons;
     font-size: 1.5em;
     line-height: 30px;
   }
-  .main-navigation li.menu-item-has-children.focus > a:after {
+  .site-header .main-navigation li.menu-item-has-children.focus > a:after {
     content: "";
     font-weight: bold;
     /* Adjust for pixel difference between open/close icons */
@@ -925,7 +1002,7 @@ a:hover, a:active {
     right: -1px;
     top: -2px;
   }
-  .main-navigation .menu-toggle {
+  .site-header .main-navigation .menu-toggle {
     display: block;
     position: absolute;
     top: 6px;
@@ -938,51 +1015,51 @@ a:hover, a:active {
     outline: 0;
     padding: 0;
   }
-  .main-navigation .menu-toggle:hover {
+  .site-header .main-navigation .menu-toggle:hover {
     cursor: pointer;
   }
-  .main-navigation .menu-toggle .toggle-content {
+  .site-header .main-navigation .menu-toggle .toggle-content {
     display: none;
   }
-  .main-navigation .menu-toggle:after {
+  .site-header .main-navigation .menu-toggle:after {
     /* Open menu icon */
     content: "";
     font-family: "dashicons";
     font-size: 3em;
   }
-  .main-navigation .nav-menu {
+  .site-header .main-navigation .nav-menu {
     display: none;
   }
-  .main-navigation.toggled .menu-toggle:after {
+  .site-header .main-navigation.toggled .menu-toggle:after {
     /* Close menu icon */
     content: "";
   }
-  .main-navigation.toggled .nav-menu {
+  .site-header .main-navigation.toggled .nav-menu {
     display: block;
   }
 
-  body.admin-bar .menu-toggle {
+  body.admin-bar .site-header .main-navigation .menu-toggle {
     top: 38px;
   }
 }
-@media screen and (max-width: 900px) and (max-width: 782px) {
-  body.admin-bar .menu-toggle {
+@media screen and (max-width: 700px) and (max-width: 782px) {
+  body.admin-bar .site-header .main-navigation .menu-toggle {
     top: 52px;
   }
 }
-@media screen and (max-width: 900px) {
-  body.admin-bar .main-navigation ul.nav-menu {
+@media screen and (max-width: 700px) {
+  body.admin-bar .site-header .main-navigation ul.nav-menu {
     /* Top level */
-    padding-top: 72px;
+    top: 82px;
   }
 }
-@media screen and (max-width: 900px) and (max-width: 782px) {
-  body.admin-bar .main-navigation ul.nav-menu {
-    padding-top: 86px;
+@media screen and (max-width: 700px) and (max-width: 782px) {
+  body.admin-bar .site-header .main-navigation ul.nav-menu {
+    top: 96px;
   }
 }
 /* Large-screen menu styling */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   .main-navigation {
     clear: both;
     display: block;
@@ -1212,6 +1289,10 @@ a:hover, a:active {
   margin: 0 0 1.5em;
 }
 
+.page {
+  margin-bottom: 0;
+}
+
 .updated:not(.published) {
   display: none;
 }
@@ -1255,18 +1336,41 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-branding {
+.site-header {
   color: #404040;
   background-color: #fff;
 }
-.site-branding a {
+.site-header a {
+  color: royalblue;
+  text-decoration: none;
+}
+.site-header a:visited {
   color: royalblue;
 }
-.site-branding a:visited {
-  color: royalblue;
-}
-.site-branding a:hover, .site-branding a:focus, .site-branding a:active {
+.site-header a:hover, .site-header a:focus, .site-header a:active {
   color: midnightblue;
+}
+.site-header .site-branding {
+  color: #404040;
+  background-color: #fff;
+}
+.site-header .site-branding a {
+  color: royalblue;
+  text-decoration: none;
+}
+.site-header .site-branding a:visited {
+  color: royalblue;
+}
+.site-header .site-branding a:hover, .site-header .site-branding a:focus, .site-header .site-branding a:active {
+  color: midnightblue;
+}
+.site-header .site-branding .site-logo a, .site-header .site-branding .site-logo img {
+  display: block;
+}
+@media screen and (max-width: 950px) {
+  .site-header .site-branding .site-description {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1284,6 +1388,45 @@ a:hover, a:active {
 }
 .site-footer a:hover, .site-footer a:focus, .site-footer a:active {
   color: midnightblue;
+}
+.site-footer ul, .site-footer ol {
+  margin: 0;
+}
+.site-footer .site-info {
+  color: #404040;
+  background-color: #fff;
+  padding: 1em;
+}
+.site-footer .site-info a {
+  color: royalblue;
+}
+.site-footer .site-info a:visited {
+  color: royalblue;
+}
+.site-footer .site-info a:hover, .site-footer .site-info a:focus, .site-footer .site-info a:active {
+  color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+## Blocks
+--------------------------------------------------------------*/
+/* Fix default column alignments at intermediate screen sizes */
+@media screen and (min-width: 600px) and (max-width: 782px) {
+  .wp-block-columns.has-1-column, .wp-block-columns.has-2-columns, .wp-block-columns.has-3-columns {
+    flex-wrap: nowrap;
+  }
+  .wp-block-columns.has-1-column .wp-block-column:last-child, .wp-block-columns.has-2-columns .wp-block-column:last-child, .wp-block-columns.has-3-columns .wp-block-column:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 782px) {
+  .wp-block-columns:not(.has-1-column):not(.has-2-columns):not(.has-3-columns) .wp-block-column {
+    flex-basis: 46%;
+    margin-left: 0;
+  }
+  .wp-block-columns:not(.has-1-column):not(.has-2-columns):not(.has-3-columns) .wp-block-column:nth-child(even) {
+    margin-right: 0;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1385,6 +1528,95 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* Optionals are partials that can be commented / uncommented
+   to perform basic configuration of the theme */
+/*--------------------------------------------------------------
+## Header - Compact
+--------------------------------------------------------------*/
+.site-header {
+  /* Places the site logo, title and description
+     on a single line */
+}
+.site-header .site-branding {
+  float: left;
+  padding: 10px 0;
+}
+.site-header .site-branding .site-logo {
+  margin-right: 1.5em;
+}
+.site-header .site-branding .site-logo img {
+  height: 30px;
+  width: 30px;
+}
+.site-header .site-branding .site-logo,
+.site-header .site-branding .site-title-container {
+  float: left;
+  line-height: 30px;
+}
+.site-header .site-branding .site-title,
+.site-header .site-branding .site-description {
+  margin: 0;
+  float: left;
+}
+.site-header .site-branding .site-title {
+  font-size: 1.5em;
+  margin-right: 1em;
+}
+@media screen and (min-width: 700px) {
+  .site-header .site-branding .site-logo img {
+    height: 50px;
+    width: 50px;
+  }
+  .site-header .site-branding .site-logo,
+.site-header .site-branding .site-title-container {
+    line-height: 50px;
+  }
+}
+
+.site-header {
+  /* Places the main menu beside the site title,
+     rather than beneath it */
+}
+@media screen and (min-width: 700px) {
+  .site-header .main-navigation {
+    clear: none;
+    float: right;
+    width: auto;
+  }
+  .site-header .main-navigation .inner {
+    float: right;
+  }
+  .site-header .main-navigation .nav-menu > li > a {
+    /* Top level menu items */
+    line-height: 70px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+/* Hide the site branding when the mobile menu is open */
+/* Small-screen menu styling */
+@media screen and (max-width: 700px) {
+  .site-header .site-branding {
+    display: none;
+  }
+  .site-header .main-navigation ul.nav-menu {
+    top: 0;
+    padding-top: 3em;
+  }
+}
+body.admin-bar .site-header .main-navigation ul.nav-menu {
+  top: 32px;
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .site-header .main-navigation ul.nav-menu {
+    top: 46px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

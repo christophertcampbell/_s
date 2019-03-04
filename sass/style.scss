@@ -26,7 +26,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Normalize
 # Typography
 # Layout
-	## Common
+	## Header
+	## Footer
 	## No Sidebar
 	## Content / Sidebar
 	## Sidbar / Content
@@ -43,10 +44,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 	## Posts and pages
 	## Comments
+	## Header
+	## Footer
+	## Blocks
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
+# Optionals
+	## Header - Compact
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -115,3 +121,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "optionals/optionals";

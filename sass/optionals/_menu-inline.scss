@@ -1,0 +1,25 @@
+.site-header {
+
+	/* Places the main menu beside the site title,
+	   rather than beneath it */
+
+	@media screen and (min-width: $breakpoint__menu) {
+
+		.main-navigation {
+			clear: none;
+			float: right;
+			width: auto;
+	
+			.inner {
+				float: right;
+			}
+	
+			.nav-menu > li > a { /* Top level menu items */
+				line-height: $height__site-header-inline;
+				padding-bottom: 0;
+				padding-top: 0;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,67 @@
+.site-header {
+
+	> .inner {
+		/* Small screen size */
+		margin-left: $size__site-header-gutter;
+		margin-right: $size__site-header-gutter;
+	
+		/* Medium screen size */
+		@media screen and (min-width: $breakpoint__medium) {
+			margin-left: $size__site-header-gutter-medium;
+			margin-right: $size__site-header-gutter-medium;
+		}
+	
+		/* Max width of header content (including gutters) */
+		@media screen and (min-width: $size__site-header-content + ($size__site-header-gutter-medium * 2)) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $size__site-header-content;
+		}
+	}
+
+	.site-branding {
+
+		.inner {
+			/* Small screen size */
+			margin-left: $size__site-branding-gutter;
+			margin-right: $size__site-branding-gutter;
+
+			/* Medium screen size */
+			@media screen and (min-width: $breakpoint__medium) {
+				margin-left: $size__site-branding-gutter-medium;
+				margin-right: $size__site-branding-gutter-medium;
+			}
+
+			/* Max width of site branding content */
+			@media screen and (min-width: $size__site-branding-content + ($size__site-branding-gutter-medium * 2)) {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: $size__site-branding-content;
+			}
+		}
+		
+	}
+
+	.main-navigation {
+
+		.inner {
+			/* Small screen size */
+			margin-left: $size__site-menu-gutter;
+			margin-right: $size__site-menu-gutter;
+
+			/* Medium screen size */
+			@media screen and (min-width: $breakpoint__medium) {
+				margin-left: $size__site-menu-gutter-medium;
+				margin-right: $size__site-menu-gutter-medium;
+			}
+
+			/* Max width of header navigation content (including gutters) */
+			@media screen and (min-width: $size__site-menu-content + ($size__site-menu-gutter-medium * 2)) {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: $size__site-menu-content;
+			}
+		}
+
+	}
+} 
