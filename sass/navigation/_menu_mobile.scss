@@ -50,6 +50,8 @@
 				}
 	
 				ul { /* Sub menus */
+					background-color: $color__mobile-menu-submenu-background;
+					color: $color__mobile-menu-submenu-text;
 					float: left;
 					position: absolute;
 					top: 100%;
@@ -70,7 +72,19 @@
 					}
 	
 					a {
+						border-color: $color__mobile-menu-submenu-link-border;
+						color: $color__mobile-menu-submenu-link;
 						padding-left: $size__site-content-gutter * 2;
+	
+						&:visited  {
+							color: $color__mobile-menu-submenu-link-visited;
+						}
+			
+						&:hover,
+						&:focus,
+						&:active {
+							color: $color__mobile-menu-submenu-link-hover;
+						}
 					}
 				}
 	

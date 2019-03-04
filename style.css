@@ -54,7 +54,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Optionals
 	## Header - Compact
 --------------------------------------------------------------*/
-/* Specific parts of the page */
+/* Header */
+/* Branding */
+/* Desktop Menu */
+/* Mobile Menu */
+/* Comments */
+/* Footer */
 /* Important note regarding units (px, %, etc)
 
    The -content and -gutter variables are used
@@ -937,6 +942,8 @@ a:hover, a:active {
   }
   .site-header .main-navigation ul ul {
     /* Sub menus */
+    background-color: #fff;
+    color: #333;
     float: left;
     position: absolute;
     top: 100%;
@@ -954,7 +961,15 @@ a:hover, a:active {
     border-top: 0;
   }
   .site-header .main-navigation ul ul a {
+    border-color: #eee;
+    color: #333;
     padding-left: 40px;
+  }
+  .site-header .main-navigation ul ul a:visited {
+    color: #333;
+  }
+  .site-header .main-navigation ul ul a:hover, .site-header .main-navigation ul ul a:focus, .site-header .main-navigation ul ul a:active {
+    color: royalblue;
   }
   .site-header .main-navigation ul li.focus > ul {
     /* Reveal sub-menu when focused by tab */

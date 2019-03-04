@@ -19,7 +19,7 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-/* Specific parts of the page */
+/* Header */
 
 $color__header-background: $color__background-body;
 $color__header-text: $color__text-main;
@@ -27,11 +27,15 @@ $color__header-link: $color__link;
 $color__header-link-hover: $color__link-hover;
 $color__header-link-visited: $color__link-visited;
 
+/* Branding */
+
 $color__branding-background: $color__header-background;
 $color__branding-text: $color__header-text;
 $color__branding-link: $color__header-link;
 $color__branding-link-hover: $color__header-link-hover;
 $color__branding-link-visited: $color__header-link-visited;
+
+/* Desktop Menu */
 
 $color__menu-background: $color__header-background;
 $color__menu-background-hover: $color__header-background;
@@ -49,6 +53,8 @@ $color__menu-submenu-link-hover: $color__link-hover;
 $color__menu-submenu-link-visited: $color__link-visited;
 $color__menu-submenu-link-border: $color__menu-link-border;
 
+/* Mobile Menu */
+
 $color__mobile-menu-background: #fff;
 $color__mobile-menu-text: #333;
 $color__mobile-menu-link: #333;
@@ -56,11 +62,22 @@ $color__mobile-menu-link-hover: royalblue;
 $color__mobile-menu-link-visited: $color__mobile-menu-link;
 $color__mobile-menu-link-border: #eee;
 
+$color__mobile-menu-submenu-background: $color__mobile-menu-background;
+$color__mobile-menu-submenu-text: $color__mobile-menu-text;
+$color__mobile-menu-submenu-link: $color__mobile-menu-link;
+$color__mobile-menu-submenu-link-hover: $color__mobile-menu-link-hover;
+$color__mobile-menu-submenu-link-visited: $color__mobile-menu-link-visited;
+$color__mobile-menu-submenu-link-border: $color__mobile-menu-link-border;
+
+/* Comments */
+
 $color__comments-area-background: $color__background-body;
 $color__comments-area-text: $color__text-main;
 $color__comments-area-link: $color__link;
 $color__comments-area-link-hover: $color__link-hover;
 $color__comments-area-link-visited: $color__link-visited;
+
+/* Footer */
 
 $color__footer-background: $color__background-body;
 $color__footer-text: $color__text-main;
