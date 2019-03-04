@@ -27,12 +27,18 @@ $color__header-link: $color__link;
 $color__header-link-hover: $color__link-hover;
 $color__header-link-visited: $color__link-visited;
 
-$color__menu-background: $color__background-body;
-$color__menu-background-hover: $color__background-body;
-$color__menu-text: $color__text-main;
-$color__menu-link: $color__link;
-$color__menu-link-hover: $color__link-hover;
-$color__menu-link-visited: $color__link-visited;
+$color__branding-background: $color__header-background;
+$color__branding-text: $color__header-text;
+$color__branding-link: $color__header-link;
+$color__branding-link-hover: $color__header-link-hover;
+$color__branding-link-visited: $color__header-link-visited;
+
+$color__menu-background: $color__header-background;
+$color__menu-background-hover: $color__header-background;
+$color__menu-text: $color__header-text;
+$color__menu-link: $color__header-link;
+$color__menu-link-hover: $color__header-link-hover;
+$color__menu-link-visited: $color__header-link-visited;
 $color__menu-link-border: #eee;
 
 $color__menu-submenu-background-color: $color__background-body;

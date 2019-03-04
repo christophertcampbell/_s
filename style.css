@@ -1317,6 +1317,20 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.site-header {
+  color: #404040;
+  background-color: #fff;
+}
+.site-header a {
+  color: royalblue;
+  text-decoration: none;
+}
+.site-header a:visited {
+  color: royalblue;
+}
+.site-header a:hover, .site-header a:focus, .site-header a:active {
+  color: midnightblue;
+}
 .site-header .site-branding {
   color: #404040;
   background-color: #fff;

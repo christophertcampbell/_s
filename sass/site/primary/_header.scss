@@ -1,21 +1,39 @@
 .site-header {
 
+	color: $color__header-text;
+	background-color: $color__header-background;
+
+	a {
+		color: $color__header-link;
+		text-decoration: none;
+
+		&:visited  {
+			color: $color__header-link-visited;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__header-link-hover;
+		}
+	}
+
 	.site-branding {
-		color: $color__header-text;
-		background-color: $color__header-background;
+		color: $color__branding-text;
+		background-color: $color__branding-background;
 	
 		a {
-			color: $color__header-link;
+			color: $color__branding-link;
 			text-decoration: none;
 	
 			&:visited  {
-				color: $color__header-link-visited;
+				color: $color__branding-link-visited;
 			}
 	
 			&:hover,
 			&:focus,
 			&:active {
-				color: $color__header-link-hover;
+				color: $color__branding-link-hover;
 			}
 		}
 	
