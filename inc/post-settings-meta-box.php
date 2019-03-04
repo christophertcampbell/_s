@@ -67,5 +67,16 @@ function _s_save_post_settings_meta_box( $post_id ) {
 
 }
 
+function _s_add_post_settings_body_classes( $classes ) {
+
+	if ( get_post_meta( get_the_id(), '_s_hide_post_title', true ) ) {
+		$classes[] = 'no-post-title';
+	}
+
+	return $classes;
+
+}
+
 add_action( 'add_meta_boxes', '_s_add_post_settings_meta_box' );
 add_action( 'save_post', '_s_save_post_settings_meta_box' );
+add_filter( 'body_class', '_s_add_post_settings_body_classes' );

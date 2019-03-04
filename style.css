@@ -1640,4 +1640,10 @@ body.menu-open.admin-bar .site-header .main-navigation ul.nav-menu {
   }
 }
 
+/* These styles work in coordination with the
+   meta settings established in inc/post-settings-meta-box.php */
+body.no-post-title .entry-title {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
