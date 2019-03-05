@@ -28,8 +28,13 @@ $size__site-header-content: 999999px;
 $size__site-header-gutter: 0px;
 $size__site-header-gutter-medium: 0px;
 
+/* Inline header heights */
 $height__site-header-mobile: 50px;
 $height__site-header-inline: 70px; /* Used in optionals */
+
+/* Sticky header heights, in case they need to be customized */
+$height__site-header-mobile-sticky: $height__site-header-mobile;
+$height__site-header-inline-sticky: $height__site-header-inline; /* Used in optionals */
 
 /* .site-branding */
 /* Set gutters to 0px if setting gutters with .site-header above */ 
