@@ -2,6 +2,8 @@
 
 /**
  * Settings for configuring appearance on a post-by-post basis
+ * 
+ * The companion css styles are contained in optionals/_post-settings.scss
  */
 function _s_add_post_settings_meta_box()
 {
