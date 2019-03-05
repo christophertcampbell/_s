@@ -16,10 +16,14 @@
 			}
 		}
 
-		.site-logo,
-		.site-title-container {
+		.site-logo {
 			float: left;
 			line-height: $height__site-header-mobile - 20px;
+		}
+
+		.site-title-container {
+			float: left;
+			line-height: $height__site-header-mobile;
 		}
 
 		.site-title,
