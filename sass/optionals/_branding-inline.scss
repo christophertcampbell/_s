@@ -5,7 +5,6 @@
 	
 	.site-branding {
 		float: left;
-		padding: 10px 0;
 		
 		.site-logo {
 			margin-right: 1.5em;
@@ -47,9 +46,12 @@
 				width: $height__site-header-inline - 20px;
 			}
 
-			.site-logo,
-			.site-title-container {
+			.site-logo {
 				line-height: $height__site-header-inline - 20px;
+			}
+			
+			.site-title-container {
+				line-height: $height__site-header-inline;
 			}
 		}
 	}
