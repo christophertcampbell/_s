@@ -1010,7 +1010,7 @@ a:hover, a:active {
   .site-header .main-navigation .menu-toggle {
     display: block;
     position: absolute;
-    top: 6px;
+    top: 1px;
     right: 6px;
     z-index: 999;
     /* Remove default button styling */
