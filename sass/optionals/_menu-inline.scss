@@ -12,6 +12,8 @@
 
 		.menu-toggle {
 			line-height: $height__site-header-inline;
+			transition: line-height $duration_scrolled_transition;
+			-webkit-transition: line-height $duration_scrolled_transition;
 		}
 
 		.main-navigation {
@@ -25,10 +27,35 @@
 	
 			.nav-menu > li > a { /* Top level menu items */
 				line-height: $height__site-header-inline;
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
 				padding-bottom: 0;
 				padding-top: 0;
 			}
 		}
 
 	}
+}
+
+#{$scrolled_selector} {
+
+	.site-header {
+
+		@media screen and (min-width: $breakpoint__menu) {
+
+			.menu-toggle {
+				line-height: $height__site-header-inline-scrolled;
+			}
+	
+			.main-navigation {
+		
+				.nav-menu > li > a { /* Top level menu items */
+					line-height: $height__site-header-inline-scrolled;
+				}
+			}
+
+		}
+		
+	}
+
 }

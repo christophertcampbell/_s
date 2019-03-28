@@ -80,6 +80,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    variables below */
 /* Inline header heights */
 /* Used in optionals */
+/* Used in optionals */
+/* Used in optionals */
 /* Sticky header heights, in case they need to be customized */
 /* Used in optionals */
 /* .site-branding */
@@ -1593,14 +1595,33 @@ object {
 }
 @media screen and (min-width: 700px) {
   .site-header .site-branding .site-logo img {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
+    transition: height 300ms, width 300ms;
+    -webkit-transition: height 300ms, width 300ms;
   }
   .site-header .site-branding .site-logo {
-    line-height: 50px;
+    line-height: 60px;
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
   }
   .site-header .site-branding .site-title-container {
-    line-height: 70px;
+    line-height: 80px;
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .scrolled-150 .site-header .site-branding .site-logo img {
+    height: 40px;
+    width: 40px;
+  }
+  .scrolled-150 .site-header .site-branding .site-logo {
+    line-height: 40px;
+  }
+  .scrolled-150 .site-header .site-branding .site-title-container {
+    line-height: 60px;
   }
 }
 
@@ -1614,7 +1635,9 @@ object {
 }
 @media screen and (min-width: 700px) {
   .site-header .menu-toggle {
-    line-height: 70px;
+    line-height: 80px;
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
   }
   .site-header .main-navigation {
     clear: none;
@@ -1626,9 +1649,21 @@ object {
   }
   .site-header .main-navigation .nav-menu > li > a {
     /* Top level menu items */
-    line-height: 70px;
+    line-height: 80px;
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
     padding-bottom: 0;
     padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .scrolled-150 .site-header .menu-toggle {
+    line-height: 60px;
+  }
+  .scrolled-150 .site-header .main-navigation .nav-menu > li > a {
+    /* Top level menu items */
+    line-height: 60px;
   }
 }
 
@@ -1654,7 +1689,7 @@ body .site {
 }
 @media screen and (min-width: 700px) {
   body .site {
-    margin-top: 70px;
+    margin-top: 80px;
   }
 }
 body.admin-bar .site .site-header {

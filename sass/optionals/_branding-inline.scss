@@ -44,15 +44,47 @@
 			.site-logo img {
 				height: $height__site-header-inline - 20px;
 				width: $height__site-header-inline - 20px;
+				transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
+				-webkit-transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
 			}
 
 			.site-logo {
 				line-height: $height__site-header-inline - 20px;
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
 			}
 			
 			.site-title-container {
 				line-height: $height__site-header-inline;
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
 			}
 		}
 	}
+}
+
+#{$scrolled_selector} {
+
+	.site-header {
+
+		@media screen and (min-width: $breakpoint__menu) {
+	
+			.site-branding {
+	
+				.site-logo img {
+					height: $height__site-header-inline-scrolled - 20px;
+					width: $height__site-header-inline-scrolled - 20px;
+				}
+	
+				.site-logo {
+					line-height: $height__site-header-inline-scrolled - 20px;
+				}
+				
+				.site-title-container {
+					line-height: $height__site-header-inline-scrolled;
+				}
+			}
+		}
+	}
+	
 }
