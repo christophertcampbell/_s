@@ -82,6 +82,16 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Enable Gutenberg alignwide and alignfull alignments
 		add_theme_support( 'align-wide' );
+
+		// Enable Gutenberg editor stylesheet
+		add_theme_support('editor-styles');
+		add_editor_style( 'style-editor.css' );
+
+		// Enable Gutenberg default block styling on frontend
+		add_theme_support( 'wp-block-styles' );
+
+		// Enable Gutenberg responsive embeds
+		add_theme_support( 'responsive-embeds' );
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
