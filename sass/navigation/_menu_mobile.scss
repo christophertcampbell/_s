@@ -54,17 +54,21 @@
 				ul { /* Sub menus */
 					background-color: $color__mobile-menu-submenu-background;
 					color: $color__mobile-menu-submenu-text;
-					float: left;
-					position: absolute;
-					top: 100%;
-					left: -999em;
-					z-index: 99999;
+					// float: left;
+					// position: absolute;
+					// top: 100%;
+					// left: -999em;
+					// z-index: 99999;
+					height: 0;
+					overflow: hidden;
+					transition: height 200ms ease-in-out;
 	
 					&.toggled { /* Reveal sub-menu when toggled by click */
-						left: auto;
-						float: none;
-						position: relative;
-						top: auto;
+						// left: auto;
+						// float: none;
+						// position: relative;
+						// top: auto;
+						height: auto;
 					}
 	
 					> li:first-child {
@@ -91,10 +95,11 @@
 				}
 	
 				li.focus > ul  { /* Reveal sub-menu when focused by tab */
-					left: auto;
-					float: none;
-					position: relative;
-					top: auto;
+					// left: auto;
+					// float: none;
+					// position: relative;
+					// top: auto;
+					height: auto;
 				}
 			}
 	
@@ -119,17 +124,16 @@
 				&.menu-item-has-children {
 	
 					> a:after {
-						content: "\f132";
+						content: "\f139";
 						float: right;
 						font-family: dashicons;
 						font-size: 1.5em;
 						line-height: 30px;
-		
 					}
 	
 					&.focus {
 						> a:after {
-							content: "\f460";
+							content: "\f140";
 							font-weight: bold;
 	
 							/* Adjust for pixel difference between open/close icons */
