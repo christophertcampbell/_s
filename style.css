@@ -72,6 +72,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    use a large pixel value (ie: 999999px).
 */
 /* This value can be px or % */
+/* .site-banner */
+/* Used in optionals */
 /* .site-header */
 /* If you are using the _branding-inline and _menu-inline optionals,
    you will want to use these settings for content and gutter widths,
@@ -1596,6 +1598,85 @@ object {
 /*--------------------------------------------------------------
 ## Header - Compact
 --------------------------------------------------------------*/
+/* Places the site banner widget area on a single line */
+body .site .site-header .site-banner {
+  overflow: hidden;
+}
+body .site .site-header .site-banner .inner {
+  line-height: 30px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+@media screen and (min-width: 700px) {
+  body .site .site-header .site-banner .inner {
+    line-height: 40px;
+  }
+}
+@media screen and (min-width: 800px) {
+  body .site .site-header .site-banner .inner {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 1000029px) {
+  body .site .site-header .site-banner .inner {
+    max-width: 999999px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body .site .site-header .site-banner .inner .banner-widget-area {
+  float: right;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget {
+  display: inline-block;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div {
+  /* individual widget wrapper */
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div > *:not([class*=menu]) {
+  margin: 0 0.5em;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div a {
+  display: inline;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div p {
+  margin: 0;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div .menu .menu-item {
+  display: inline;
+  margin: 0 0.5em;
+}
+body .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
+  top: 30px;
+}
+
+.scrolled-50 .site-banner .inner {
+  transition: line-height 300ms;
+  -webkit-transition: line-height 300ms;
+}
+.scrolled-50 .site-banner + .inner .main-navigation .menu-toggle {
+  transition: top 300ms;
+  -webkit-transition: top 300ms;
+}
+
+body.scrolled-150 .site .site-header .site-banner .inner {
+  line-height: 0px;
+}
+@media screen and (min-width: 700px) {
+  body.scrolled-150 .site .site-header .site-banner .inner {
+    line-height: 0px;
+  }
+}
+body.scrolled-150 .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
+  top: 0px;
+}
+
 /* Places the site branding (logo, title and description)
 	on a single line */
 .site-header .site-branding {

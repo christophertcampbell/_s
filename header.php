@@ -25,6 +25,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<?php if ( is_active_sidebar( 'banner' ) ) : ?>
+			<div class="site-banner">
+				<div class="inner">
+					<?php get_sidebar( 'banner' ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<div class="inner">
 			<div class="site-branding">
 				<div class="inner">

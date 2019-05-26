@@ -19,6 +19,16 @@ $size__site-content-gutter-medium: 33px;
 $size__site-content-gutter-inner: 3%; /* This value can be px or % */
 $size__alignwide: 1200px;
 
+/* .site-banner */
+/* Used in optionals */
+$size__site-banner-gutter: 6px;
+$size__site-banner-gutter-medium: 15px;
+$size__site-banner-content: 999999px;
+$height__site-banner-mobile: 30px;
+$height__site-banner-mobile-scrolled: 0px;
+$height__site-banner: 40px;
+$height__site-banner-scrolled: 0px;
+
 /* .site-header */
 /* If you are using the _branding-inline and _menu-inline optionals,
    you will want to use these settings for content and gutter widths,
