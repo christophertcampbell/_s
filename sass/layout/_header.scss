@@ -1,5 +1,7 @@
 .site-header {
 
+	font-family: $font__header;
+
 	> .inner {
 		/* Small screen size */
 		margin-left: $size__site-header-gutter;
@@ -40,6 +42,14 @@
 			}
 		}
 		
+	}
+
+	.site-branding-secondary {
+		.menu {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 	}
 
 	.main-navigation {

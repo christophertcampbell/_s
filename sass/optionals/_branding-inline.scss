@@ -1,10 +1,20 @@
-.site-header {
+/* Places the site branding (logo, title and description)
+	on a single line */
 
-	/* Places the site logo, title and description
-	   on a single line */
+.site-header {
 	
 	.site-branding {
 		float: left;
+		
+		.inner {
+
+			/* Max width of site branding content */
+			@media screen and (min-width: $size__site-branding-content + ($size__site-branding-gutter-medium * 2)) {
+				/* Fix zero left-margin when branding is floated inline */
+				margin-left: $size__site-branding-gutter-medium;
+			}
+
+		}
 		
 		.site-logo {
 			margin-right: 1.5em;
@@ -37,6 +47,55 @@
 		}
 	}
 
+	.site-branding-secondary {
+		float: right;
+		line-height: $height__site-header-mobile;
+		margin-right: 70px; /* leave room for the mobile menu toggle */
+
+		/* Mobile menu breakpoint */
+		@media screen and (min-width: $breakpoint__menu) {
+			line-height: $height__site-header-inline;
+		}
+
+		> span + span:not(.branding-widget-area) {
+			margin-left: .5em;
+		}
+
+		.branding-widget-area > .branding-widget {
+			display: inline-block;
+
+			> *:not([class*=menu]) {
+				margin: 0 .5em;
+			}
+
+			a {
+				display: inline;
+			}
+
+			p {
+				margin: 0;
+			}
+
+			.menu .menu-item {
+				display: inline;
+				margin: 0 .5em;
+			}
+		}
+
+		/* Mobile menu breakpoint */
+		@media screen and (min-width: $breakpoint__menu) {
+			line-height: $height__site-header-inline;
+			margin-right: $size__site-branding-gutter;
+			margin-left: $size__site-branding-gutter;
+		}
+
+		/* Medium screen size */
+		@media screen and (min-width: $breakpoint__medium) {
+			margin-right: $size__site-branding-gutter-medium;
+			margin-left: $size__site-branding-gutter-medium;
+		}
+	}
+
 	@media screen and (min-width: $breakpoint__menu) {
 
 		.site-branding {
@@ -44,21 +103,49 @@
 			.site-logo img {
 				height: $height__site-header-inline - 20px;
 				width: $height__site-header-inline - 20px;
-				transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
-				-webkit-transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
 			}
 
 			.site-logo {
 				line-height: $height__site-header-inline - 20px;
-				transition: line-height $duration_scrolled_transition;
-				-webkit-transition: line-height $duration_scrolled_transition;
 			}
 			
 			.site-title-container {
 				line-height: $height__site-header-inline;
+			}
+		}
+	}
+}
+
+.scrolled-50 {
+	.site-header {
+		@media screen and (min-width: $breakpoint__menu) {
+
+			// Only add transition once we have scrolled a little bit
+			// Improves behavior when the page is scrolled quickly back to the top
+
+			.site-branding {
+
+				.site-logo img {
+					transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
+					-webkit-transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
+				}
+	
+				.site-logo {
+					transition: line-height $duration_scrolled_transition;
+					-webkit-transition: line-height $duration_scrolled_transition;
+				}
+				
+				.site-title-container {
+					transition: line-height $duration_scrolled_transition;
+					-webkit-transition: line-height $duration_scrolled_transition;
+				}
+			}
+
+			.site-branding-secondary {
 				transition: line-height $duration_scrolled_transition;
 				-webkit-transition: line-height $duration_scrolled_transition;
 			}
+
 		}
 	}
 }
@@ -83,6 +170,10 @@
 				.site-title-container {
 					line-height: $height__site-header-inline-scrolled;
 				}
+			}
+
+			.site-branding-secondary {
+				line-height: $height__site-header-inline-scrolled;
 			}
 		}
 	}

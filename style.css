@@ -52,8 +52,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 # Optionals
-	## Header - Compact
+# Theme-Specific
 --------------------------------------------------------------*/
+/* Theme-specific overrides to the base variables.
+   Re-declare any variables here that you wish to override.
+   Useful for separating theme-specific styling from base styles that may change */
 /* Header */
 /* Branding */
 /* Desktop Menu */
@@ -73,6 +76,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    use a large pixel value (ie: 999999px).
 */
 /* This value can be px or % */
+/* .site-banner */
+/* Used in optionals */
 /* .site-header */
 /* If you are using the _branding-inline and _menu-inline optionals,
    you will want to use these settings for content and gutter widths,
@@ -441,7 +446,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -449,6 +454,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 p {
@@ -505,6 +511,9 @@ big {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.site-header {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
 .site-header > .inner {
   /* Small screen size */
   margin-left: 0px;
@@ -544,6 +553,11 @@ big {
     margin-right: auto;
     max-width: 1200px;
   }
+}
+.site-header .site-branding-secondary .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .site-header .main-navigation .inner {
   /* Small screen size */
@@ -1036,7 +1050,7 @@ body.menu-open .site-content {
   .site-header .main-navigation .menu-toggle {
     display: block;
     position: absolute;
-    top: 1px;
+    top: 6px;
     right: 6px;
     z-index: 999;
     /* Remove default button styling */
@@ -1581,19 +1595,105 @@ object {
 }
 
 /*--------------------------------------------------------------
-# Media
+# Optionals
 --------------------------------------------------------------*/
 /* Optionals are partials that can be commented / uncommented
    to perform basic configuration of the theme */
 /*--------------------------------------------------------------
 ## Header - Compact
 --------------------------------------------------------------*/
-.site-header {
-  /* Places the site logo, title and description
-     on a single line */
+/* Places the site banner widget area on a single line */
+body .site .site-header .site-banner {
+  overflow: hidden;
 }
+body .site .site-header .site-banner .inner {
+  line-height: 30px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+@media screen and (min-width: 700px) {
+  body .site .site-header .site-banner .inner {
+    line-height: 40px;
+  }
+}
+@media screen and (min-width: 800px) {
+  body .site .site-header .site-banner .inner {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 1000029px) {
+  body .site .site-header .site-banner .inner {
+    max-width: 999999px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body .site .site-header .site-banner .inner .banner-widget-area {
+  float: right;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget {
+  display: inline-block;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div {
+  /* individual widget wrapper */
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div > *:not([class*=menu]) {
+  margin: 0 0.5em;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div a {
+  display: inline;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div p {
+  margin: 0;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget > div .menu .menu-item {
+  display: inline;
+  margin: 0 0.5em;
+}
+body .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
+  top: 30px;
+}
+
+.scrolled-50 .site-banner .inner {
+  transition: line-height 300ms;
+  -webkit-transition: line-height 300ms;
+}
+.scrolled-50 .site-banner + .inner .main-navigation .menu-toggle {
+  transition: top 300ms;
+  -webkit-transition: top 300ms;
+}
+
+body.scrolled-150 .site .site-header .site-banner .inner {
+  line-height: 0px;
+}
+@media screen and (min-width: 700px) {
+  body.scrolled-150 .site .site-header .site-banner .inner {
+    line-height: 0px;
+  }
+}
+body.scrolled-150 .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
+  top: 0px;
+}
+
+/* Places the site branding (logo, title and description)
+	on a single line */
 .site-header .site-branding {
   float: left;
+}
+.site-header .site-branding .inner {
+  /* Max width of site branding content */
+}
+@media screen and (min-width: 1266px) {
+  .site-header .site-branding .inner {
+    /* Fix zero left-margin when branding is floated inline */
+    margin-left: 33px;
+  }
 }
 .site-header .site-branding .site-logo {
   margin-right: 1.5em;
@@ -1619,20 +1719,79 @@ object {
   font-size: 1.5em;
   margin-right: 1em;
 }
+.site-header .site-branding-secondary {
+  float: right;
+  line-height: 50px;
+  margin-right: 70px;
+  /* leave room for the mobile menu toggle */
+  /* Mobile menu breakpoint */
+  /* Mobile menu breakpoint */
+  /* Medium screen size */
+}
+@media screen and (min-width: 700px) {
+  .site-header .site-branding-secondary {
+    line-height: 80px;
+  }
+}
+.site-header .site-branding-secondary > span + span:not(.branding-widget-area) {
+  margin-left: 0.5em;
+}
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget {
+  display: inline-block;
+}
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget > *:not([class*=menu]) {
+  margin: 0 0.5em;
+}
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget a {
+  display: inline;
+}
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget p {
+  margin: 0;
+}
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget .menu .menu-item {
+  display: inline;
+  margin: 0 0.5em;
+}
+@media screen and (min-width: 700px) {
+  .site-header .site-branding-secondary {
+    line-height: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .site-header .site-branding-secondary {
+    margin-right: 33px;
+    margin-left: 33px;
+  }
+}
 @media screen and (min-width: 700px) {
   .site-header .site-branding .site-logo img {
     height: 60px;
     width: 60px;
-    transition: height 300ms, width 300ms;
-    -webkit-transition: height 300ms, width 300ms;
   }
   .site-header .site-branding .site-logo {
     line-height: 60px;
-    transition: line-height 300ms;
-    -webkit-transition: line-height 300ms;
   }
   .site-header .site-branding .site-title-container {
     line-height: 80px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .scrolled-50 .site-header .site-branding .site-logo img {
+    transition: height 300ms, width 300ms;
+    -webkit-transition: height 300ms, width 300ms;
+  }
+  .scrolled-50 .site-header .site-branding .site-logo {
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+  .scrolled-50 .site-header .site-branding .site-title-container {
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+  .scrolled-50 .site-header .site-branding-secondary {
     transition: line-height 300ms;
     -webkit-transition: line-height 300ms;
   }
@@ -1649,45 +1808,68 @@ object {
   .scrolled-150 .site-header .site-branding .site-title-container {
     line-height: 60px;
   }
+  .scrolled-150 .site-header .site-branding-secondary {
+    line-height: 60px;
+  }
 }
 
-.site-header {
-  /* Places the main menu beside the site title,
-  	rather than beneath it */
-}
-.site-header .menu-toggle {
+/* Places the main menu beside the site title,
+	rather than beneath it */
+body .site .site-header .main-navigation .menu-toggle {
   line-height: 50px;
   top: 0;
 }
 @media screen and (min-width: 700px) {
-  .site-header .menu-toggle {
+  body .site .site-header .menu-toggle {
     line-height: 80px;
-    transition: line-height 300ms;
-    -webkit-transition: line-height 300ms;
   }
-  .site-header .main-navigation {
+  body .site .site-header .main-navigation {
     clear: none;
     float: right;
     width: auto;
   }
-  .site-header .main-navigation .inner {
+  body .site .site-header .main-navigation .inner {
     float: right;
   }
-  .site-header .main-navigation .nav-menu > li > a {
+  body .site .site-header .main-navigation .nav-menu > li > a {
     /* Top level menu items */
     line-height: 80px;
-    transition: line-height 300ms;
-    -webkit-transition: line-height 300ms;
     padding-bottom: 0;
     padding-top: 0;
   }
 }
+body .site .site-header .main-navigation .inner {
+  margin-right: 0;
+  /* Medium screen size */
+}
+@media screen and (min-width: 800px) {
+  body .site .site-header .main-navigation .inner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+body.admin-bar .site header.site-header button.menu-toggle {
+  top: 0px;
+}
 
 @media screen and (min-width: 700px) {
-  .scrolled-150 .site-header .menu-toggle {
+  .scrolled-50 .site-header .menu-toggle {
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+  .scrolled-50 .site-header .main-navigation .nav-menu > li > a {
+    /* Top level menu items */
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body.scrolled-150 .site .site-header .menu-toggle {
     line-height: 60px;
   }
-  .scrolled-150 .site-header .main-navigation .nav-menu > li > a {
+  body.scrolled-150 .site .site-header .main-navigation .nav-menu > li > a {
     /* Top level menu items */
     line-height: 60px;
   }
@@ -1702,6 +1884,7 @@ body.no-post-title.collapse-header-margin .entry-content {
   margin-top: 0;
 }
 
+/* Sticks the site header to the top of the screen */
 .site-header {
   position: fixed;
   top: 0;
@@ -1718,6 +1901,9 @@ body .site {
     margin-top: 80px;
   }
 }
+body .site .site-header button.menu-toggle {
+  top: 6px;
+}
 body.admin-bar .site .site-header {
   top: 46px;
 }
@@ -1726,11 +1912,17 @@ body.admin-bar .site .site-header {
     top: 32px;
   }
 }
-body.admin-bar .site .site-header .menu-toggle {
-  top: 0;
+body.admin-bar .site .site-header button.menu-toggle {
+  top: 6px;
 }
 body.admin-bar #wpadminbar {
   position: fixed;
 }
+
+/*--------------------------------------------------------------
+# Theme-Specific
+--------------------------------------------------------------*/
+/* Theme-specific overrides to the base styling.
+   Useful for separating theme-specific styling from base styles that may change */
 
 /*# sourceMappingURL=style.css.map */

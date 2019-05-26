@@ -25,6 +25,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<?php if ( is_active_sidebar( 'banner' ) ) : ?>
+			<div class="site-banner">
+				<div class="inner">
+					<?php get_sidebar( 'banner' ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<div class="inner">
 			<div class="site-branding">
 				<div class="inner">
@@ -53,6 +60,32 @@
 				</div><!-- .inner -->
 			</div><!-- .site-branding -->
 
+			<?php
+				$show_login_link = get_theme_mod('show_login_link') === true;
+				$show_account_link = get_theme_mod('show_account_link') === true;
+				$show_welcome_text = get_theme_mod('show_welcome_text') === true;
+			?>
+			<?php if ( $show_login_link || $show_account_link || $show_welcome_text || is_active_sidebar( 'branding' ) ) : ?>
+				<div class="site-branding-secondary">
+					<?php if ( $show_welcome_text && is_user_logged_in() ) : ?>
+						<?php $user = wp_get_current_user(); ?>
+						<span class="welcome-text">Welcome, <?php echo $user->first_name ?? $user->display_name ?? $user->login ?>!</span>
+					<?php endif; ?>
+					<?php if ( $show_login_link ) : ?>
+						<?php global $wp; $current_url = home_url($wp->request); ?>
+						<?php if (is_user_logged_in()) : ?>
+							<span class="loginout-link logout-link"><a href="<?php echo wp_logout_url( $current_url ); ?>" title="Log Out"><span class="text">Sign Out</span></a></span>
+						<?php else : ?>
+							<span class="loginout-link login-link"><a href="<?php echo wp_login_url( $current_url ); ?>" title="Log In"><span class="text">Sign In</span></a></span>
+						<?php endif; ?>
+					<?php endif; ?>
+					<?php if ( $show_account_link && is_user_logged_in() ) : ?>
+						<span class="account-link"><a href="<?php echo get_edit_profile_url(); ?>" title="My Account"><span class="text">Account</span></a></span>
+					<?php endif; ?>
+					<?php get_sidebar( 'branding' ); ?>
+				</div>
+			<?php endif; ?>
+
 			<nav id="site-navigation" class="main-navigation">
 				<div class="inner">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="toggle-content"><?php esc_html_e( 'Primary Menu', '_s' ); ?></span></button>
@@ -64,6 +97,7 @@
 					?>
 				</div><!-- .inner -->
 			</nav><!-- #site-navigation -->
+
 		</div><!-- .inner -->
 	</header><!-- #masthead -->
 

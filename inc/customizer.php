@@ -55,12 +55,65 @@ function _s_customize_preview_js() {
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
 
 /**
+ * Add header settings
+ */
+function _s_add_header_section( $wp_customize ) {
+	$wp_customize->add_section( 'header' , array(
+		'title'      => __('Header','_s'),
+		'priority'   => 40,
+	) );
+
+	// Setting: show_login_link
+
+	$wp_customize->add_setting( 'show_login_link', array(
+	   'capability' => 'edit_theme_options',
+	   'sanitize_callback' => '_s_sanitize_checkbox',
+	) );
+	 
+	$wp_customize->add_control( 'show_login_link', array(
+		'type' => 'checkbox',
+		'section' => 'header',
+		'label' => __( 'Show login/logout link' ),
+		'description' => __( 'Show a login/logout link in the header' ),
+	) );
+
+	// Setting: show_account_link
+
+	$wp_customize->add_setting( 'show_account_link', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => '_s_sanitize_checkbox',
+	) );
+	  
+	$wp_customize->add_control( 'show_account_link', array(
+		'type' => 'checkbox',
+		'section' => 'header',
+		'label' => __( 'Show account link' ),
+		'description' => __( 'Show an account link in the header' ),
+	) );
+
+	// Setting: show_welcome_text
+
+	$wp_customize->add_setting( 'show_welcome_text', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => '_s_sanitize_checkbox',
+	) );
+		
+	$wp_customize->add_control( 'show_welcome_text', array(
+		'type' => 'checkbox',
+		'section' => 'header',
+		'label' => __( 'Show "welcome [username]" text' ),
+		'description' => __( 'Show "welcome [username]" text' ),
+	) );
+}
+add_action( 'customize_register', '_s_add_header_section' );
+
+/**
  * Add footer settings
  */
 function _s_add_footer_section( $wp_customize ) {
 	$wp_customize->add_section( 'footer' , array(
 		'title'      => __('Footer','_s'),
-		// 'priority'   => 30,
+		'priority'   => 80,
 	) );
 
 	// Setting: hide_footer_credits
@@ -68,31 +121,31 @@ function _s_add_footer_section( $wp_customize ) {
 	$wp_customize->add_setting( 'hide_footer_credits', array(
 	   'capability' => 'edit_theme_options',
 	   'sanitize_callback' => '_s_sanitize_checkbox',
-	 ) );
+	) );
 	 
-	 $wp_customize->add_control( 'hide_footer_credits', array(
+	$wp_customize->add_control( 'hide_footer_credits', array(
 	   'type' => 'checkbox',
 	   'section' => 'footer',
 	   'label' => __( 'Hide footer credits' ),
 	   'description' => __( 'Hide the footer credits' ),
-	 ) );
+	) );
 
-	 // Setting: custom_footer_credits
+	// Setting: custom_footer_credits
 
-	 $wp_customize->add_setting( 'custom_footer_credits', array(
+	$wp_customize->add_setting( 'custom_footer_credits', array(
 		'capability' => 'edit_theme_options',
 		'default' => '',
-	  ) );
+	) );
 	  
-	  $wp_customize->add_control( 'custom_footer_credits', array(
+	$wp_customize->add_control( 'custom_footer_credits', array(
 		'type' => 'textarea',
 		'section' => 'footer',
 		'label' => __( 'Custom Footer Credits' ),
 		'description' => __( 'Will replace the default Wordpress / Underscores credits' ),
-	  ) );
+	) );
 	 
- }
- add_action( 'customize_register', '_s_add_footer_section' );
+}
+add_action( 'customize_register', '_s_add_footer_section' );
 
 function _s_sanitize_checkbox( $checked ) {
 	// Boolean check.

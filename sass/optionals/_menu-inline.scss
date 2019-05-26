@@ -1,61 +1,112 @@
-.site-header {
-	
-	.menu-toggle {
-		line-height: $height__site-header-mobile;
-		top: 0;
-	}
+/* Places the main menu beside the site title,
+	rather than beneath it */
 
-	/* Places the main menu beside the site title,
-		rather than beneath it */
+body {
+	.site {
 
-	@media screen and (min-width: $breakpoint__menu) {
-
-		.menu-toggle {
-			line-height: $height__site-header-inline;
-			transition: line-height $duration_scrolled_transition;
-			-webkit-transition: line-height $duration_scrolled_transition;
-		}
-
-		.main-navigation {
-			clear: none;
-			float: right;
-			width: auto;
-	
-			.inner {
-				float: right;
+		.site-header {
+		
+			.main-navigation {
+				.menu-toggle {
+					line-height: $height__site-header-mobile;
+					top: 0;
+				}
 			}
-	
-			.nav-menu > li > a { /* Top level menu items */
-				line-height: $height__site-header-inline;
-				transition: line-height $duration_scrolled_transition;
-				-webkit-transition: line-height $duration_scrolled_transition;
-				padding-bottom: 0;
-				padding-top: 0;
+		
+			@media screen and (min-width: $breakpoint__menu) {
+		
+				.menu-toggle {
+					line-height: $height__site-header-inline;
+				}
+		
+				.main-navigation {
+					clear: none;
+					float: right;
+					width: auto;
+			
+					.inner {
+						float: right;
+					}
+			
+					.nav-menu > li > a { /* Top level menu items */
+						line-height: $height__site-header-inline;
+						padding-bottom: 0;
+						padding-top: 0;
+					}
+				}
+		
+			}
+		
+			.main-navigation {
+				.inner {
+					margin-right: 0;
+					
+					/* Medium screen size */
+					@media screen and (min-width: $breakpoint__medium) {
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
 			}
 		}
-
+		
 	}
 }
 
-#{$scrolled_selector} {
-
-	.site-header {
-
-		@media screen and (min-width: $breakpoint__menu) {
-
-			.menu-toggle {
-				line-height: $height__site-header-inline-scrolled;
-			}
-	
-			.main-navigation {
-		
-				.nav-menu > li > a { /* Top level menu items */
-					line-height: $height__site-header-inline-scrolled;
+body {
+	&.admin-bar {
+		.site {
+			header.site-header {
+				button.menu-toggle {
+					top: 0px;
 				}
 			}
-
 		}
-		
 	}
+}
 
+.scrolled-50 {
+	.site-header {
+		@media screen and (min-width: $breakpoint__menu) {
+
+			// Only add transition once we have scrolled a little bit
+			// Improves behavior when the page is scrolled quickly back to the top
+
+			.menu-toggle {
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
+			}
+
+			.main-navigation {
+				.nav-menu > li > a { /* Top level menu items */
+					transition: line-height $duration_scrolled_transition;
+					-webkit-transition: line-height $duration_scrolled_transition;
+				}
+			}
+	
+		}
+	}
+}
+
+body#{$scrolled_selector} {
+	.site {
+		.site-header {
+	
+			@media screen and (min-width: $breakpoint__menu) {
+	
+				.menu-toggle {
+					line-height: $height__site-header-inline-scrolled;
+				}
+		
+				.main-navigation {
+			
+					.nav-menu > li > a { /* Top level menu items */
+						line-height: $height__site-header-inline-scrolled;
+					}
+				}
+	
+			}
+			
+		}
+	}
 }
