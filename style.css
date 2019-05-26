@@ -566,10 +566,11 @@ big {
 --------------------------------------------------------------*/
 .header-image .inner {
   /* Small screen size */
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0;
+  margin-right: 0;
   height: 35vw;
   overflow: hidden;
+  position: relative;
   /* Medium screen size */
   /* Max width of header navigation content (including gutters) */
 }
@@ -579,16 +580,16 @@ big {
 }
 @media screen and (min-width: 800px) {
   .header-image .inner {
-    margin-left: 33px;
-    margin-right: 33px;
+    margin-left: 0;
+    margin-right: 0;
     height: 35vw;
   }
 }
-@media screen and (min-width: 1066px) {
+@media screen and (min-width: 100%) {
   .header-image .inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1000px;
+    max-width: 100%;
   }
 }
 

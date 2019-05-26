@@ -6,6 +6,7 @@
 		margin-right: $size__site-header-image-gutter;
 		height: $height__site-header-image;
 		overflow: hidden;
+		position: relative;
 
 		img {
 			display: block;
