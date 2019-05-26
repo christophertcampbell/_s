@@ -1637,6 +1637,9 @@ object {
   /* Mobile menu breakpoint */
   /* Medium screen size */
 }
+.site-header .site-login > span + span {
+  margin-left: 0.5em;
+}
 @media screen and (min-width: 700px) {
   .site-header .site-login {
     line-height: 80px;

@@ -77,13 +77,27 @@ function _s_add_header_section( $wp_customize ) {
 		'description' => __( 'Show a login/logout link in the header' ),
 	) );
 
+	// Setting: show_account_link
+
+	$wp_customize->add_setting( 'show_account_link', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => '_s_sanitize_checkbox',
+	) );
+	  
+	$wp_customize->add_control( 'show_account_link', array(
+		'type' => 'checkbox',
+		'section' => 'header',
+		'label' => __( 'Show account link' ),
+		'description' => __( 'Show an account link in the header' ),
+	) );
+
 	// Setting: show_welcome_text
 
 	$wp_customize->add_setting( 'show_welcome_text', array(
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => '_s_sanitize_checkbox',
 	) );
-	  
+		
 	$wp_customize->add_control( 'show_welcome_text', array(
 		'type' => 'checkbox',
 		'section' => 'header',

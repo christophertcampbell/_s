@@ -52,6 +52,10 @@
 		line-height: $height__site-header-mobile;
 		margin-right: 70px; /* leave room for the mobile menu toggle */
 
+		> span + span {
+			margin-left: .5em;
+		}
+
 		/* Mobile menu breakpoint */
 		@media screen and (min-width: $breakpoint__menu) {
 			line-height: $height__site-header-inline;

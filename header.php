@@ -55,13 +55,14 @@
 
 			<?php
 				$show_login_link = get_theme_mod('show_login_link') === true;
+				$show_account_link = get_theme_mod('show_account_link') === true;
 				$show_welcome_text = get_theme_mod('show_welcome_text') === true;
 			?>
-			<?php if ( $show_login_link || $show_welcome_text ) : ?>
+			<?php if ( $show_login_link || $show_account_link || $show_welcome_text ) : ?>
 				<div class="site-login">
 					<?php if ( $show_welcome_text && is_user_logged_in() ) : ?>
 						<?php $user = wp_get_current_user(); ?>
-						<span class="welcome-text">Welcome, <?php echo $user->first_name ?? $user->display_name ?? $user->login ?>!<span class="spacer">&nbsp;&nbsp;</span></span>
+						<span class="welcome-text">Welcome, <?php echo $user->first_name ?? $user->display_name ?? $user->login ?>!</span>
 					<?php endif; ?>
 					<?php if ( $show_login_link ) : ?>
 						<?php global $wp; $current_url = home_url($wp->request); ?>
@@ -70,6 +71,9 @@
 						<?php else : ?>
 							<span class="loginout-link login-link"><a href="<?php echo wp_login_url( $current_url ); ?>" title="Log In"><span class="text">Sign In</span></a></span>
 						<?php endif; ?>
+					<?php endif; ?>
+					<?php if ( $show_account_link && is_user_logged_in() ) : ?>
+						<span class="account-link"><a href="<?php echo get_edit_profile_url(); ?>" title="My Account"><span class="text">Account</span></a></span>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
