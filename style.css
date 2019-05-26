@@ -1760,6 +1760,15 @@ body.admin-bar .site .site-header button.menu-toggle {
   }
 }
 
+/* These styles work in coordination with the
+   meta settings established in inc/post-settings-meta-box.php */
+body.no-post-title .entry-title {
+  display: none;
+}
+body.no-post-title.collapse-header-margin .entry-content {
+  margin-top: 0;
+}
+
 /* Sticks the site header to the top of the screen */
 .site-header {
   position: fixed;
