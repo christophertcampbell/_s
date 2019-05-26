@@ -88,6 +88,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Set gutters to 0px if setting gutters with .site-header above */
 /* .main-navigation */
 /* Set gutters to 0px if setting gutters with .site-header above */
+/* .header-image */
 /* .site-footer */
 /* Breakpoint at which '-medium' variables take effect */
 /* Breakpoint at which the sidebar is aligned to the side */
@@ -566,6 +567,38 @@ big {
 }
 
 /*--------------------------------------------------------------
+## Header Image
+--------------------------------------------------------------*/
+.header-image .inner {
+  /* Small screen size */
+  margin-left: 0;
+  margin-right: 0;
+  height: 35vw;
+  overflow: hidden;
+  position: relative;
+  /* Medium screen size */
+  /* Max width of header navigation content (including gutters) */
+}
+.header-image .inner img {
+  display: block;
+  width: 100%;
+}
+@media screen and (min-width: 800px) {
+  .header-image .inner {
+    margin-left: 0;
+    margin-right: 0;
+    height: 35vw;
+  }
+}
+@media screen and (min-width: 100%) {
+  .header-image .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
 .site-footer .inner {
@@ -908,7 +941,8 @@ a:hover, a:active {
     overflow: hidden;
     /* Prevent extra scroll bar */
   }
-  body.menu-open .site-content {
+  body.menu-open .header-image,
+body.menu-open .site-content {
     display: none;
   }
 
