@@ -17,8 +17,8 @@ body {
 		}
 
 		.site-header {
-			.menu-toggle {
-				top: 6px;
+			button.menu-toggle {
+				top: 0px;
 			}
 		}
 	}
@@ -32,8 +32,8 @@ body {
 					top: 32px;
 				}
 
-				.menu-toggle {
-					top: 6px;
+				button.menu-toggle {
+					top: 0px;
 				}
 			}
 		}

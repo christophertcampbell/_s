@@ -2,10 +2,12 @@
 	rather than beneath it */
 
 .site-header {
-	
-	.menu-toggle {
-		line-height: $height__site-header-mobile;
-		top: 0;
+
+	.main-navigation {
+		.menu-toggle {
+			line-height: $height__site-header-mobile;
+			top: 0;
+		}
 	}
 
 	@media screen and (min-width: $breakpoint__menu) {
@@ -30,6 +32,33 @@
 			}
 		}
 
+	}
+
+	.main-navigation {
+		.inner {
+			/* Medium screen size */
+			@media screen and (min-width: $breakpoint__medium) {
+				margin-left: 0;
+			}
+
+			/* Max width of header navigation content (including gutters) */
+			@media screen and (min-width: $size__site-menu-content + ($size__site-menu-gutter-medium * 2)) {
+				/* Fix zero right-margin when floating menu inline */
+				margin-right: $size__site-menu-gutter-medium;
+			}
+		}
+	}
+}
+
+body {
+	&.admin-bar {
+		.site {
+			.site-header {
+				button.menu-toggle {
+					top: 46px;
+				}
+			}
+		}
 	}
 }
 
