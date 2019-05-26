@@ -53,6 +53,18 @@
 				</div><!-- .inner -->
 			</div><!-- .site-branding -->
 
+			<div class="site-login">
+				<?php
+					global $wp;
+					$current_url = home_url($wp->request);
+				?>
+				<?php if (is_user_logged_in()) : ?>
+					<a href="<?php echo wp_logout_url( $current_url ); ?>" title="Log Out"><span class="text">Log Out</span></a>
+				<?php else : ?>
+					<a href="<?php echo wp_login_url( $current_url ); ?>" title="Log In"><span class="text">Login</span></a>
+				<?php endif; ?>
+			</div>
+
 			<nav id="site-navigation" class="main-navigation">
 				<div class="inner">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="toggle-content"><?php esc_html_e( 'Primary Menu', '_s' ); ?></span></button>
@@ -64,6 +76,7 @@
 					?>
 				</div><!-- .inner -->
 			</nav><!-- #site-navigation -->
+
 		</div><!-- .inner -->
 	</header><!-- #masthead -->
 

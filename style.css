@@ -1035,7 +1035,7 @@ body.menu-open .site-content {
   .site-header .main-navigation .menu-toggle {
     display: block;
     position: absolute;
-    top: 1px;
+    top: 6px;
     right: 6px;
     z-index: 999;
     /* Remove default button styling */
@@ -1592,6 +1592,15 @@ object {
 .site-header .site-branding {
   float: left;
 }
+.site-header .site-branding .inner {
+  /* Max width of site branding content */
+}
+@media screen and (min-width: 1266px) {
+  .site-header .site-branding .inner {
+    /* Fix zero left-margin when branding is floated inline */
+    margin-left: 33px;
+  }
+}
 .site-header .site-branding .site-logo {
   margin-right: 1.5em;
 }
@@ -1615,6 +1624,25 @@ object {
 .site-header .site-branding .site-title {
   font-size: 1.5em;
   margin-right: 1em;
+}
+.site-header .site-login {
+  float: right;
+  line-height: 50px;
+  margin-right: 70px;
+  /* leave room for the mobile menu toggle */
+  /* Mobile menu breakpoint */
+  /* Medium screen size */
+}
+@media screen and (min-width: 700px) {
+  .site-header .site-login {
+    line-height: 80px;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .site-header .site-login {
+    margin-right: 33px;
+  }
 }
 @media screen and (min-width: 700px) {
   .site-header .site-branding .site-logo img {
@@ -1642,6 +1670,10 @@ object {
     transition: line-height 300ms;
     -webkit-transition: line-height 300ms;
   }
+  .scrolled-50 .site-header .site-login {
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -1655,11 +1687,14 @@ object {
   .scrolled-150 .site-header .site-branding .site-title-container {
     line-height: 60px;
   }
+  .scrolled-150 .site-header .site-login {
+    line-height: 60px;
+  }
 }
 
 /* Places the main menu beside the site title,
 	rather than beneath it */
-.site-header .menu-toggle {
+.site-header .main-navigation .menu-toggle {
   line-height: 50px;
   top: 0;
 }
@@ -1681,6 +1716,25 @@ object {
     padding-bottom: 0;
     padding-top: 0;
   }
+}
+.site-header .main-navigation .inner {
+  /* Medium screen size */
+  /* Max width of header navigation content (including gutters) */
+}
+@media screen and (min-width: 800px) {
+  .site-header .main-navigation .inner {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1066px) {
+  .site-header .main-navigation .inner {
+    /* Fix zero right-margin when floating menu inline */
+    margin-right: 33px;
+  }
+}
+
+body.admin-bar .site .site-header button.menu-toggle {
+  top: 46px;
 }
 
 @media screen and (min-width: 700px) {
@@ -1705,15 +1759,6 @@ object {
   }
 }
 
-/* These styles work in coordination with the
-   meta settings established in inc/post-settings-meta-box.php */
-body.no-post-title .entry-title {
-  display: none;
-}
-body.no-post-title.collapse-header-margin .entry-content {
-  margin-top: 0;
-}
-
 /* Sticks the site header to the top of the screen */
 .site-header {
   position: fixed;
@@ -1731,6 +1776,9 @@ body .site {
     margin-top: 80px;
   }
 }
+body .site .site-header button.menu-toggle {
+  top: 0px;
+}
 body.admin-bar .site .site-header {
   top: 46px;
 }
@@ -1739,8 +1787,8 @@ body.admin-bar .site .site-header {
     top: 32px;
   }
 }
-body.admin-bar .site .site-header .menu-toggle {
-  top: 0;
+body.admin-bar .site .site-header button.menu-toggle {
+  top: 0px;
 }
 body.admin-bar #wpadminbar {
   position: fixed;

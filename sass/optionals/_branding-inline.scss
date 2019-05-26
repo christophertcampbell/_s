@@ -6,6 +6,16 @@
 	.site-branding {
 		float: left;
 		
+		.inner {
+
+			/* Max width of site branding content */
+			@media screen and (min-width: $size__site-branding-content + ($size__site-branding-gutter-medium * 2)) {
+				/* Fix zero left-margin when branding is floated inline */
+				margin-left: $size__site-branding-gutter-medium;
+			}
+
+		}
+		
 		.site-logo {
 			margin-right: 1.5em;
 
@@ -34,6 +44,23 @@
 		.site-title {
 			font-size: 1.5em;
 			margin-right: 1em;
+		}
+	}
+
+	.site-login {
+		float: right;
+		line-height: $height__site-header-mobile;
+		margin-right: 70px; /* leave room for the mobile menu toggle */
+
+		/* Mobile menu breakpoint */
+		@media screen and (min-width: $breakpoint__menu) {
+			line-height: $height__site-header-inline;
+			margin-right: $size__site-branding-gutter;
+		}
+
+		/* Medium screen size */
+		@media screen and (min-width: $breakpoint__medium) {
+			margin-right: $size__site-branding-gutter-medium;
 		}
 	}
 
@@ -82,6 +109,11 @@
 				}
 			}
 
+			.site-login {
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
+			}
+
 		}
 	}
 }
@@ -106,6 +138,10 @@
 				.site-title-container {
 					line-height: $height__site-header-inline-scrolled;
 				}
+			}
+
+			.site-login {
+				line-height: $height__site-header-inline-scrolled;
 			}
 		}
 	}
