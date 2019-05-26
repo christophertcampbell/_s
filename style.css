@@ -548,6 +548,11 @@ big {
     max-width: 1200px;
   }
 }
+.site-header .site-login .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .site-header .main-navigation .inner {
   /* Small screen size */
   margin-left: 20px;
@@ -1635,10 +1640,32 @@ object {
   margin-right: 70px;
   /* leave room for the mobile menu toggle */
   /* Mobile menu breakpoint */
+  /* Mobile menu breakpoint */
   /* Medium screen size */
 }
-.site-header .site-login > span + span {
+@media screen and (min-width: 700px) {
+  .site-header .site-login {
+    line-height: 80px;
+  }
+}
+.site-header .site-login > span + span:not(.branding-widget-area) {
   margin-left: 0.5em;
+}
+.site-header .site-login .branding-widget-area > .branding-widget {
+  display: inline-block;
+}
+.site-header .site-login .branding-widget-area > .branding-widget > *:not([class*=menu]) {
+  margin: 0 0.5em;
+}
+.site-header .site-login .branding-widget-area > .branding-widget a {
+  display: inline;
+}
+.site-header .site-login .branding-widget-area > .branding-widget p {
+  margin: 0;
+}
+.site-header .site-login .branding-widget-area > .branding-widget .menu .menu-item {
+  display: inline;
+  margin: 0 0.5em;
 }
 @media screen and (min-width: 700px) {
   .site-header .site-login {

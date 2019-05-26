@@ -58,7 +58,7 @@
 				$show_account_link = get_theme_mod('show_account_link') === true;
 				$show_welcome_text = get_theme_mod('show_welcome_text') === true;
 			?>
-			<?php if ( $show_login_link || $show_account_link || $show_welcome_text ) : ?>
+			<?php if ( $show_login_link || $show_account_link || $show_welcome_text || is_active_sidebar( 'branding' ) ) : ?>
 				<div class="site-login">
 					<?php if ( $show_welcome_text && is_user_logged_in() ) : ?>
 						<?php $user = wp_get_current_user(); ?>
@@ -75,6 +75,7 @@
 					<?php if ( $show_account_link && is_user_logged_in() ) : ?>
 						<span class="account-link"><a href="<?php echo get_edit_profile_url(); ?>" title="My Account"><span class="text">Account</span></a></span>
 					<?php endif; ?>
+					<?php get_sidebar( 'branding' ); ?>
 				</div>
 			<?php endif; ?>
 

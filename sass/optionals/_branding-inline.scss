@@ -52,8 +52,34 @@
 		line-height: $height__site-header-mobile;
 		margin-right: 70px; /* leave room for the mobile menu toggle */
 
-		> span + span {
+		/* Mobile menu breakpoint */
+		@media screen and (min-width: $breakpoint__menu) {
+			line-height: $height__site-header-inline;
+		}
+
+		> span + span:not(.branding-widget-area) {
 			margin-left: .5em;
+		}
+
+		.branding-widget-area > .branding-widget {
+			display: inline-block;
+
+			> *:not([class*=menu]) {
+				margin: 0 .5em;
+			}
+
+			a {
+				display: inline;
+			}
+
+			p {
+				margin: 0;
+			}
+
+			.menu .menu-item {
+				display: inline;
+				margin: 0 .5em;
+			}
 		}
 
 		/* Mobile menu breakpoint */

@@ -135,6 +135,15 @@ function _s_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Branding Widget Area', '_s' ),
+		'id'            => 'branding',
+		'description'   => esc_html__( 'Add branding area widgets here.', '_s' ),
+		'before_widget' => '<section id="%1$s" class="branding-widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', '_s_widgets_init' );
 
