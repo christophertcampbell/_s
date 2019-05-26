@@ -52,7 +52,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 # Optionals
-	## Header - Compact
 --------------------------------------------------------------*/
 /* Header */
 /* Branding */
@@ -1581,7 +1580,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-# Media
+# Optionals
 --------------------------------------------------------------*/
 /* Optionals are partials that can be commented / uncommented
    to perform basic configuration of the theme */
@@ -1623,16 +1622,25 @@ object {
   .site-header .site-branding .site-logo img {
     height: 60px;
     width: 60px;
-    transition: height 300ms, width 300ms;
-    -webkit-transition: height 300ms, width 300ms;
   }
   .site-header .site-branding .site-logo {
     line-height: 60px;
-    transition: line-height 300ms;
-    -webkit-transition: line-height 300ms;
   }
   .site-header .site-branding .site-title-container {
     line-height: 80px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .scrolled-50 .site-header .site-branding .site-logo img {
+    transition: height 300ms, width 300ms;
+    -webkit-transition: height 300ms, width 300ms;
+  }
+  .scrolled-50 .site-header .site-branding .site-logo {
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+  .scrolled-50 .site-header .site-branding .site-title-container {
     transition: line-height 300ms;
     -webkit-transition: line-height 300ms;
   }
@@ -1662,8 +1670,6 @@ object {
 @media screen and (min-width: 700px) {
   .site-header .menu-toggle {
     line-height: 80px;
-    transition: line-height 300ms;
-    -webkit-transition: line-height 300ms;
   }
   .site-header .main-navigation {
     clear: none;
@@ -1676,10 +1682,20 @@ object {
   .site-header .main-navigation .nav-menu > li > a {
     /* Top level menu items */
     line-height: 80px;
-    transition: line-height 300ms;
-    -webkit-transition: line-height 300ms;
     padding-bottom: 0;
     padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .scrolled-50 .site-header .menu-toggle {
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
+  }
+  .scrolled-50 .site-header .main-navigation .nav-menu > li > a {
+    /* Top level menu items */
+    transition: line-height 300ms;
+    -webkit-transition: line-height 300ms;
   }
 }
 

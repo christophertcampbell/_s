@@ -44,21 +44,44 @@
 			.site-logo img {
 				height: $height__site-header-inline - 20px;
 				width: $height__site-header-inline - 20px;
-				transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
-				-webkit-transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
 			}
 
 			.site-logo {
 				line-height: $height__site-header-inline - 20px;
-				transition: line-height $duration_scrolled_transition;
-				-webkit-transition: line-height $duration_scrolled_transition;
 			}
 			
 			.site-title-container {
 				line-height: $height__site-header-inline;
-				transition: line-height $duration_scrolled_transition;
-				-webkit-transition: line-height $duration_scrolled_transition;
 			}
+		}
+	}
+}
+
+.scrolled-50 {
+	.site-header {
+		@media screen and (min-width: $breakpoint__menu) {
+
+			// Only add transition once we have scrolled a little bit
+			// Improves behavior when the page is scrolled quickly back to the top
+
+			.site-branding {
+
+				.site-logo img {
+					transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
+					-webkit-transition: height $duration_scrolled_transition, width $duration_scrolled_transition;
+				}
+	
+				.site-logo {
+					transition: line-height $duration_scrolled_transition;
+					-webkit-transition: line-height $duration_scrolled_transition;
+				}
+				
+				.site-title-container {
+					transition: line-height $duration_scrolled_transition;
+					-webkit-transition: line-height $duration_scrolled_transition;
+				}
+			}
+
 		}
 	}
 }

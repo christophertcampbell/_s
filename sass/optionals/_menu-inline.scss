@@ -12,8 +12,6 @@
 
 		.menu-toggle {
 			line-height: $height__site-header-inline;
-			transition: line-height $duration_scrolled_transition;
-			-webkit-transition: line-height $duration_scrolled_transition;
 		}
 
 		.main-navigation {
@@ -27,13 +25,34 @@
 	
 			.nav-menu > li > a { /* Top level menu items */
 				line-height: $height__site-header-inline;
-				transition: line-height $duration_scrolled_transition;
-				-webkit-transition: line-height $duration_scrolled_transition;
 				padding-bottom: 0;
 				padding-top: 0;
 			}
 		}
 
+	}
+}
+
+.scrolled-50 {
+	.site-header {
+		@media screen and (min-width: $breakpoint__menu) {
+
+			// Only add transition once we have scrolled a little bit
+			// Improves behavior when the page is scrolled quickly back to the top
+
+			.menu-toggle {
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
+			}
+
+			.main-navigation {
+				.nav-menu > li > a { /* Top level menu items */
+					transition: line-height $duration_scrolled_transition;
+					-webkit-transition: line-height $duration_scrolled_transition;
+				}
+			}
+	
+		}
 	}
 }
 
