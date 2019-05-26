@@ -1751,10 +1751,10 @@ body.admin-bar .site header.site-header button.menu-toggle {
 }
 
 @media screen and (min-width: 700px) {
-  .scrolled-150 .site-header .menu-toggle {
+  body.scrolled-150 .site .site-header .menu-toggle {
     line-height: 60px;
   }
-  .scrolled-150 .site-header .main-navigation .nav-menu > li > a {
+  body.scrolled-150 .site .site-header .main-navigation .nav-menu > li > a {
     /* Top level menu items */
     line-height: 60px;
   }

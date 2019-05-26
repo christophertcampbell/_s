@@ -76,6 +76,20 @@ function _s_add_header_section( $wp_customize ) {
 	   'label' => __( 'Show login/logout link' ),
 	   'description' => __( 'Show a login/logout link in the header' ),
 	 ) );
+
+	// Setting: show_welcome_text
+
+	$wp_customize->add_setting( 'show_welcome_text', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => '_s_sanitize_checkbox',
+	  ) );
+	  
+	  $wp_customize->add_control( 'show_welcome_text', array(
+		'type' => 'checkbox',
+		'section' => 'header',
+		'label' => __( 'Show "welcome [username]" text' ),
+		'description' => __( 'Show "welcome [username]" text' ),
+	  ) );
 }
 add_action( 'customize_register', '_s_add_header_section' );
 

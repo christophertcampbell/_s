@@ -88,25 +88,25 @@ body {
 	}
 }
 
-#{$scrolled_selector} {
-
-	.site-header {
-
-		@media screen and (min-width: $breakpoint__menu) {
-
-			.menu-toggle {
-				line-height: $height__site-header-inline-scrolled;
-			}
+body#{$scrolled_selector} {
+	.site {
+		.site-header {
 	
-			.main-navigation {
-		
-				.nav-menu > li > a { /* Top level menu items */
+			@media screen and (min-width: $breakpoint__menu) {
+	
+				.menu-toggle {
 					line-height: $height__site-header-inline-scrolled;
 				}
-			}
-
-		}
 		
+				.main-navigation {
+			
+					.nav-menu > li > a { /* Top level menu items */
+						line-height: $height__site-header-inline-scrolled;
+					}
+				}
+	
+			}
+			
+		}
 	}
-
 }

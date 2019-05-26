@@ -60,6 +60,10 @@
 						$current_url = home_url($wp->request);
 					?>
 					<?php if (is_user_logged_in()) : ?>
+						<?php if ( get_theme_mod('show_welcome_text') === true ) : ?>
+							<?php $user = wp_get_current_user(); ?>
+							<span class="welcome-text">Welcome, <?php echo $user->first_name ?? $user->display_name ?? $user->login ?>!<span class="spacer">&nbsp;&nbsp;</span></span>
+						<?php endif; ?>
 						<a href="<?php echo wp_logout_url( $current_url ); ?>" title="Log Out"><span class="text">Sign Out</span></a>
 					<?php else : ?>
 						<a href="<?php echo wp_login_url( $current_url ); ?>" title="Log In"><span class="text">Sign In</span></a>
