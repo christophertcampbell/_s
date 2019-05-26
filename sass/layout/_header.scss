@@ -1,5 +1,7 @@
 .site-header {
 
+	font-family: $font__header;
+
 	> .inner {
 		/* Small screen size */
 		margin-left: $size__site-header-gutter;
