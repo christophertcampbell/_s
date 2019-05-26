@@ -59,7 +59,7 @@
 				$show_welcome_text = get_theme_mod('show_welcome_text') === true;
 			?>
 			<?php if ( $show_login_link || $show_account_link || $show_welcome_text || is_active_sidebar( 'branding' ) ) : ?>
-				<div class="site-login">
+				<div class="site-branding-secondary">
 					<?php if ( $show_welcome_text && is_user_logged_in() ) : ?>
 						<?php $user = wp_get_current_user(); ?>
 						<span class="welcome-text">Welcome, <?php echo $user->first_name ?? $user->display_name ?? $user->login ?>!</span>

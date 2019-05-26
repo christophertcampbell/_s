@@ -548,7 +548,7 @@ big {
     max-width: 1200px;
   }
 }
-.site-header .site-login .menu {
+.site-header .site-branding-secondary .menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1634,7 +1634,7 @@ object {
   font-size: 1.5em;
   margin-right: 1em;
 }
-.site-header .site-login {
+.site-header .site-branding-secondary {
   float: right;
   line-height: 50px;
   margin-right: 70px;
@@ -1644,38 +1644,38 @@ object {
   /* Medium screen size */
 }
 @media screen and (min-width: 700px) {
-  .site-header .site-login {
+  .site-header .site-branding-secondary {
     line-height: 80px;
   }
 }
-.site-header .site-login > span + span:not(.branding-widget-area) {
+.site-header .site-branding-secondary > span + span:not(.branding-widget-area) {
   margin-left: 0.5em;
 }
-.site-header .site-login .branding-widget-area > .branding-widget {
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget {
   display: inline-block;
 }
-.site-header .site-login .branding-widget-area > .branding-widget > *:not([class*=menu]) {
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget > *:not([class*=menu]) {
   margin: 0 0.5em;
 }
-.site-header .site-login .branding-widget-area > .branding-widget a {
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget a {
   display: inline;
 }
-.site-header .site-login .branding-widget-area > .branding-widget p {
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget p {
   margin: 0;
 }
-.site-header .site-login .branding-widget-area > .branding-widget .menu .menu-item {
+.site-header .site-branding-secondary .branding-widget-area > .branding-widget .menu .menu-item {
   display: inline;
   margin: 0 0.5em;
 }
 @media screen and (min-width: 700px) {
-  .site-header .site-login {
+  .site-header .site-branding-secondary {
     line-height: 80px;
     margin-right: 20px;
     margin-left: 20px;
   }
 }
 @media screen and (min-width: 800px) {
-  .site-header .site-login {
+  .site-header .site-branding-secondary {
     margin-right: 33px;
     margin-left: 33px;
   }
@@ -1706,7 +1706,7 @@ object {
     transition: line-height 300ms;
     -webkit-transition: line-height 300ms;
   }
-  .scrolled-50 .site-header .site-login {
+  .scrolled-50 .site-header .site-branding-secondary {
     transition: line-height 300ms;
     -webkit-transition: line-height 300ms;
   }
@@ -1723,7 +1723,7 @@ object {
   .scrolled-150 .site-header .site-branding .site-title-container {
     line-height: 60px;
   }
-  .scrolled-150 .site-header .site-login {
+  .scrolled-150 .site-header .site-branding-secondary {
     line-height: 60px;
   }
 }

@@ -47,7 +47,7 @@
 		}
 	}
 
-	.site-login {
+	.site-branding-secondary {
 		float: right;
 		line-height: $height__site-header-mobile;
 		margin-right: 70px; /* leave room for the mobile menu toggle */
@@ -141,7 +141,7 @@
 				}
 			}
 
-			.site-login {
+			.site-branding-secondary {
 				transition: line-height $duration_scrolled_transition;
 				-webkit-transition: line-height $duration_scrolled_transition;
 			}
@@ -172,7 +172,7 @@
 				}
 			}
 
-			.site-login {
+			.site-branding-secondary {
 				line-height: $height__site-header-inline-scrolled;
 			}
 		}
