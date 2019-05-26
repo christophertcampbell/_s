@@ -7,6 +7,11 @@
 ( function() {
 	var body, container, button, menu, links, i, len;
 
+	var expandableSubMenuConfig = {
+		classOnExpanded: "expanded",
+		classOnCollapseed: "collapsed"
+	}
+
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
@@ -172,8 +177,16 @@
 		}
 
 		if ( -1 === el.className.indexOf(' focus') ) {
+			// Smooth height transition if Expandable.js is present
+			if (window.Expandable) {
+				Expandable.expand(el.querySelector("ul"), expandableSubMenuConfig);
+			}
 			el.className += ' focus';
 		} else {
+			// Smooth height transition if Expandable.js is present
+			if (window.Expandable) {
+				Expandable.collapse(el.querySelector("ul"), expandableSubMenuConfig);
+			}
 			el.className = el.className.replace(' focus', '');
 		}
 	}

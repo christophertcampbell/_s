@@ -28,8 +28,16 @@ $size__site-header-content: 999999px;
 $size__site-header-gutter: 0px;
 $size__site-header-gutter-medium: 0px;
 
+/* Inline header heights */
 $height__site-header-mobile: 50px;
-$height__site-header-inline: 70px; /* Used in optionals */
+$height__site-header-inline: 80px; /* Used in optionals */
+$height__site-header-inline-scrolled: 60px; /* Used in optionals */
+$scrolled_selector: ".scrolled-150"; /* Used in optionals */
+$duration_scrolled_transition: 300ms;
+
+/* Sticky header heights, in case they need to be customized */
+$height__site-header-mobile-sticky: $height__site-header-mobile;
+$height__site-header-inline-sticky: $height__site-header-inline; /* Used in optionals */
 
 /* .site-branding */
 /* Set gutters to 0px if setting gutters with .site-header above */ 

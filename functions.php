@@ -82,6 +82,16 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Enable Gutenberg alignwide and alignfull alignments
 		add_theme_support( 'align-wide' );
+
+		// Enable Gutenberg editor stylesheet
+		add_theme_support('editor-styles');
+		add_editor_style( 'style-editor.css' );
+
+		// Enable Gutenberg default block styling on frontend
+		add_theme_support( 'wp-block-styles' );
+
+		// Enable Gutenberg responsive embeds
+		add_theme_support( 'responsive-embeds' );
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
@@ -134,7 +144,9 @@ add_action( 'widgets_init', '_s_widgets_init' );
 function _s_scripts() {
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	wp_enqueue_script( '_s-expandable', get_template_directory_uri() . '/lib/expandable/expandable.js', array(), '20151215', true );
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( '_s-scroll-detection', get_template_directory_uri() . '/js/scroll-detection.js', array(), '20151215', true );
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -176,3 +188,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Post settings meta box
+ */
+require get_template_directory() . '/inc/post-settings-meta-box.php';
