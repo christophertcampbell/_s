@@ -15,6 +15,12 @@ body {
 		@media screen and (min-width: $breakpoint__menu) {
 			margin-top: $height__site-header-inline-sticky;
 		}
+
+		.site-header {
+			.menu-toggle {
+				top: 6px;
+			}
+		}
 	}
 
 	&.admin-bar {
@@ -27,7 +33,7 @@ body {
 				}
 
 				.menu-toggle {
-					top: 0;
+					top: 6px;
 				}
 			}
 		}
