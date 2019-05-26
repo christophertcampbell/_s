@@ -222,3 +222,10 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Post settings meta box
  */
 require get_template_directory() . '/inc/post-settings-meta-box.php';
+
+/**
+ * Theme-specific code
+ */
+if ( file_exists( __DIR__ . "/theme-specific/theme-custom.php" ) ) {
+	require_once( __DIR__ . "/theme-specific/theme-custom.php" );
+}

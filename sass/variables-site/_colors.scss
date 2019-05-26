@@ -1,92 +1,92 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__background-body: #fff !default;
+$color__background-screen: #f1f1f1 !default;
+$color__background-hr: #ccc !default;
+$color__background-button: #e6e6e6 !default;
+$color__background-pre: #eee !default;
+$color__background-ins: #fff9c0 !default;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: $color__link; //purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color__text-screen: #21759b !default;
+$color__text-input: #666 !default;
+$color__text-input-focus: #111 !default;
+$color__link: royalblue !default;
+$color__link-visited: $color__link !default; //purple !default;
+$color__link-hover: midnightblue !default;
+$color__text-main: #404040 !default;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__border-button: #ccc #ccc #bbb !default;
+$color__border-button-hover: #ccc #bbb #aaa !default;
+$color__border-button-focus: #aaa #bbb #bbb !default;
+$color__border-input: #ccc !default;
+$color__border-abbr: #666 !default;
 
 /* Header */
 
-$color__header-background: $color__background-body;
-$color__header-text: $color__text-main;
-$color__header-link: $color__link;
-$color__header-link-hover: $color__link-hover;
-$color__header-link-visited: $color__link-visited;
+$color__header-background: $color__background-body !default;
+$color__header-text: $color__text-main !default;
+$color__header-link: $color__link !default;
+$color__header-link-hover: $color__link-hover !default;
+$color__header-link-visited: $color__link-visited !default;
 
 /* Branding */
 
-$color__branding-background: $color__header-background;
-$color__branding-text: $color__header-text;
-$color__branding-link: $color__header-link;
-$color__branding-link-hover: $color__header-link-hover;
-$color__branding-link-visited: $color__header-link-visited;
+$color__branding-background: $color__header-background !default;
+$color__branding-text: $color__header-text !default;
+$color__branding-link: $color__header-link !default;
+$color__branding-link-hover: $color__header-link-hover !default;
+$color__branding-link-visited: $color__header-link-visited !default;
 
 /* Desktop Menu */
 
-$color__menu-background: $color__header-background;
-$color__menu-background-hover: $color__header-background;
-$color__menu-text: $color__header-text;
-$color__menu-link: $color__header-link;
-$color__menu-link-hover: $color__header-link-hover;
-$color__menu-link-visited: $color__header-link-visited;
-$color__menu-link-border: #eee;
+$color__menu-background: $color__header-background !default;
+$color__menu-background-hover: $color__header-background !default;
+$color__menu-text: $color__header-text !default;
+$color__menu-link: $color__header-link !default;
+$color__menu-link-hover: $color__header-link-hover !default;
+$color__menu-link-visited: $color__header-link-visited !default;
+$color__menu-link-border: #eee !default;
 
-$color__menu-submenu-background-color: $color__background-body;
-$color__menu-submenu-background-color-hover: $color__background-body;
-$color__menu-submenu-text: $color__text-main;
-$color__menu-submenu-link: $color__link;
-$color__menu-submenu-link-hover: $color__link-hover;
-$color__menu-submenu-link-visited: $color__link-visited;
-$color__menu-submenu-link-border: $color__menu-link-border;
+$color__menu-submenu-background-color: $color__background-body !default;
+$color__menu-submenu-background-color-hover: $color__background-body !default;
+$color__menu-submenu-text: $color__text-main !default;
+$color__menu-submenu-link: $color__link !default;
+$color__menu-submenu-link-hover: $color__link-hover !default;
+$color__menu-submenu-link-visited: $color__link-visited !default;
+$color__menu-submenu-link-border: $color__menu-link-border !default;
 
 /* Mobile Menu */
 
-$color__mobile-menu-background: #fff;
-$color__mobile-menu-text: #333;
-$color__mobile-menu-link: #333;
-$color__mobile-menu-link-hover: royalblue;
-$color__mobile-menu-link-visited: $color__mobile-menu-link;
-$color__mobile-menu-link-border: #eee;
+$color__mobile-menu-background: #fff !default;
+$color__mobile-menu-text: #333 !default;
+$color__mobile-menu-link: #333 !default;
+$color__mobile-menu-link-hover: royalblue !default;
+$color__mobile-menu-link-visited: $color__mobile-menu-link !default;
+$color__mobile-menu-link-border: #eee !default;
 
-$color__mobile-menu-submenu-background: $color__mobile-menu-background;
-$color__mobile-menu-submenu-text: $color__mobile-menu-text;
-$color__mobile-menu-submenu-link: $color__mobile-menu-link;
-$color__mobile-menu-submenu-link-hover: $color__mobile-menu-link-hover;
-$color__mobile-menu-submenu-link-visited: $color__mobile-menu-link-visited;
-$color__mobile-menu-submenu-link-border: $color__mobile-menu-link-border;
+$color__mobile-menu-submenu-background: $color__mobile-menu-background !default;
+$color__mobile-menu-submenu-text: $color__mobile-menu-text !default;
+$color__mobile-menu-submenu-link: $color__mobile-menu-link !default;
+$color__mobile-menu-submenu-link-hover: $color__mobile-menu-link-hover !default;
+$color__mobile-menu-submenu-link-visited: $color__mobile-menu-link-visited !default;
+$color__mobile-menu-submenu-link-border: $color__mobile-menu-link-border !default;
 
 /* Comments */
 
-$color__comments-area-background: $color__background-body;
-$color__comments-area-text: $color__text-main;
-$color__comments-area-link: $color__link;
-$color__comments-area-link-hover: $color__link-hover;
-$color__comments-area-link-visited: $color__link-visited;
+$color__comments-area-background: $color__background-body !default;
+$color__comments-area-text: $color__text-main !default;
+$color__comments-area-link: $color__link !default;
+$color__comments-area-link-hover: $color__link-hover !default;
+$color__comments-area-link-visited: $color__link-visited !default;
 
 /* Footer */
 
-$color__footer-background: $color__background-body;
-$color__footer-text: $color__text-main;
-$color__footer-link: $color__link;
-$color__footer-link-hover: $color__link-hover;
-$color__footer-link-visited: $color__link-visited;
+$color__footer-background: $color__background-body !default;
+$color__footer-text: $color__text-main !default;
+$color__footer-link: $color__link !default;
+$color__footer-link-hover: $color__link-hover !default;
+$color__footer-link-visited: $color__link-visited !default;
 
-$color__footer-credits-background: $color__footer-background;
-$color__footer-credits-text: $color__footer-text;
-$color__footer-credits-link: $color__footer-link;
-$color__footer-credits-link-hover: $color__footer-link-hover;
-$color__footer-credits-link-visited: $color__footer-link-visited;
+$color__footer-credits-background: $color__footer-background !default;
+$color__footer-credits-text: $color__footer-text !default;
+$color__footer-credits-link: $color__footer-link !default;
+$color__footer-credits-link-hover: $color__footer-link-hover !default;
+$color__footer-credits-link-visited: $color__footer-link-visited !default;

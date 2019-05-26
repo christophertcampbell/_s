@@ -52,7 +52,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 # Optionals
+# Theme-Specific
 --------------------------------------------------------------*/
+/* Theme-specific overrides to the base variables.
+   Re-declare any variables here that you wish to override.
+   Useful for separating theme-specific styling from base styles that may change */
 /* Header */
 /* Branding */
 /* Desktop Menu */
@@ -1914,5 +1918,11 @@ body.admin-bar .site .site-header button.menu-toggle {
 body.admin-bar #wpadminbar {
   position: fixed;
 }
+
+/*--------------------------------------------------------------
+# Theme-Specific
+--------------------------------------------------------------*/
+/* Theme-specific overrides to the base styling.
+   Useful for separating theme-specific styling from base styles that may change */
 
 /*# sourceMappingURL=style.css.map */
