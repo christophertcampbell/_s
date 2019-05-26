@@ -56,11 +56,13 @@
 		@media screen and (min-width: $breakpoint__menu) {
 			line-height: $height__site-header-inline;
 			margin-right: $size__site-branding-gutter;
+			margin-left: $size__site-branding-gutter;
 		}
 
 		/* Medium screen size */
 		@media screen and (min-width: $breakpoint__medium) {
 			margin-right: $size__site-branding-gutter-medium;
+			margin-left: $size__site-branding-gutter-medium;
 		}
 	}
 

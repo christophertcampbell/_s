@@ -36,15 +36,12 @@
 
 	.main-navigation {
 		.inner {
+			margin-right: 0;
+			
 			/* Medium screen size */
 			@media screen and (min-width: $breakpoint__medium) {
 				margin-left: 0;
-			}
-
-			/* Max width of header navigation content (including gutters) */
-			@media screen and (min-width: $size__site-menu-content + ($size__site-menu-gutter-medium * 2)) {
-				/* Fix zero right-margin when floating menu inline */
-				margin-right: $size__site-menu-gutter-medium;
+				margin-right: 0;
 			}
 		}
 	}

@@ -53,17 +53,19 @@
 				</div><!-- .inner -->
 			</div><!-- .site-branding -->
 
-			<div class="site-login">
-				<?php
-					global $wp;
-					$current_url = home_url($wp->request);
-				?>
-				<?php if (is_user_logged_in()) : ?>
-					<a href="<?php echo wp_logout_url( $current_url ); ?>" title="Log Out"><span class="text">Log Out</span></a>
-				<?php else : ?>
-					<a href="<?php echo wp_login_url( $current_url ); ?>" title="Log In"><span class="text">Login</span></a>
-				<?php endif; ?>
-			</div>
+			<?php if ( get_theme_mod('show_login_link') === true ) : ?>
+				<div class="site-login">
+					<?php
+						global $wp;
+						$current_url = home_url($wp->request);
+					?>
+					<?php if (is_user_logged_in()) : ?>
+						<a href="<?php echo wp_logout_url( $current_url ); ?>" title="Log Out"><span class="text">Log Out</span></a>
+					<?php else : ?>
+						<a href="<?php echo wp_login_url( $current_url ); ?>" title="Log In"><span class="text">Login</span></a>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
 			<nav id="site-navigation" class="main-navigation">
 				<div class="inner">

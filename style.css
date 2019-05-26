@@ -1637,11 +1637,13 @@ object {
   .site-header .site-login {
     line-height: 80px;
     margin-right: 20px;
+    margin-left: 20px;
   }
 }
 @media screen and (min-width: 800px) {
   .site-header .site-login {
     margin-right: 33px;
+    margin-left: 33px;
   }
 }
 @media screen and (min-width: 700px) {
@@ -1718,18 +1720,13 @@ object {
   }
 }
 .site-header .main-navigation .inner {
+  margin-right: 0;
   /* Medium screen size */
-  /* Max width of header navigation content (including gutters) */
 }
 @media screen and (min-width: 800px) {
   .site-header .main-navigation .inner {
     margin-left: 0;
-  }
-}
-@media screen and (min-width: 1066px) {
-  .site-header .main-navigation .inner {
-    /* Fix zero right-margin when floating menu inline */
-    margin-right: 33px;
+    margin-right: 0;
   }
 }
 

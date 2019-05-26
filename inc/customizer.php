@@ -55,12 +55,37 @@ function _s_customize_preview_js() {
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
 
 /**
+ * Add header settings
+ */
+function _s_add_header_section( $wp_customize ) {
+	$wp_customize->add_section( 'header' , array(
+		'title'      => __('Header','_s'),
+		'priority'   => 40,
+	) );
+
+	// Setting: show_login_link
+
+	$wp_customize->add_setting( 'show_login_link', array(
+	   'capability' => 'edit_theme_options',
+	   'sanitize_callback' => '_s_sanitize_checkbox',
+	 ) );
+	 
+	 $wp_customize->add_control( 'show_login_link', array(
+	   'type' => 'checkbox',
+	   'section' => 'header',
+	   'label' => __( 'Show login/logout link' ),
+	   'description' => __( 'Show a login/logout link in the header' ),
+	 ) );
+}
+add_action( 'customize_register', '_s_add_header_section' );
+
+/**
  * Add footer settings
  */
 function _s_add_footer_section( $wp_customize ) {
 	$wp_customize->add_section( 'footer' , array(
 		'title'      => __('Footer','_s'),
-		// 'priority'   => 30,
+		'priority'   => 80,
 	) );
 
 	// Setting: hide_footer_credits
