@@ -1700,42 +1700,42 @@ object {
 
 /* Places the main menu beside the site title,
 	rather than beneath it */
-.site-header .main-navigation .menu-toggle {
+body .site .site-header .main-navigation .menu-toggle {
   line-height: 50px;
   top: 0;
 }
 @media screen and (min-width: 700px) {
-  .site-header .menu-toggle {
+  body .site .site-header .menu-toggle {
     line-height: 80px;
   }
-  .site-header .main-navigation {
+  body .site .site-header .main-navigation {
     clear: none;
     float: right;
     width: auto;
   }
-  .site-header .main-navigation .inner {
+  body .site .site-header .main-navigation .inner {
     float: right;
   }
-  .site-header .main-navigation .nav-menu > li > a {
+  body .site .site-header .main-navigation .nav-menu > li > a {
     /* Top level menu items */
     line-height: 80px;
     padding-bottom: 0;
     padding-top: 0;
   }
 }
-.site-header .main-navigation .inner {
+body .site .site-header .main-navigation .inner {
   margin-right: 0;
   /* Medium screen size */
 }
 @media screen and (min-width: 800px) {
-  .site-header .main-navigation .inner {
+  body .site .site-header .main-navigation .inner {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
-body.admin-bar .site .site-header button.menu-toggle {
-  top: 46px;
+body.admin-bar .site header.site-header button.menu-toggle {
+  top: 0px;
 }
 
 @media screen and (min-width: 700px) {
@@ -1787,7 +1787,7 @@ body .site {
   }
 }
 body .site .site-header button.menu-toggle {
-  top: 0px;
+  top: 6px;
 }
 body.admin-bar .site .site-header {
   top: 46px;
@@ -1798,7 +1798,7 @@ body.admin-bar .site .site-header {
   }
 }
 body.admin-bar .site .site-header button.menu-toggle {
-  top: 0px;
+  top: 6px;
 }
 body.admin-bar #wpadminbar {
   position: fixed;
