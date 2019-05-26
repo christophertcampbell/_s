@@ -936,7 +936,8 @@ a:hover, a:active {
     overflow: hidden;
     /* Prevent extra scroll bar */
   }
-  body.menu-open .site-content {
+  body.menu-open .header-image,
+body.menu-open .site-content {
     display: none;
   }
 

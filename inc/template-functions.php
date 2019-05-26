@@ -81,3 +81,42 @@ function _s_add_body_class_no_sidebar() {
 		return $classes;
 	} );
 }
+
+/**
+ * Returns true if a header image is set, or if the page/post has a featured image set
+ * 
+ * Uses the featured image as page-specific override of the header image
+ *
+ * @return bool
+ */
+function _s_has_header_image() {
+	return (bool) has_header_image() || (bool) has_post_thumbnail();
+}
+
+/**
+ * Returns the markup for the header image, or the featured image if set.
+ * Returns an empty string if no header image or featured image is found.
+ *
+ * Uses the featured image as page-specific override of the header image
+ * 
+ * @return string
+ */
+function _s_get_header_image() {
+	if (has_post_thumbnail()) {
+		return get_the_post_thumbnail();
+	} else if (has_header_image()) {
+		return get_header_image_tag();
+	}
+	return "";
+}
+
+/**
+ * Renders the header image, or the featured image if set.
+ *
+ * Uses the featured image as page-specific override of the header image
+ * 
+ * @return void
+ */
+function _s_the_header_image_tag() {
+	echo _s_get_header_image();
+}

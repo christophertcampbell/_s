@@ -67,10 +67,12 @@
 		</div><!-- .inner -->
 	</header><!-- #masthead -->
 
-	<?php if ( has_header_image() ) : ?>
+	<?php //if ( has_header_image() ) : ?>
+	<?php if ( _s_has_header_image() ) : ?>
 		<div id="header-image" class="header-image">
 			<div class="inner">
-				<?php the_header_image_tag() ?>
+				<?php //the_header_image_tag() ?>
+				<?php _s_the_header_image_tag() ?>
 			</div>
 		</div>
 	<?php endif; ?>

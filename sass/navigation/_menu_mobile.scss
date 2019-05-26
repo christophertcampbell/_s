@@ -4,6 +4,7 @@
 	body.menu-open {
 		overflow: hidden; /* Prevent extra scroll bar */
 
+		.header-image,
 		.site-content {
 			display: none;
 		}
