@@ -1,12 +1,12 @@
+/* Places the main menu beside the site title,
+	rather than beneath it */
+
 .site-header {
 	
 	.menu-toggle {
 		line-height: $height__site-header-mobile;
 		top: 0;
 	}
-
-	/* Places the main menu beside the site title,
-		rather than beneath it */
 
 	@media screen and (min-width: $breakpoint__menu) {
 

@@ -1587,10 +1587,8 @@ object {
 /*--------------------------------------------------------------
 ## Header - Compact
 --------------------------------------------------------------*/
-.site-header {
-  /* Places the site logo, title and description
-     on a single line */
-}
+/* Places the site branding (logo, title and description)
+	on a single line */
 .site-header .site-branding {
   float: left;
 }
@@ -1659,10 +1657,8 @@ object {
   }
 }
 
-.site-header {
-  /* Places the main menu beside the site title,
-  	rather than beneath it */
-}
+/* Places the main menu beside the site title,
+	rather than beneath it */
 .site-header .menu-toggle {
   line-height: 50px;
   top: 0;
@@ -1718,6 +1714,7 @@ body.no-post-title.collapse-header-margin .entry-content {
   margin-top: 0;
 }
 
+/* Sticks the site header to the top of the screen */
 .site-header {
   position: fixed;
   top: 0;
