@@ -162,9 +162,9 @@ add_action( 'widgets_init', '_s_widgets_init' );
 function _s_scripts() {
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime(get_stylesheet_directory() . '/style.css') );
-	_s_enqueue_script( '_s-expandable', '/lib/expandable/expandable.js' );
+	_s_enqueue_script( '_s-expandable', '/lib/expandable.js' );
 	_s_enqueue_script( '_s-navigation', '/js/navigation.js' );
-	_s_enqueue_script( '_s-scroll-detection', '/js/scroll-detection.js' );
+	_s_enqueue_script( '_s-scroll-detection', '/lib/scroll-detection.js' );
 	_s_enqueue_script( '_s-skip-link-focus-fix', '/js/skip-link-focus-fix.js' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

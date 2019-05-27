@@ -1,115 +1,131 @@
 /* Places the site banner widget area on a single line */
 
-body .site .site-header {
+body {
+	.site .site-header {
 
-	.site-banner {
-	
-		overflow: hidden;
-	
-		.inner {
-	
-			line-height: $height__site-banner-mobile;
-			margin-left: $size__site-banner-gutter;
-			margin-right: $size__site-banner-gutter;
-	
-			@media screen and (min-width: $breakpoint__menu) {
-				line-height: $height__site-banner;
-			}
-
-			@media screen and (min-width: $breakpoint__medium) {
-				margin-left: $size__site-banner-gutter-medium;
-				margin-right: $size__site-banner-gutter-medium;
-			}
-
-			@media screen and (min-width: $size__site-banner-content + ( $size__site-banner-gutter-medium * 2 )) {
-				max-width: $size__site-banner-content;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			
-			.banner-widget-area {
-				float: right;
-
-				> .banner-widget {
-					display: inline-block;
+		.site-banner {
 		
-					> div { /* individual widget wrapper */
+			overflow: hidden;
 		
-						> *:not([class*=menu]) {
-							margin: 0 .5em;
-						}
+			.inner {
+		
+				line-height: $height__site-banner-mobile;
+				margin-left: $size__site-banner-gutter;
+				margin-right: $size__site-banner-gutter;
+		
+				@media screen and (min-width: $breakpoint__menu) {
+					line-height: $height__site-banner;
+				}
+
+				@media screen and (min-width: $breakpoint__medium) {
+					margin-left: $size__site-banner-gutter-medium;
+					margin-right: $size__site-banner-gutter-medium;
+				}
+
+				@media screen and (min-width: $size__site-banner-content + ( $size__site-banner-gutter-medium * 2 )) {
+					max-width: $size__site-banner-content;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				
+				.banner-widget-area {
+					float: right;
+
+					> .banner-widget {
+						display: inline-block;
 			
-						a {
-							display: inline;
-						}
+						> div { /* individual widget wrapper */
 			
-						p {
-							margin: 0;
-						}
-			
-						.menu {
-							list-style: none;
-							margin: 0;
-							padding: 0;
-			
-							.menu-item {
-								display: inline;
+							> *:not([class*=menu]) {
 								margin: 0 .5em;
 							}
+				
+							a {
+								display: inline;
+							}
+				
+							p {
+								margin: 0;
+							}
+				
+							.menu {
+								list-style: none;
+								margin: 0;
+								padding: 0;
+				
+								.menu-item {
+									display: inline;
+									margin: 0 .5em;
+								}
+							}
+			
 						}
-		
+			
 					}
+				} 
+			}
 		
-				}
-			} 
+			+ .inner .main-navigation .menu-toggle {
+				top: $height__site-banner-mobile;
+			}
+		}
+	}
+
+	&.scrolled-50 {
+	
+		// Only add transition once we have scrolled a little bit
+		// Improves behavior when the page is scrolled quickly back to the top
+	
+		.site-banner {
+	
+			.inner {
+				transition: line-height $duration_scrolled_transition;
+				-webkit-transition: line-height $duration_scrolled_transition;
+			}
+	
+			+ .inner .main-navigation .menu-toggle {
+				transition: top $duration_scrolled_transition;
+				-webkit-transition: top $duration_scrolled_transition;
+			}
+	
 		}
 	
-		+ .inner .main-navigation .menu-toggle {
-			top: $height__site-banner-mobile;
-		}
-		
 	}
 
-}
-
-.scrolled-50 {
-
-	// Only add transition once we have scrolled a little bit
-	// Improves behavior when the page is scrolled quickly back to the top
-
-	.site-banner {
-
-		.inner {
-			transition: line-height $duration_scrolled_transition;
-			-webkit-transition: line-height $duration_scrolled_transition;
-		}
-
-		+ .inner .main-navigation .menu-toggle {
-			transition: top $duration_scrolled_transition;
-			-webkit-transition: top $duration_scrolled_transition;
-		}
-
-	}
-
-}
-
-body#{$scrolled_selector} .site .site-header {
-
-	.site-banner {
-
-		.inner {
-
-			line-height: $height__site-banner-mobile-scrolled;
-			
-			@media screen and (min-width: $breakpoint__menu) {
-				line-height: $height__site-banner-scrolled;
+	&#{$scrolled_selector} .site .site-header {
+	
+		.site-banner {
+	
+			.inner {
+	
+				line-height: $height__site-banner-mobile-scrolled;
+				
+				@media screen and (min-width: $breakpoint__menu) {
+					line-height: $height__site-banner-scrolled;
+				}
+	
 			}
-
+	
+			+ .inner .main-navigation .menu-toggle {
+				top: $height__site-banner-mobile-scrolled;
+			}
+			
 		}
+	}
 
-		+ .inner .main-navigation .menu-toggle {
-			top: $height__site-banner-mobile-scrolled;
+	&.menu-open {
+		.site .site-header {
+
+			.site-banner {
+				display: none;
+
+				+ .inner .main-navigation .menu-toggle {
+					top: 0;
+					transition: top 0s;
+					-webkit-transition: 0s;
+				}
+
+			}
 		}
-		
 	}
 }
