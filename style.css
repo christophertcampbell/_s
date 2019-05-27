@@ -1659,16 +1659,14 @@ body .site .site-header .site-banner .inner .banner-widget-area > .banner-widget
 body .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
   top: 30px;
 }
-
-.scrolled-50 .site-banner .inner {
+body.scrolled-50 .site-banner .inner {
   transition: line-height 300ms;
   -webkit-transition: line-height 300ms;
 }
-.scrolled-50 .site-banner + .inner .main-navigation .menu-toggle {
+body.scrolled-50 .site-banner + .inner .main-navigation .menu-toggle {
   transition: top 300ms;
   -webkit-transition: top 300ms;
 }
-
 body.scrolled-150 .site .site-header .site-banner .inner {
   line-height: 0px;
 }
@@ -1679,6 +1677,12 @@ body.scrolled-150 .site .site-header .site-banner .inner {
 }
 body.scrolled-150 .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
   top: 0px;
+}
+body.menu-open .site .site-header .site-banner {
+  display: none;
+}
+body.menu-open .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
+  top: 0;
 }
 
 /* Places the site branding (logo, title and description)
