@@ -121,6 +121,8 @@ body {
 
 				+ .inner .main-navigation .menu-toggle {
 					top: 0;
+					transition: top 0s;
+					-webkit-transition: 0s;
 				}
 
 			}
