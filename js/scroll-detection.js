@@ -1,5 +1,12 @@
 /**
- * Applies body classes based on pixel/percent distances scrolled
+ * ScrollDetection.js
+ * 
+ * Detects browser scroll amount and applies pixel/percent-based css classes
+ * to the <body> element based on distance scrolled
+ * 
+ * Copyright (c) 2019 Chris Campbell; License: MIT
+ * 
+ * GitHub repo: https://github.com/christophertcampbell/scroll-detection.js
  * 
  * Use window.ScrollDetection.GetConfig() to get the default configuration
  * Use window.ScrollDetection.SetConfig() to set a new configuration
