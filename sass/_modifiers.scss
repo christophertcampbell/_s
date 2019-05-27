@@ -1,0 +1,28 @@
+/* Modifiers are css classes that are intended for general usage
+   throughout markup and the Wordpress editor */
+
+body:not(.logged-in) .hidden-logged-out {
+	display: none;
+}
+
+body.logged-in .hidden-logged-in {
+	display: none;
+}
+
+@media screen and (max-width: $breakpoint__menu) {
+	.hidden-mobile {
+		display: none;
+	}
+}
+
+@media screen and (min-width: $breakpoint__menu) and (max-width: $breakpoint__medium) {
+	.hidden-medium {
+		display: none;
+	}
+}
+
+@media screen and (min-width: $breakpoint__medium) {
+	.hidden-desktop {
+		display: none;
+	}
+}

@@ -521,7 +521,7 @@ big {
   /* Medium screen size */
   /* Max width of header content (including gutters) */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .site-header > .inner {
     margin-left: 0px;
     margin-right: 0px;
@@ -541,7 +541,7 @@ big {
   /* Medium screen size */
   /* Max width of site branding content */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .site-header .site-branding .inner {
     margin-left: 33px;
     margin-right: 33px;
@@ -566,7 +566,7 @@ big {
   /* Medium screen size */
   /* Max width of header navigation content (including gutters) */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .site-header .main-navigation .inner {
     margin-left: 33px;
     margin-right: 33px;
@@ -597,7 +597,7 @@ big {
   display: block;
   width: 100%;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .header-image .inner {
     margin-left: 0;
     margin-right: 0;
@@ -620,7 +620,7 @@ big {
   margin-right: 20px;
   /* Max width of header content (including gutters) */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .site-footer .inner {
     margin-left: 33px;
     margin-right: 33px;
@@ -661,7 +661,7 @@ big {
   margin-left: 20px;
   margin-right: 20px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .no-sidebar .site-main .entry-header > *,
 .no-sidebar .site-main .entry-content > *,
 .no-sidebar .site-main .entry-footer,
@@ -706,7 +706,7 @@ big {
 .content-sidebar .content-area {
   width: 100%;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .content-sidebar .site-content {
     margin-left: 33px;
     margin-right: 33px;
@@ -745,7 +745,7 @@ big {
 .sidebar-content .content-area {
   width: 100%;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .sidebar-content .site-content {
     margin-left: 33px;
     margin-right: 33px;
@@ -1616,7 +1616,7 @@ body .site .site-header .site-banner .inner {
     line-height: 40px;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   body .site .site-header .site-banner .inner {
     margin-left: 15px;
     margin-right: 15px;
@@ -1683,6 +1683,8 @@ body.menu-open .site .site-header .site-banner {
 }
 body.menu-open .site .site-header .site-banner + .inner .main-navigation .menu-toggle {
   top: 0;
+  transition: top 0s;
+  -webkit-transition: 0s;
 }
 
 /* Places the site branding (logo, title and description)
@@ -1763,7 +1765,7 @@ body.menu-open .site .site-header .site-banner + .inner .main-navigation .menu-t
     margin-left: 20px;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   .site-header .site-branding-secondary {
     margin-right: 33px;
     margin-left: 33px;
@@ -1846,7 +1848,7 @@ body .site .site-header .main-navigation .inner {
   margin-right: 0;
   /* Medium screen size */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 100px) {
   body .site .site-header .main-navigation .inner {
     margin-left: 0;
     margin-right: 0;
@@ -1923,6 +1925,34 @@ body.admin-bar #wpadminbar {
   position: fixed;
 }
 
+/*--------------------------------------------------------------
+# Modifiers
+--------------------------------------------------------------*/
+/* Modifiers are css classes that are intended for general usage
+   throughout markup and the Wordpress editor */
+body:not(.logged-in) .hidden-logged-out {
+  display: none;
+}
+
+body.logged-in .hidden-logged-in {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 100px) {
+  .hidden-medium {
+    display: none;
+  }
+}
+@media screen and (min-width: 100px) {
+  .hidden-desktop {
+    display: none;
+  }
+}
 /*--------------------------------------------------------------
 # Theme-Specific
 --------------------------------------------------------------*/
