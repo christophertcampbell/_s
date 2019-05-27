@@ -12,16 +12,20 @@
 	function ScrollDetection() {
 
 		var config = {
-			singlePixelClassesUntil: 200,
-			singlePercentClassesUntil: 100,
-			stickyScrollDistances: [50, 100, 150, 200, 300],
-			stickyScrollPercentages: [25, 50, 75],
+			pixel: {
+				singleClassesUntil: 200,
+				stickyDistances: [50, 100, 150, 200, 300]
+			},
+			percent: {
+				singleClassesUntil: 100,
+				stickyDistances: [25, 50, 75]
+			}
 		}
 	
 		// Max pixel distance to watch for applying pixel-based scroll classes
 		var maxPixelScrollDistanceToWatch;
 		function calculateMaxPixelScrollDistanceToWatch() {
-			maxPixelScrollDistanceToWatch = Math.max(config.singlePixelClassesUntil, Math.max.apply(null, config.stickyScrollDistances));
+			maxPixelScrollDistanceToWatch = Math.max(config.pixel.singleClassesUntil, Math.max.apply(null, config.pixel.stickyDistances));
 		}
 		calculateMaxPixelScrollDistanceToWatch();
 	
@@ -44,26 +48,26 @@
 			}
 	
 			// Add single-pixel scroll classes
-			if (distanceScrolled > 0 && distanceScrolled <= config.singlePixelClassesUntil) {
+			if (distanceScrolled > 0 && distanceScrolled <= config.pixel.singleClassesUntil) {
 				body.className += " scrolled-" + distanceScrolled;
 			}
 	
 			// Add sticky pixel scroll classes
-			for (var i = 0; i < config.stickyScrollDistances.length; i++) {
-				var dist = config.stickyScrollDistances[i];
+			for (var i = 0; i < config.pixel.stickyDistances.length; i++) {
+				var dist = config.pixel.stickyDistances[i];
 				if (distanceScrolled >= dist && ! body.className.includes(" scrolled-" + dist)) {
 					body.className += " scrolled-" + dist;
 				}
 			}
 	
 			// Add single-percent scroll classes
-			if (percentScrolled > 0 && percentScrolled <= config.singlePercentClassesUntil) {
+			if (percentScrolled > 0 && percentScrolled <= config.percent.singleClassesUntil) {
 				body.className += " scrolled-pct-" + percentScrolled;
 			}
 	
 			// Add sticky percent scroll classes
-			for (var i = 0; i < config.stickyScrollPercentages.length; i++) {
-				var dist = config.stickyScrollPercentages[i];
+			for (var i = 0; i < config.percent.stickyDistances.length; i++) {
+				var dist = config.percent.stickyDistances[i];
 				if (percentScrolled > dist && ! body.className.includes(" scrolled-pct-" + dist)) {
 					body.className += " scrolled-pct-" + dist;
 				}
